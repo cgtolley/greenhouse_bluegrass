@@ -12,7 +12,7 @@ from pathlib import Path
 
 
 TITLE_LIGHTNESS = 0.22
-ACCENT_LIGHTNESS = 0.48
+ACCENT_LIGHTNESS = 0.42
 
 
 def parse_hex_color(s):
