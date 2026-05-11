@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+render_song.py — Render a Nashville-notation song file to HTML in a chosen key.
+
 Usage:
     python render_song.py SONG_FILE KEY [-o OUTPUT_FILE] [--color HEX]
 
@@ -7,6 +9,9 @@ Examples:
     python render_song.py songs/example.py G
     python render_song.py songs/example.py Eb -o example_Eb.html
     python render_song.py songs/example.py D --color "#1a8"
+
+The song file should be a Python module that defines a SONG dict.
+See song_template.py for the format.
 """
 
 import argparse
@@ -298,8 +303,38 @@ def main():
         Path(args.output).write_text(out)
         print(f"Wrote {args.output} (title {title_color}, chord {chord_color})",
               file=sys.stderr)
+        update_manifest(args.output, song, args.key)
     else:
         print(out)
+
+
+def update_manifest(output_path, song, key, manifest_path="songs.json"):
+    """Add or update this song's entry in songs.json, matched by file path."""
+    import json
+
+    path = Path(manifest_path)
+    if path.exists():
+        data = json.loads(path.read_text())
+    else:
+        data = {"site_title": "Songbook", "songs": []}
+
+    entry = {
+        "title": song["title"],
+        "key": key,
+        "file": output_path,
+        "sources": song.get("sources", []),
+    }
+
+    songs = data.setdefault("songs", [])
+    for i, existing in enumerate(songs):
+        if existing.get("file") == output_path:
+            songs[i] = entry
+            break
+    else:
+        songs.append(entry)
+
+    path.write_text(json.dumps(data, indent=2) + "\n")
+    print(f"Updated {manifest_path}", file=sys.stderr)
 
 
 if __name__ == "__main__":

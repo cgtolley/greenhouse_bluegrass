@@ -1,27 +1,14 @@
 """
 song_template.py — Template for a song data file.
 
-Copy this file, rename it (e.g. ragged_but_right.py), and fill in your song.
-Then render with:
-
-    python render_song.py YOUR_SONG.py KEY -o output.html
-
-Format
-------
-SONG is a dict with two keys:
-  "title"   : the song title (string)
-  "sections": a list of section dicts
-
-  "type"  : semantic type — "verse", "chorus", "bridge", "intro", "outro", "solo", etc.
-            (Used as the default label if no explicit one is given.)
-  "label" : (optional) the header shown above the section, e.g. "Verse 1",
-            "Chorus 1", "Verse Solo Break". If omitted, falls back to type.title().
-  "lines" : list of (chord_row, lyric_row) tuples.
-            For instrumental lines (e.g. solo breaks), set lyric_row to None.
 """
 
 SONG = {
     "title": "Ragged But Right",
+    "sources": [
+        ("banjojudy", "https://www.banjojudy.com/wp-content/uploads/2022/09/Ragged-But-Right.txt"),
+        ("UltimateGuitar", "https://tabs.ultimate-guitar.com/tab/the-devil-makes-three/ragged-but-right-chords-5598459"),
+    ],
     "sections": [
         {
             "type": "verse",

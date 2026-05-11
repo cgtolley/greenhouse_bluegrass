@@ -4,6 +4,9 @@ song_template.py — Template for a song data file.
 
 SONG = {
     "title": "Big Rock Candy Mountain",
+    "sources": [
+        ("UltimateGuitar", "https://tabs.ultimate-guitar.com/tab/harry-mcclintock/big-rock-candy-mountain-chords-974999"),
+        ],
     "sections": [
         {
             "type": "intro",

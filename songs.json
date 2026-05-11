@@ -1,0 +1,53 @@
+{
+  "site_title": "Songbook",
+  "songs": [
+    {
+      "title": "Going Down the Road Feeling Bad",
+      "key": "C",
+      "file": "songs/going_down_the_road_feeling_bad.html",
+      "sources": [
+        [
+          "harper college",
+          "https://ce.harpercollege.edu/upload/LMU-Music-Back-Porch-Revue-Chord-Sheet-Going_Down_the_Road_Feeling_Bad.pdf"
+        ]
+      ]
+    },
+    {
+      "title": "Ragged But Right",
+      "key": "C",
+      "file": "songs/ragged_but_right.html",
+      "sources": [
+        [
+          "banjojudy",
+          "https://www.banjojudy.com/wp-content/uploads/2022/09/Ragged-But-Right.txt"
+        ],
+        [
+          "UltimateGuitar",
+          "https://tabs.ultimate-guitar.com/tab/the-devil-makes-three/ragged-but-right-chords-5598459"
+        ]
+      ]
+    },
+    {
+      "title": "Look at Miss Ohio",
+      "key": "F",
+      "file": "songs/look_at_miss_ohio.html",
+      "sources": [
+        [
+          "UltimateGuitar",
+          "https://tabs.ultimate-guitar.com/tab/gillian-welch/look-at-miss-ohio-chords-1089277"
+        ]
+      ]
+    },
+    {
+      "title": "Big Rock Candy Mountain",
+      "key": "C",
+      "file": "songs/big_rock_candy_mountain.html",
+      "sources": [
+        [
+          "UltimateGuitar",
+          "https://tabs.ultimate-guitar.com/tab/harry-mcclintock/big-rock-candy-mountain-chords-974999"
+        ]
+      ]
+    }
+  ]
+}

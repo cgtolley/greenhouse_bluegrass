@@ -4,6 +4,9 @@ song_template.py — Template for a song data file.
 
 SONG = {
     "title": "Going Down the Road Feeling Bad",
+    "sources": [
+        ("harper college", 'https://ce.harpercollege.edu/upload/LMU-Music-Back-Porch-Revue-Chord-Sheet-Going_Down_the_Road_Feeling_Bad.pdf')
+        ],
     "sections": [
         {
             "type": "chorus",

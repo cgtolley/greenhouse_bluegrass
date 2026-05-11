@@ -8,6 +8,9 @@ Then render with:
 """
 SONG = {
     "title": "Look at Miss Ohio",
+    "sources": [
+        ("UltimateGuitar", "https://tabs.ultimate-guitar.com/tab/gillian-welch/look-at-miss-ohio-chords-1089277"),
+        ],
     "sections": [
         {
             "type": "intro",
