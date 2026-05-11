@@ -16,19 +16,19 @@ SONG = {
             "type": "intro",
             "label": "Intro",
             "lines": [
-                ("| 1 | 5 | 2 | 3m 2 |", None),
-                ("| 1 | 5 | 1 |", None)
+                ("| 4 | 1 | 5 | 6m 5 |", None),
+                ("| 4 | 1 | 4 |", None)
                 ],
         },
         {
             "type": "chorus",
             "label": "Chorus",
             "lines": [
-                ("1        5      2            3m 2",
+                ("4        1      5            6m 5",
                  "Oh me oh my oh, look at Miss O-hio"),
-                ("        1                       5       2",
+                ("        4                       1       5",
                  "She's a-running around with her rag-top down"),
-                 ("           1                  5         2",
+                 ("           4                  1         5",
                  "She says I wanna do right but not right now")
             ],
         },
@@ -36,11 +36,11 @@ SONG = {
             "type": "verse",
             "label": "Verse 1",
             "lines": [
-                ("      1           5        2             3m  2",
+                ("      4           1        5             6m  5",
                  "Gonna drive to Atlanta and live out this fantasy"),
-                ("1                      5       2",
+                ("4                      1       5",
                  "Running around with the rag-top down"),
-                 ("       1                  5            2",
+                 ("       4                  1          5",
                  "Yeah I wanna do right but not right now")
             ],
         },
@@ -48,21 +48,21 @@ SONG = {
             "type": "solo",
             "label": "Instrumental",
             "lines": [
-                ("| 3m | 67 |", None),
-                ("| 3m | 67 |", None),
-                ("| 1 | 5 | 2 | 3m 2 |", None),
-                ("| 1 | 5 | 2 |", None),
+                ("| 6m | 27 |", None),
+                ("| 6m | 27 |", None),
+                ("| 4 | 1 | 5 | 6m 5 |", None),
+                ("| 4 | 1 | 5 |", None),
             ],
         },
         {
             "type": "verse",
             "label": "Verse 2",
             "lines": [
-                ("         1           5        2                3m  2",
+                ("         4           1        5                6m  5",
                  "Had your arm around her shoulder, a regimental soldier"),
-                ("    1                         5       2",
+                ("    4                         1       5",
                  "An' mamma starts pushing that wedding gown"),
-                 ("        1                  5         2",
+                 ("        4                  1         5",
                  "Yeah you wanna do right but not right now")
             ],
         },
@@ -70,11 +70,11 @@ SONG = {
             "type": "chorus",
             "label": "Chorus",
             "lines": [
-                ("1        5      2            3m 2",
+                ("4        1      5            6m 5",
                  "Oh me oh my oh, look at Miss O-hio"),
-                ("        1                       5       2",
+                ("        4                       1       5",
                  "She's a-running around with her rag-top down"),
-                 ("           1                  5         2",
+                 ("           4                  1         5",
                  "She says I wanna do right but not right now")
             ],
         },
@@ -82,21 +82,21 @@ SONG = {
             "type": "solo",
             "label": "Instrumental",
             "lines": [
-                ("| 3m | 67 |", None),
-                ("| 3m | 67 |", None),
-                ("| 1 | 5 | 2 | 3m 2 |", None),
-                ("| 1 | 5 | 2 |", None),
+                ("| 6m | 27 |", None),
+                ("| 6m | 27 |", None),
+                ("| 4 | 1 | 5 | 6m 5 |", None),
+                ("| 4 | 1 | 5 |", None),
             ],
         },
         {
             "type": "verse",
             "label": "Verse 2",
             "lines": [
-                ("  1           5        2                  3m  2",
+                ("  4           1        5                  6m  5",
                  "I know all about it, so you don't have to shout it"),
-                ("    1                   5       2",
+                ("    4                   1       5",
                  "I'm gonna straighten it out somehow"),
-                 ("        1                  5         2",
+                 ("        4                  1         5",
                  "Yeah I wanna do right but not right now")
             ],
         },
@@ -104,13 +104,13 @@ SONG = {
             "type": "chorus",
             "label": "Chorus",
             "lines": [
-                ("1        5      2            3m 2",
+                ("4        1      5            6m 5",
                  "Oh me oh my oh, look at Miss O-hio"),
-                ("        1                       5       2",
+                ("        4                       1       5",
                  "She's a-running around with her rag-top down"),
-                 ("           1                  5         2",
+                 ("           4                  1         5",
                  "She says I wanna do right but not right now"),
-                 ("     C                  5         2",
+                 ("     4                  1         5",
                   "Oh I wanna do right but not right now"),
             ],
         },
@@ -118,10 +118,10 @@ SONG = {
             "type": "outro",
             "label": "Outro",
             "lines": [
-                ("| 1 | 5 | 2 | 3m 2 |", None),
-                ("| 1 | 5 | 1 |", None),
-                ("| 1 | 5 | 2 | 3m 2 |", None),
-                ("| 1 | 5 | 1 |", None)
+                ("| 4 | 1 | 5 | 6m 5 |", None),
+                ("| 4 | 1 | 5 |", None),
+                ("| 4 | 1 | 5 | 6m 5 |", None),
+                ("| 4 | 1 | 5 |", None)
                 ],
         },
     ],
