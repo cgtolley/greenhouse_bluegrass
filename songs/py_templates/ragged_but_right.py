@@ -21,7 +21,7 @@ SONG is a dict with two keys:
 """
 
 SONG = {
-    "title": "Song Title Here",
+    "title": "Ragged But Right",
     "sections": [
         {
             "type": "verse",
@@ -32,7 +32,7 @@ SONG = {
                 ("5                                1",
                  "I'm a thief and a gambler, I get drunk every night"),
                 ("      4                               1          6 ",
-                 "Get a porterhouse steak three times a day for my board"),
+                 "Eat a porterhouse steak three times a day for my board"),
                 ("       2                           5",
                 "That's more than any loafer in this town can afford"),
                 ("1                             5",

@@ -1,29 +1,25 @@
 #!/usr/bin/env python3
 """
-render_song.py — Render a Nashville-notation song file to HTML in a chosen key.
-
 Usage:
-    python render_song.py SONG_FILE KEY [-o OUTPUT_FILE]
+    python render_song.py SONG_FILE KEY [-o OUTPUT_FILE] [--color HEX]
 
 Examples:
     python render_song.py songs/example.py G
     python render_song.py songs/example.py Eb -o example_Eb.html
+    python render_song.py songs/example.py D --color "#1a8"
 
 The song file should be a Python module that defines a SONG dict.
 See song_template.py for the format.
 """
 
 import argparse
-import importlib.util
+import colorsys
 import html as htmllib
+import importlib.util
 import re
 import sys
 from pathlib import Path
 
-
-# ---------------------------------------------------------------------------
-# Music theory
-# ---------------------------------------------------------------------------
 
 NOTES_SHARP = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 NOTES_FLAT  = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"]
@@ -34,14 +30,9 @@ KEY_TO_SEMITONE = {
     "A": 9,  "A#": 10, "Bb": 10, "B": 11,
 }
 
-# Keys that conventionally spell notes with flats.
 FLAT_KEYS = {"F", "Bb", "Eb", "Ab", "Db", "Gb"}
-
-# Major-scale semitone offsets from the tonic, for degrees 1–7.
 SCALE_DEGREE_SEMITONES = {1: 0, 2: 2, 3: 4, 4: 5, 5: 7, 6: 9, 7: 11}
 
-# Pattern matching a Nashville chord symbol embedded in any context.
-# Examples it matches: 1, 5m, 6m, 57, 1maj7, 5/7, 1sus4, b3, #4
 CHORD_RE = re.compile(
     r"(?<![A-Za-z0-9])"
     r"(?P<acc>[b#])?"
@@ -54,7 +45,6 @@ CHORD_RE = re.compile(
 
 
 def note_at(key, semitone_offset, prefer_flats=None):
-    """Return the note name `semitone_offset` semitones above `key`."""
     if prefer_flats is None:
         prefer_flats = key in FLAT_KEYS
     idx = (KEY_TO_SEMITONE[key] + semitone_offset) % 12
@@ -62,7 +52,6 @@ def note_at(key, semitone_offset, prefer_flats=None):
 
 
 def transpose_chord_match(match, key):
-    """Given a regex match for a Nashville chord, return the chord name in `key`."""
     deg = int(match.group("deg"))
     offset = SCALE_DEGREE_SEMITONES[deg]
     acc = match.group("acc")
@@ -73,10 +62,9 @@ def transpose_chord_match(match, key):
         offset += 1
         prefer_flats = False
     else:
-        prefer_flats = None  # follow key default
+        prefer_flats = None
 
     root = note_at(key, offset, prefer_flats)
-
     out = root
     if match.group("qual"):
         out += match.group("qual")
@@ -101,25 +89,50 @@ def transpose_chord_match(match, key):
 
 
 def transpose_chord_row(chord_row, key):
-    """Replace each Nashville chord in `chord_row` with its name in `key`,
-    preserving each chord's source column. If a transposed chord is longer
-    than the original token, it overwrites following space characters."""
     chars = list(chord_row)
     for m in CHORD_RE.finditer(chord_row):
         start = m.start()
         new = transpose_chord_match(m, key)
-        # Write new chars at the source position
         for j, ch in enumerate(new):
             if start + j < len(chars):
                 chars[start + j] = ch
             else:
                 chars.append(ch)
-        # If new is shorter than source token, pad with spaces
         old_len = m.end() - m.start()
         if len(new) < old_len:
             for j in range(len(new), old_len):
                 chars[start + j] = " "
     return "".join(chars).rstrip()
+
+
+# Color palette
+# Lightness targets for the derived colors (0.0 = black, 1.0 = white).
+TITLE_LIGHTNESS = 0.22  # darker version of the base color
+CHORD_LIGHTNESS = 0.48  # lighter, but still very visible
+
+
+def parse_hex_color(s):
+    """Accept '#abc', '#aabbcc', 'abc', or 'aabbcc'. Return (r, g, b) in 0..1."""
+    s = s.lstrip("#").strip()
+    if len(s) == 3:
+        s = "".join(c * 2 for c in s)
+    if len(s) != 6 or not all(c in "0123456789abcdefABCDEF" for c in s):
+        raise ValueError(f"Not a valid hex color: {s!r}")
+    return tuple(int(s[i:i + 2], 16) / 255 for i in (0, 2, 4))
+
+
+def rgb_to_hex(rgb):
+    return "#" + "".join(f"{max(0, min(255, round(c * 255))):02x}" for c in rgb)
+
+
+def derive_palette(base_hex):
+    """From one base color, derive (title_hex, chord_hex) sharing its hue/saturation
+    but at fixed lightness levels."""
+    r, g, b = parse_hex_color(base_hex)
+    h, _l, s = colorsys.rgb_to_hls(r, g, b)
+    title_rgb = colorsys.hls_to_rgb(h, TITLE_LIGHTNESS, s)
+    chord_rgb = colorsys.hls_to_rgb(h, CHORD_LIGHTNESS, s)
+    return rgb_to_hex(title_rgb), rgb_to_hex(chord_rgb)
 
 
 # ---------------------------------------------------------------------------
@@ -145,17 +158,17 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     line-height: 1.4;
   }}
   h2 {{
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #888;
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }}
   h1 {{
     font-size: 1rem;
     letter-spacing: 0.1em;
-    color: #611;
+    color: {title_color};
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.25rem;
     margin-top: 0.5rem;
@@ -175,7 +188,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     overflow-x: auto;
   }}
   pre.lyrics .chord {{
-    color: #b54;
+    color: {chord_color};
     font-weight: bold;
   }}
 </style>
@@ -198,24 +211,24 @@ def esc(s):
 
 def render_section(section, key):
     label = section.get("label", section["type"].title())
-    line_blocks = []
+    blocks = []
     for chord_row, lyric_row in section["lines"]:
         chord_html = esc(transpose_chord_row(chord_row, key))
         if lyric_row:
-            line_blocks.append(
-                f'<span class="chord">{chord_html}</span>\n{esc(lyric_row)}'
-            )
+            blocks.append(f'<span class="chord">{chord_html}</span>\n{esc(lyric_row)}')
         else:
-            line_blocks.append(f'<span class="chord">{chord_html}</span>')
-    body = "\n".join(line_blocks)
+            blocks.append(f'<span class="chord">{chord_html}</span>')
+    body = "\n".join(blocks)
     return f'<h2>{esc(label)}</h2>\n<pre class="lyrics">\n{body}\n</pre>\n'
 
 
-def render_song(song, key):
+def render_song(song, key, title_color, chord_color):
     sections_html = "\n".join(render_section(s, key) for s in song["sections"])
     return HTML_TEMPLATE.format(
         title=esc(song["title"]),
         key=esc(key),
+        title_color=title_color,
+        chord_color=chord_color,
         sections=sections_html,
     )
 
@@ -237,8 +250,13 @@ def main():
     )
     parser.add_argument("song", help="path to a song .py file (defines SONG dict)")
     parser.add_argument("key", help="target key, e.g. C, G, Eb, F#")
+    parser.add_argument("-o", "--output", help="output HTML file (default: stdout)")
     parser.add_argument(
-        "-o", "--output", help="output HTML file (default: stdout)"
+        "--color",
+        default="#b54",
+        help="base color (hex, e.g. '#b54' or '#1a8866'). "
+             "Title is rendered as a darker version, chords as a lighter version. "
+             "Default: #b54 (warm red).",
     )
     args = parser.parse_args()
 
@@ -248,12 +266,18 @@ def main():
             f"Valid keys: {', '.join(sorted(KEY_TO_SEMITONE))}"
         )
 
+    try:
+        title_color, chord_color = derive_palette(args.color)
+    except ValueError as e:
+        sys.exit(str(e))
+
     song = load_song(args.song)
-    out = render_song(song, args.key)
+    out = render_song(song, args.key, title_color, chord_color)
 
     if args.output:
         Path(args.output).write_text(out)
-        print(f"Wrote {args.output}", file=sys.stderr)
+        print(f"Wrote {args.output} (title {title_color}, chord {chord_color})",
+              file=sys.stderr)
     else:
         print(out)
 
