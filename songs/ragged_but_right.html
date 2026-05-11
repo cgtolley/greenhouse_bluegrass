@@ -38,10 +38,22 @@
     color: #888;
     margin-bottom: 0.75rem;
   }
+  .key select {
+    font-family: inherit;
+    font-size: inherit;
+    color: #b45241;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 0.2rem;
+    margin-left: 0.3rem;
+    font-weight: bold;
+  }
   pre.lyrics {
     font-family: "Courier New", Courier, monospace;
     /* Scaled so the longest line (54 chars) fits the available width.
-       0.62 ≈ Courier New character-width / font-size ratio (small safety margin). */
+       0.62 ≈ Courier New character-width / font-size ratio (small safety margin).
+       Worst-case length across all keys, so transposing live never overflows. */
     font-size: clamp(0.4rem, calc((100vw - 2rem) / 54 / 0.62), 0.95rem);
     line-height: 1.4;
     margin: 0;
@@ -53,91 +65,166 @@
   }
 </style>
 </head>
-<body>
+<body data-default-key="C">
 
 <h1>Ragged But Right</h1>
-<div class="key">Key of C</div>
+<div class="key">Key of <select id="key-selector" aria-label="Transpose to key"><option value="C" selected>C</option><option value="Db">Db</option><option value="D">D</option><option value="Eb">Eb</option><option value="E">E</option><option value="F">F</option><option value="F#">F#</option><option value="G">G</option><option value="Ab">Ab</option><option value="A">A</option><option value="Bb">Bb</option><option value="B">B</option></select></div>
 
 <h2>Verse 1</h2>
 <pre class="lyrics">
-<span class="chord">C                                   G</span>
+<span class="chord" data-nash="1                                   5">C                                   G</span>
 I come here to tell you that I&#x27;m ragged but right
-<span class="chord">G                                C</span>
+<span class="chord" data-nash="5                                1">G                                C</span>
 I&#x27;m a thief and a gambler, I get drunk every night
-<span class="chord">      F                               C          A</span>
+<span class="chord" data-nash="      4                               1          6 ">      F                               C          A</span>
 Eat a porterhouse steak three times a day for my board
-<span class="chord">       D                           G</span>
+<span class="chord" data-nash="       2                           5">       D                           G</span>
 That&#x27;s more than any loafer in this town can afford
-<span class="chord">C                             G</span>
+<span class="chord" data-nash="1                             5">C                             G</span>
 A big electric fan to keep me cool while I sleep
-<span class="chord">  G                       C</span>
+<span class="chord" data-nash="  5                       1">  G                       C</span>
 A little baby girl dancin round at my feet
-<span class="chord">       F                          C           A</span>
+<span class="chord" data-nash="       4                          1           6">       F                          C           A</span>
 I am a ramblin&#x27; gambler and I get drunk every night
-<span class="chord">D                 G          C</span>
+<span class="chord" data-nash="2                 5          1">D                 G          C</span>
 Boys you know I&#x27;m ragged but right
 </pre>
 
 <h2>Chorus 1</h2>
 <pre class="lyrics">
-<span class="chord">C</span>
+<span class="chord" data-nash="1">C</span>
 I go everywhere, I don&#x27;t pay no fare
-<span class="chord">                           D  G</span>
+<span class="chord" data-nash="                           2  5">                           D  G</span>
 I can ride a freight train anywhere
-<span class="chord">C                F</span>
+<span class="chord" data-nash="1                4              ">C                F</span>
 If I win or lose, I don&#x27;t get no blues
-<span class="chord">        C              G           C</span>
+<span class="chord" data-nash="        1              5           1">        C              G           C</span>
 Oh it&#x27;s a-ramblin&#x27; and rollin&#x27; for me
 </pre>
 
 <h2>Verse Solo Break</h2>
 <pre class="lyrics">
-<span class="chord">|C    |G    |G    |C    |</span>
-<span class="chord">|F C  |C Am |D    |G    |</span>
+<span class="chord" data-nash="|1    |5    |5    |1    |">|C    |G    |G    |C    |</span>
+<span class="chord" data-nash="|4 1  |1 6m |2    |5    |">|F C  |C Am |D    |G    |</span>
 </pre>
 
 <h2>Chorus 2</h2>
 <pre class="lyrics">
-<span class="chord">C                           G</span>
+<span class="chord" data-nash="1                           5">C                           G</span>
 Well I never got married, I never settled down
-<span class="chord">                                   C</span>
+<span class="chord" data-nash="                                   1">                                   C</span>
 Never spent more than one night in any one town
-<span class="chord">F                         C             A</span>
+<span class="chord" data-nash="4                         1             6">F                         C             A</span>
 I&#x27;ve got no family and no place to call home
-<span class="chord">D                      G</span>
+<span class="chord" data-nash="2                      5">D                      G</span>
 But I&#x27;ll stay happy as long as I roam
 </pre>
 
 <h2>Verse 2</h2>
 <pre class="lyrics">
-<span class="chord">C                              G</span>
+<span class="chord" data-nash="1                              5">C                              G</span>
 I hopped on a freight train in North Caroline
-<span class="chord">G                        C</span>
+<span class="chord" data-nash="5                        1">G                        C</span>
 Rode down to Atlanta and bought me some shine
-<span class="chord">F                          C       A</span>
+<span class="chord" data-nash="4                          1       6 ">F                          C       A</span>
 Went into a card game with 39 cents
-<span class="chord">D                       G</span>
+<span class="chord" data-nash="2                       5">D                       G</span>
 Came out with enough for another month&#x27;s rent
-<span class="chord">C                                   G</span>
+<span class="chord" data-nash="1                                   5">C                                   G</span>
 Well you may think I&#x27;m bragging but don&#x27;t get me wrong
-<span class="chord">  G                               C</span>
+<span class="chord" data-nash="  5                               1">  G                               C</span>
 I can&#x27;t run for office while I&#x27;m singing this song
-<span class="chord">       F                          C           A</span>
+<span class="chord" data-nash="       4                          1           6">       F                          C           A</span>
 I&#x27;m a thief and a gambler and I&#x27;m drunk every night
-<span class="chord">D                 G          C</span>
+<span class="chord" data-nash="2                 5          1">D                 G          C</span>
 I tell you boys I&#x27;m ragged but right.
 </pre>
 
 <h2>Outro</h2>
 <pre class="lyrics">
-<span class="chord">  D7                 G7</span>
+<span class="chord" data-nash="  27                 57">  D7                 G7</span>
 I tell you boys I&#x27;m ragged
-<span class="chord">  D7                  G7</span>
+<span class="chord" data-nash="  27                  57">  D7                  G7</span>
 I tell you boys I&#x27;m ragged
-<span class="chord">  D7                 G7         C</span>
+<span class="chord" data-nash="  27                 57         1">  D7                 G7         C</span>
 I tell you boys I&#x27;m ragged but right.
 </pre>
 
+
+<script>
+(function () {
+  var NOTES_SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+  var NOTES_FLAT  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  var KEY_TO_SEMITONE = {"C":0,"C#":1,"Db":1,"D":2,"D#":3,"Eb":3,"E":4,"F":5,"F#":6,"Gb":6,"G":7,"G#":8,"Ab":8,"A":9,"A#":10,"Bb":10,"B":11};
+  var FLAT_KEYS = {"F":1,"Bb":1,"Eb":1,"Ab":1,"Db":1,"Gb":1};
+  var SDS = {1:0,2:2,3:4,4:5,5:7,6:9,7:11};
+  var CHORD_RE = /(?<![A-Za-z0-9])([b#])?([1-7])(m(?!aj)|maj|dim|aug|sus[24]?)?(7|9|11|13)?(?:\/([b#])?([1-7]))?(?![A-Za-z0-9])/g;
+
+  function noteAt(key, offset, preferFlats) {
+    if (preferFlats === null) preferFlats = !!FLAT_KEYS[key];
+    var idx = ((KEY_TO_SEMITONE[key] + offset) % 12 + 12) % 12;
+    return preferFlats ? NOTES_FLAT[idx] : NOTES_SHARP[idx];
+  }
+
+  function transposeChord(m, key) {
+    var acc = m[1], degStr = m[2], qual = m[3], ext = m[4], bassAcc = m[5], bassStr = m[6];
+    var offset = SDS[parseInt(degStr, 10)];
+    var pf = null;
+    if (acc === "b") { offset--; pf = true; }
+    else if (acc === "#") { offset++; pf = false; }
+    var out = noteAt(key, offset, pf);
+    if (qual) out += qual;
+    if (ext) out += ext;
+    if (bassStr) {
+      var bo = SDS[parseInt(bassStr, 10)];
+      var bpf = pf;
+      if (bassAcc === "b") { bo--; bpf = true; }
+      else if (bassAcc === "#") { bo++; bpf = false; }
+      out += "/" + noteAt(key, bo, bpf);
+    }
+    return out;
+  }
+
+  function transposeRow(row, key) {
+    var chars = row.split("");
+    var re = new RegExp(CHORD_RE.source, "g");
+    var m;
+    while ((m = re.exec(row)) !== null) {
+      var start = m.index;
+      var newChord = transposeChord(m, key);
+      for (var j = 0; j < newChord.length; j++) {
+        if (start + j < chars.length) chars[start + j] = newChord[j];
+        else chars.push(newChord[j]);
+      }
+      var oldLen = m[0].length;
+      if (newChord.length < oldLen) {
+        for (var k = newChord.length; k < oldLen; k++) chars[start + k] = " ";
+      }
+    }
+    return chars.join("").replace(/\s+$/, "");
+  }
+
+  function rerender(key) {
+    if (!(key in KEY_TO_SEMITONE)) return false;
+    var spans = document.querySelectorAll(".chord[data-nash]");
+    for (var i = 0; i < spans.length; i++) {
+      spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+    }
+    var sel = document.getElementById("key-selector");
+    if (sel && sel.value !== key) sel.value = key;
+    return true;
+  }
+
+  // Apply ?key=X from the URL on load (if present and valid)
+  var params = new URLSearchParams(window.location.search);
+  var urlKey = params.get("key");
+  if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
+
+  // Wire up the in-page selector
+  var sel = document.getElementById("key-selector");
+  if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
+})();
+</script>
 
 </body>
 </html>

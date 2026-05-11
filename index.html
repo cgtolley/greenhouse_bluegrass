@@ -9,7 +9,7 @@
     font-size: clamp(13px, 3.2vw, 16px);
   }
   body {
-    font-family: Courier, "Courier New", monospace;
+    font-family: Georgia, "Times New Roman", serif;
     max-width: 720px;
     padding: 0 1rem;
     margin: 1.5rem auto;
@@ -44,16 +44,32 @@
     border-bottom: 1px solid #ddd;
   }
   td.key {
+    width: 4em;
+  }
+  td.key input {
     font-family: "Courier New", Courier, monospace;
-    color: #476b8f;
+    font-size: 0.95rem;
+    color: #527aa3;
     font-weight: bold;
-    width: 3em;
+    width: 3.2em;
+    padding: 0.15rem 0.3rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fafafa;
+  }
+  td.key input.invalid {
+    border-color: #c44;
+    background: #fff0f0;
+  }
+  td.key input.changed {
+    border-color: #527aa3;
+    background: #fff;
   }
   td.sources {
     font-size: 0.85rem;
   }
   a {
-    color: #476b8f;
+    color: #527aa3;
     text-decoration: none;
   }
   a:hover {
@@ -76,27 +92,62 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="songs/going_down_the_road_feeling_bad.html">Going Down the Road Feeling Bad</a></td>
-      <td class="key">D</td>
+      <td><a class="song-link" href="songs/going_down_the_road_feeling_bad.html" data-base="songs/going_down_the_road_feeling_bad.html">Going Down the Road Feeling Bad</a></td>
+      <td class="key"><input type="text" class="key-input" value="D" data-original="D" maxlength="3" aria-label="Transpose key" /></td>
       <td class="sources"><a href="https://ce.harpercollege.edu/upload/LMU-Music-Back-Porch-Revue-Chord-Sheet-Going_Down_the_Road_Feeling_Bad.pdf">harper college</a></td>
     </tr>
     <tr>
-      <td><a href="songs/ragged_but_right.html">Ragged But Right</a></td>
-      <td class="key">C</td>
+      <td><a class="song-link" href="songs/ragged_but_right.html" data-base="songs/ragged_but_right.html">Ragged But Right</a></td>
+      <td class="key"><input type="text" class="key-input" value="C" data-original="C" maxlength="3" aria-label="Transpose key" /></td>
       <td class="sources"><a href="https://www.banjojudy.com/wp-content/uploads/2022/09/Ragged-But-Right.txt">banjojudy</a>, <a href="https://tabs.ultimate-guitar.com/tab/the-devil-makes-three/ragged-but-right-chords-5598459">UltimateGuitar</a></td>
     </tr>
     <tr>
-      <td><a href="songs/look_at_miss_ohio.html">Look at Miss Ohio</a></td>
-      <td class="key">C</td>
+      <td><a class="song-link" href="songs/look_at_miss_ohio.html" data-base="songs/look_at_miss_ohio.html">Look at Miss Ohio</a></td>
+      <td class="key"><input type="text" class="key-input" value="C" data-original="C" maxlength="3" aria-label="Transpose key" /></td>
       <td class="sources"><a href="https://tabs.ultimate-guitar.com/tab/gillian-welch/look-at-miss-ohio-chords-1089277">UltimateGuitar</a></td>
     </tr>
     <tr>
-      <td><a href="songs/big_rock_candy_mountain.html">Big Rock Candy Mountain</a></td>
-      <td class="key">C</td>
+      <td><a class="song-link" href="songs/big_rock_candy_mountain.html" data-base="songs/big_rock_candy_mountain.html">Big Rock Candy Mountain</a></td>
+      <td class="key"><input type="text" class="key-input" value="C" data-original="C" maxlength="3" aria-label="Transpose key" /></td>
       <td class="sources"><a href="https://tabs.ultimate-guitar.com/tab/harry-mcclintock/big-rock-candy-mountain-chords-974999">UltimateGuitar</a></td>
     </tr>
   </tbody>
 </table>
+
+<script>
+(function () {
+  var VALID = {"C":1,"C#":1,"Db":1,"D":1,"D#":1,"Eb":1,"E":1,"F":1,"F#":1,"Gb":1,"G":1,"G#":1,"Ab":1,"A":1,"A#":1,"Bb":1,"B":1};
+
+  document.querySelectorAll(".key-input").forEach(function (input) {
+    var link = input.closest("tr").querySelector(".song-link");
+    var base = link.getAttribute("data-base");
+    var original = input.getAttribute("data-original");
+
+    function update() {
+      var v = input.value.trim();
+      // Normalize first char to uppercase (so "eb" → "Eb")
+      if (v.length > 0) v = v[0].toUpperCase() + v.slice(1);
+
+      input.classList.toggle("invalid", v.length > 0 && !(v in VALID));
+      input.classList.toggle("changed", v in VALID && v !== original);
+
+      if (v in VALID && v !== original) {
+        link.href = base + "?key=" + encodeURIComponent(v);
+      } else {
+        link.href = base;
+      }
+    }
+
+    input.addEventListener("input", update);
+    input.addEventListener("blur", function () {
+      // Tidy display: capitalize as user leaves the field
+      var v = input.value.trim();
+      if (v.length > 0) input.value = v[0].toUpperCase() + v.slice(1);
+    });
+  });
+})();
+</script>
+
 
 </body>
 </html>

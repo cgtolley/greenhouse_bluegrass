@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """
 render_index.py — Generate index.html from songs.json.
+
+The manifest songs.json is maintained automatically by render_song.py;
+this script reads it and emits a homepage with a table of all songs.
+
+Usage:
+    python render_index.py
+    python render_index.py -o index.html
+    python render_index.py --color "#3a3"
 """
 
 import argparse
@@ -11,8 +19,12 @@ import sys
 from pathlib import Path
 
 
+# ---------------------------------------------------------------------------
+# Color palette (mirrors render_song.py so the index matches the song pages)
+# ---------------------------------------------------------------------------
+
 TITLE_LIGHTNESS = 0.22
-ACCENT_LIGHTNESS = 0.42
+ACCENT_LIGHTNESS = 0.48
 
 
 def parse_hex_color(s):
@@ -36,7 +48,9 @@ def derive_palette(base_hex):
     return rgb_to_hex(title_rgb), rgb_to_hex(accent_rgb)
 
 
+# ---------------------------------------------------------------------------
 # HTML rendering
+# ---------------------------------------------------------------------------
 
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
@@ -49,7 +63,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     font-size: clamp(13px, 3.2vw, 16px);
   }}
   body {{
-    font-family: Courier, "Courier New", monospace;
+    font-family: Georgia, "Times New Roman", serif;
     max-width: 720px;
     padding: 0 1rem;
     margin: 1.5rem auto;
@@ -84,10 +98,26 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     border-bottom: 1px solid #ddd;
   }}
   td.key {{
+    width: 4em;
+  }}
+  td.key input {{
     font-family: "Courier New", Courier, monospace;
+    font-size: 0.95rem;
     color: {accent_color};
     font-weight: bold;
-    width: 3em;
+    width: 3.2em;
+    padding: 0.15rem 0.3rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fafafa;
+  }}
+  td.key input.invalid {{
+    border-color: #c44;
+    background: #fff0f0;
+  }}
+  td.key input.changed {{
+    border-color: {accent_color};
+    background: #fff;
   }}
   td.sources {{
     font-size: 0.85rem;
@@ -140,14 +170,15 @@ def render_table(songs):
         return '<p class="empty">No songs yet. Run render_song.py to add one.</p>'
     rows = []
     for s in songs:
+        key = s["key"]
         rows.append(
             "    <tr>\n"
-            f'      <td><a href="{esc(s["file"])}">{esc(s["title"])}</a></td>\n'
-            f'      <td class="key">{esc(s["key"])}</td>\n'
+            f'      <td><a class="song-link" href="{esc(s["file"])}" data-base="{esc(s["file"])}">{esc(s["title"])}</a></td>\n'
+            f'      <td class="key"><input type="text" class="key-input" value="{esc(key)}" data-original="{esc(key)}" maxlength="3" aria-label="Transpose key" /></td>\n'
             f'      <td class="sources">{render_sources(s.get("sources", []))}</td>\n'
             "    </tr>"
         )
-    return (
+    table_html = (
         "<table>\n"
         "  <thead>\n"
         "    <tr><th>Song</th><th>Key</th><th>Sources</th></tr>\n"
@@ -157,6 +188,45 @@ def render_table(songs):
         "  </tbody>\n"
         "</table>"
     )
+    return table_html + INDEX_SCRIPT
+
+
+INDEX_SCRIPT = """
+
+<script>
+(function () {
+  var VALID = {"C":1,"C#":1,"Db":1,"D":1,"D#":1,"Eb":1,"E":1,"F":1,"F#":1,"Gb":1,"G":1,"G#":1,"Ab":1,"A":1,"A#":1,"Bb":1,"B":1};
+
+  document.querySelectorAll(".key-input").forEach(function (input) {
+    var link = input.closest("tr").querySelector(".song-link");
+    var base = link.getAttribute("data-base");
+    var original = input.getAttribute("data-original");
+
+    function update() {
+      var v = input.value.trim();
+      // Normalize first char to uppercase (so "eb" → "Eb")
+      if (v.length > 0) v = v[0].toUpperCase() + v.slice(1);
+
+      input.classList.toggle("invalid", v.length > 0 && !(v in VALID));
+      input.classList.toggle("changed", v in VALID && v !== original);
+
+      if (v in VALID && v !== original) {
+        link.href = base + "?key=" + encodeURIComponent(v);
+      } else {
+        link.href = base;
+      }
+    }
+
+    input.addEventListener("input", update);
+    input.addEventListener("blur", function () {
+      // Tidy display: capitalize as user leaves the field
+      var v = input.value.trim();
+      if (v.length > 0) input.value = v[0].toUpperCase() + v.slice(1);
+    });
+  });
+})();
+</script>
+"""
 
 
 def main():
@@ -185,7 +255,7 @@ def main():
         )
 
     data = json.loads(manifest_path.read_text())
-    site_title = data.get("site_title", "Greenhouse Bluegrass")
+    site_title = data.get("site_title", "Songbook")
     songs = data.get("songs", [])
 
     try:

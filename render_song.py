@@ -189,10 +189,22 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     color: #888;
     margin-bottom: 0.75rem;
   }}
+  .key select {{
+    font-family: inherit;
+    font-size: inherit;
+    color: {chord_color};
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 0.2rem;
+    margin-left: 0.3rem;
+    font-weight: bold;
+  }}
   pre.lyrics {{
     font-family: "Courier New", Courier, monospace;
     /* Scaled so the longest line ({longest_line} chars) fits the available width.
-       0.62 ≈ Courier New character-width / font-size ratio (small safety margin). */
+       0.62 ≈ Courier New character-width / font-size ratio (small safety margin).
+       Worst-case length across all keys, so transposing live never overflows. */
     font-size: clamp(0.4rem, calc((100vw - 2rem) / {longest_line} / 0.62), 0.95rem);
     line-height: 1.4;
     margin: 0;
@@ -204,12 +216,87 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   }}
 </style>
 </head>
-<body>
+<body data-default-key="{key}">
 
 <h1>{title}</h1>
-<div class="key">Key of {key}</div>
+<div class="key">Key of <select id="key-selector" aria-label="Transpose to key">{key_options}</select></div>
 
 {sections}
+
+<script>
+(function () {{
+  var NOTES_SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+  var NOTES_FLAT  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  var KEY_TO_SEMITONE = {{"C":0,"C#":1,"Db":1,"D":2,"D#":3,"Eb":3,"E":4,"F":5,"F#":6,"Gb":6,"G":7,"G#":8,"Ab":8,"A":9,"A#":10,"Bb":10,"B":11}};
+  var FLAT_KEYS = {{"F":1,"Bb":1,"Eb":1,"Ab":1,"Db":1,"Gb":1}};
+  var SDS = {{1:0,2:2,3:4,4:5,5:7,6:9,7:11}};
+  var CHORD_RE = /(?<![A-Za-z0-9])([b#])?([1-7])(m(?!aj)|maj|dim|aug|sus[24]?)?(7|9|11|13)?(?:\\/([b#])?([1-7]))?(?![A-Za-z0-9])/g;
+
+  function noteAt(key, offset, preferFlats) {{
+    if (preferFlats === null) preferFlats = !!FLAT_KEYS[key];
+    var idx = ((KEY_TO_SEMITONE[key] + offset) % 12 + 12) % 12;
+    return preferFlats ? NOTES_FLAT[idx] : NOTES_SHARP[idx];
+  }}
+
+  function transposeChord(m, key) {{
+    var acc = m[1], degStr = m[2], qual = m[3], ext = m[4], bassAcc = m[5], bassStr = m[6];
+    var offset = SDS[parseInt(degStr, 10)];
+    var pf = null;
+    if (acc === "b") {{ offset--; pf = true; }}
+    else if (acc === "#") {{ offset++; pf = false; }}
+    var out = noteAt(key, offset, pf);
+    if (qual) out += qual;
+    if (ext) out += ext;
+    if (bassStr) {{
+      var bo = SDS[parseInt(bassStr, 10)];
+      var bpf = pf;
+      if (bassAcc === "b") {{ bo--; bpf = true; }}
+      else if (bassAcc === "#") {{ bo++; bpf = false; }}
+      out += "/" + noteAt(key, bo, bpf);
+    }}
+    return out;
+  }}
+
+  function transposeRow(row, key) {{
+    var chars = row.split("");
+    var re = new RegExp(CHORD_RE.source, "g");
+    var m;
+    while ((m = re.exec(row)) !== null) {{
+      var start = m.index;
+      var newChord = transposeChord(m, key);
+      for (var j = 0; j < newChord.length; j++) {{
+        if (start + j < chars.length) chars[start + j] = newChord[j];
+        else chars.push(newChord[j]);
+      }}
+      var oldLen = m[0].length;
+      if (newChord.length < oldLen) {{
+        for (var k = newChord.length; k < oldLen; k++) chars[start + k] = " ";
+      }}
+    }}
+    return chars.join("").replace(/\\s+$/, "");
+  }}
+
+  function rerender(key) {{
+    if (!(key in KEY_TO_SEMITONE)) return false;
+    var spans = document.querySelectorAll(".chord[data-nash]");
+    for (var i = 0; i < spans.length; i++) {{
+      spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+    }}
+    var sel = document.getElementById("key-selector");
+    if (sel && sel.value !== key) sel.value = key;
+    return true;
+  }}
+
+  // Apply ?key=X from the URL on load (if present and valid)
+  var params = new URLSearchParams(window.location.search);
+  var urlKey = params.get("key");
+  if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
+
+  // Wire up the in-page selector
+  var sel = document.getElementById("key-selector");
+  if (sel) sel.addEventListener("change", function () {{ rerender(sel.value); }});
+}})();
+</script>
 
 </body>
 </html>
@@ -225,25 +312,47 @@ def render_section(section, key):
     blocks = []
     for chord_row, lyric_row in section["lines"]:
         chord_html = esc(transpose_chord_row(chord_row, key))
+        nash_attr = esc(chord_row)
         if lyric_row:
-            blocks.append(f'<span class="chord">{chord_html}</span>\n{esc(lyric_row)}')
+            blocks.append(
+                f'<span class="chord" data-nash="{nash_attr}">{chord_html}</span>\n{esc(lyric_row)}'
+            )
         else:
-            blocks.append(f'<span class="chord">{chord_html}</span>')
+            blocks.append(
+                f'<span class="chord" data-nash="{nash_attr}">{chord_html}</span>'
+            )
     body = "\n".join(blocks)
     return f'<h2>{esc(label)}</h2>\n<pre class="lyrics">\n{body}\n</pre>\n'
 
 
-def compute_longest_line(song, key):
-    """Length of the widest line that will appear in the rendered output,
-    accounting for chord-row width after transposition into `key`."""
-    longest = 1  # avoid divide-by-zero
+def compute_longest_line(song):
+    """Worst-case line width across all 12 keys, so the CSS-baked font size
+    is small enough to fit even after live JS transposition."""
+    longest = 1
     for section in song["sections"]:
         for chord_row, lyric_row in section["lines"]:
-            transposed = transpose_chord_row(chord_row, key)
-            longest = max(longest, len(transposed))
             if lyric_row:
                 longest = max(longest, len(lyric_row))
+            for key in KEY_TO_SEMITONE:
+                longest = max(longest, len(transpose_chord_row(chord_row, key)))
     return longest
+
+
+# Keys offered in the on-page selector (sharps preferred for sharp keys,
+# flats preferred for flat keys; both spellings included for ambiguous ones).
+KEY_ORDER = ["C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
+
+
+def render_key_options(current_key):
+    """Build <option> tags for the in-page key selector."""
+    options = []
+    for k in KEY_ORDER:
+        selected = " selected" if k == current_key else ""
+        options.append(f'<option value="{k}"{selected}>{k}</option>')
+    # Include the current key even if it's not in KEY_ORDER (e.g. enharmonic spelling)
+    if current_key not in KEY_ORDER:
+        options.insert(0, f'<option value="{current_key}" selected>{current_key}</option>')
+    return "".join(options)
 
 
 def render_song(song, key, title_color, chord_color):
@@ -251,9 +360,10 @@ def render_song(song, key, title_color, chord_color):
     return HTML_TEMPLATE.format(
         title=esc(song["title"]),
         key=esc(key),
+        key_options=render_key_options(key),
         title_color=title_color,
         chord_color=chord_color,
-        longest_line=compute_longest_line(song, key),
+        longest_line=compute_longest_line(song),
         sections=sections_html,
     )
 

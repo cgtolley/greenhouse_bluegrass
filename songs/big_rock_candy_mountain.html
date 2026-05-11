@@ -38,10 +38,22 @@
     color: #888;
     margin-bottom: 0.75rem;
   }
+  .key select {
+    font-family: inherit;
+    font-size: inherit;
+    color: #d47221;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 0.2rem;
+    margin-left: 0.3rem;
+    font-weight: bold;
+  }
   pre.lyrics {
     font-family: "Courier New", Courier, monospace;
     /* Scaled so the longest line (72 chars) fits the available width.
-       0.62 ≈ Courier New character-width / font-size ratio (small safety margin). */
+       0.62 ≈ Courier New character-width / font-size ratio (small safety margin).
+       Worst-case length across all keys, so transposing live never overflows. */
     font-size: clamp(0.4rem, calc((100vw - 2rem) / 72 / 0.62), 0.95rem);
     line-height: 1.4;
     margin: 0;
@@ -53,90 +65,165 @@
   }
 </style>
 </head>
-<body>
+<body data-default-key="C">
 
 <h1>Big Rock Candy Mountain</h1>
-<div class="key">Key of C</div>
+<div class="key">Key of <select id="key-selector" aria-label="Transpose to key"><option value="C" selected>C</option><option value="Db">Db</option><option value="D">D</option><option value="Eb">Eb</option><option value="E">E</option><option value="F">F</option><option value="F#">F#</option><option value="G">G</option><option value="Ab">Ab</option><option value="A">A</option><option value="Bb">Bb</option><option value="B">B</option></select></div>
 
 <h2>Intro</h2>
 <pre class="lyrics">
-<span class="chord">    C                                           G        C</span>
+<span class="chord" data-nash="    1                                           5        1">    C                                           G        C</span>
 One evening as the sun went down and the jungle fire was burning
-<span class="chord">         C                                            G       C</span>
+<span class="chord" data-nash="         1                                            5       1">         C                                            G       C</span>
 Down the track came a hobo hiking and he said, &#x27;Boys, I&#x27;m not turning&#x27;
-<span class="chord">    F            C           F    C     F         C       G</span>
+<span class="chord" data-nash="    4            1           4    1     4         1       5">    F            C           F    C     F         C       G</span>
 I&#x27;m headed for a land that&#x27;s far away besides the crystal fountains
-<span class="chord">   C                                  G              C</span>
+<span class="chord" data-nash="   1                                  5              1">   C                                  G              C</span>
 So come with me, we&#x27;ll go and see the Big Rock Candy Mountains
 </pre>
 
 <h2>Verse 1</h2>
 <pre class="lyrics">
-<span class="chord">    C                                     F                    C</span>
+<span class="chord" data-nash="    1                                     4                    1">    C                                     F                    C</span>
 In the Big Rock Candy Mountains there&#x27;s a land that&#x27;s fair and bright,
-<span class="chord">         F                 C               F              G</span>
+<span class="chord" data-nash="         4                 1               4              5">         F                 C               F              G</span>
 where the handouts grow on bushes and you sleep out every night
-<span class="chord">          C                             F                C</span>
+<span class="chord" data-nash="          1                             4                1">          C                             F                C</span>
 Where the boxcars all are empty and the sun shines every day
-<span class="chord">       F             C            F         C          F</span>
+<span class="chord" data-nash="       4             1            4         1          4        ">       F             C            F         C          F</span>
 on the birds and the bees and the cigarette trees, the lemonade 
-<span class="chord">C                 F        C            G              C</span>
+<span class="chord" data-nash="1                 4        1            5              1">C                 F        C            G              C</span>
 springs where the bluebird sings in the Big Rock Candy Mountains
 </pre>
 
 <h2>Verse 2</h2>
 <pre class="lyrics">
-<span class="chord">       C                                F                C</span>
+<span class="chord" data-nash="       1                                4                1">       C                                F                C</span>
 In the Big Rock Candy Mountains all the cops have wooden legs,
-<span class="chord">        F                 C                    F                    G</span>
+<span class="chord" data-nash="        4                 1                    4                    5">        F                 C                    F                    G</span>
 and the bulldogs all have rubber teeth and the hens lay soft-boiled eggs
-<span class="chord">   C                                        F                C</span>
+<span class="chord" data-nash="   1                                        4                1">   C                                        F                C</span>
 The farmers&#x27; trees are full of fruit and the barns are full of hay
-<span class="chord">       F         C              F        C               F</span>
+<span class="chord" data-nash="       4         1              4        1               4          ">       F         C              F        C               F</span>
 Oh, I&#x27;m bound to go where there ain&#x27;t no snow, where the rain
-<span class="chord">      C         F          C           G              C</span>
+<span class="chord" data-nash="      1         4          1           5              1">      C         F          C           G              C</span>
 don&#x27;t fall, the wind don&#x27;t blow in the Big Rock Candy Mountains
 </pre>
 
 <h2>Verse 3</h2>
 <pre class="lyrics">
-<span class="chord">       C                            F                 C</span>
+<span class="chord" data-nash="       1                            4                 1">       C                            F                 C</span>
 In the Big Rock Candy Mountains you never change your socks,
-<span class="chord">        F                 C              F                  G</span>
+<span class="chord" data-nash="        4                 1              4                  5">        F                 C              F                  G</span>
 and the little streams of alcohol come a trickling down the rocks
-<span class="chord">   C                                       F                  C</span>
+<span class="chord" data-nash="   1                                       4                  1">   C                                       F                  C</span>
 The brakemen have to tip their hats and the railroad bulls are blind
-<span class="chord">          F       C           F       C            F           C</span>
+<span class="chord" data-nash="          4       1           4       1            4           1       ">          F       C           F       C            F           C</span>
 There&#x27;s a lake of stew and of whiskey too, you can paddle all around
-<span class="chord">F      C         G              C</span>
+<span class="chord" data-nash="4      1         5              1">F      C         G              C</span>
 &#x27;em in a big canoe in the Big Rock Candy Mountains
 </pre>
 
 <h2>Verse 4</h2>
 <pre class="lyrics">
-<span class="chord">       C                            F                 C</span>
+<span class="chord" data-nash="       1                            4                 1">       C                            F                 C</span>
 In the Big Rock Candy Mountains the jails are made of tin
-<span class="chord">    F                  C            F               G</span>
+<span class="chord" data-nash="    4                  1            4               5">    F                  C            F               G</span>
 and you can walk right out again as soon as you are in
-<span class="chord">     C                                  F             C</span>
+<span class="chord" data-nash="     1                                  4             1">     C                                  F             C</span>
 There ain&#x27;t no short-handled shovels, no axes, saws or picks
-<span class="chord">      F     C              F         C               F        C</span>
+<span class="chord" data-nash="      4     1              4         1               4        1">      F     C              F         C               F        C</span>
 I&#x27;m a gonna stay where you sleep all day, where they hung the Turk
-<span class="chord">     F        C           G              C</span>
+<span class="chord" data-nash="     4        1           5              1">     F        C           G              C</span>
 that invented work in the Big Rock Candy Mountains
 </pre>
 
 <h2>Instrumental</h2>
 <pre class="lyrics">
-<span class="chord">|C    |F C  |F C  |F C  |</span>
+<span class="chord" data-nash="|1    |4 1  |4 1  |4 1  |">|C    |F C  |F C  |F C  |</span>
 </pre>
 
 <h2>Outro</h2>
 <pre class="lyrics">
-<span class="chord">     F       C        F      C           G              F</span>
+<span class="chord" data-nash="     4       1        4      1           5              4">     F       C        F      C           G              F</span>
 I&#x27;ll see you all this comin&#x27; fall in the Big Rock Candy Mountains
 </pre>
 
+
+<script>
+(function () {
+  var NOTES_SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+  var NOTES_FLAT  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  var KEY_TO_SEMITONE = {"C":0,"C#":1,"Db":1,"D":2,"D#":3,"Eb":3,"E":4,"F":5,"F#":6,"Gb":6,"G":7,"G#":8,"Ab":8,"A":9,"A#":10,"Bb":10,"B":11};
+  var FLAT_KEYS = {"F":1,"Bb":1,"Eb":1,"Ab":1,"Db":1,"Gb":1};
+  var SDS = {1:0,2:2,3:4,4:5,5:7,6:9,7:11};
+  var CHORD_RE = /(?<![A-Za-z0-9])([b#])?([1-7])(m(?!aj)|maj|dim|aug|sus[24]?)?(7|9|11|13)?(?:\/([b#])?([1-7]))?(?![A-Za-z0-9])/g;
+
+  function noteAt(key, offset, preferFlats) {
+    if (preferFlats === null) preferFlats = !!FLAT_KEYS[key];
+    var idx = ((KEY_TO_SEMITONE[key] + offset) % 12 + 12) % 12;
+    return preferFlats ? NOTES_FLAT[idx] : NOTES_SHARP[idx];
+  }
+
+  function transposeChord(m, key) {
+    var acc = m[1], degStr = m[2], qual = m[3], ext = m[4], bassAcc = m[5], bassStr = m[6];
+    var offset = SDS[parseInt(degStr, 10)];
+    var pf = null;
+    if (acc === "b") { offset--; pf = true; }
+    else if (acc === "#") { offset++; pf = false; }
+    var out = noteAt(key, offset, pf);
+    if (qual) out += qual;
+    if (ext) out += ext;
+    if (bassStr) {
+      var bo = SDS[parseInt(bassStr, 10)];
+      var bpf = pf;
+      if (bassAcc === "b") { bo--; bpf = true; }
+      else if (bassAcc === "#") { bo++; bpf = false; }
+      out += "/" + noteAt(key, bo, bpf);
+    }
+    return out;
+  }
+
+  function transposeRow(row, key) {
+    var chars = row.split("");
+    var re = new RegExp(CHORD_RE.source, "g");
+    var m;
+    while ((m = re.exec(row)) !== null) {
+      var start = m.index;
+      var newChord = transposeChord(m, key);
+      for (var j = 0; j < newChord.length; j++) {
+        if (start + j < chars.length) chars[start + j] = newChord[j];
+        else chars.push(newChord[j]);
+      }
+      var oldLen = m[0].length;
+      if (newChord.length < oldLen) {
+        for (var k = newChord.length; k < oldLen; k++) chars[start + k] = " ";
+      }
+    }
+    return chars.join("").replace(/\s+$/, "");
+  }
+
+  function rerender(key) {
+    if (!(key in KEY_TO_SEMITONE)) return false;
+    var spans = document.querySelectorAll(".chord[data-nash]");
+    for (var i = 0; i < spans.length; i++) {
+      spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+    }
+    var sel = document.getElementById("key-selector");
+    if (sel && sel.value !== key) sel.value = key;
+    return true;
+  }
+
+  // Apply ?key=X from the URL on load (if present and valid)
+  var params = new URLSearchParams(window.location.search);
+  var urlKey = params.get("key");
+  if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
+
+  // Wire up the in-page selector
+  var sel = document.getElementById("key-selector");
+  if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
+})();
+</script>
 
 </body>
 </html>
