@@ -199,7 +199,7 @@ def main():
         )
 
     data = json.loads(manifest_path.read_text())
-    site_title = data.get("site_title", "Songbook")
+    site_title = data.get("site_title", "Greenhouse Bluegrass")
     songs = data.get("songs", [])
 
     try:
