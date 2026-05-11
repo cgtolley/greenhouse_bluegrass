@@ -51,7 +51,7 @@ SONG = {
             "lines": [
                 ("1",
                  "I go everywhere, I don't pay no fare"),
-                ("             2             5  1",
+                ("                           2  5",
                  "I can ride a freight train anywhere"),
                 ("1                4              ",
                  "If I win or lose, I don't get no blues"),
