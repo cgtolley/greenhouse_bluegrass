@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+render_song.py — Render a Nashville-notation song file to HTML in a chosen key.
+
 Usage:
     python render_song.py SONG_FILE KEY [-o OUTPUT_FILE] [--color HEX]
 
@@ -20,6 +22,10 @@ import re
 import sys
 from pathlib import Path
 
+
+# ---------------------------------------------------------------------------
+# Music theory
+# ---------------------------------------------------------------------------
 
 NOTES_SHARP = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 NOTES_FLAT  = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"]
@@ -105,8 +111,12 @@ def transpose_chord_row(chord_row, key):
     return "".join(chars).rstrip()
 
 
+# ---------------------------------------------------------------------------
 # Color palette
+# ---------------------------------------------------------------------------
+
 # Lightness targets for the derived colors (0.0 = black, 1.0 = white).
+# Adjust these to taste — lower = darker, higher = lighter.
 TITLE_LIGHTNESS = 0.22  # darker version of the base color
 CHORD_LIGHTNESS = 0.48  # lighter, but still very visible
 
@@ -158,12 +168,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     line-height: 1.4;
   }}
   h2 {{
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #888;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
   }}
   h1 {{
     font-size: 1rem;
@@ -181,11 +191,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   }}
   pre.lyrics {{
     font-family: "Courier New", Courier, monospace;
-    font-size: clamp(0.65rem, 2.5vw, 0.95rem);
+    /* Scaled so the longest line ({longest_line} chars) fits the available width.
+       0.62 ≈ Courier New character-width / font-size ratio (small safety margin). */
+    font-size: clamp(0.4rem, calc((100vw - 2rem) / {longest_line} / 0.62), 0.95rem);
     line-height: 1.4;
     margin: 0;
     white-space: pre;
-    overflow-x: auto;
   }}
   pre.lyrics .chord {{
     color: {chord_color};
@@ -222,6 +233,19 @@ def render_section(section, key):
     return f'<h2>{esc(label)}</h2>\n<pre class="lyrics">\n{body}\n</pre>\n'
 
 
+def compute_longest_line(song, key):
+    """Length of the widest line that will appear in the rendered output,
+    accounting for chord-row width after transposition into `key`."""
+    longest = 1  # avoid divide-by-zero
+    for section in song["sections"]:
+        for chord_row, lyric_row in section["lines"]:
+            transposed = transpose_chord_row(chord_row, key)
+            longest = max(longest, len(transposed))
+            if lyric_row:
+                longest = max(longest, len(lyric_row))
+    return longest
+
+
 def render_song(song, key, title_color, chord_color):
     sections_html = "\n".join(render_section(s, key) for s in song["sections"])
     return HTML_TEMPLATE.format(
@@ -229,6 +253,7 @@ def render_song(song, key, title_color, chord_color):
         key=esc(key),
         title_color=title_color,
         chord_color=chord_color,
+        longest_line=compute_longest_line(song, key),
         sections=sections_html,
     )
 
