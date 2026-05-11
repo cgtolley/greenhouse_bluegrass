@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
 """
 render_index.py — Generate index.html from songs.json.
-
-The manifest songs.json is maintained automatically by render_song.py;
-this script reads it and emits a homepage with a table of all songs.
-
-Usage:
-    python render_index.py
-    python render_index.py -o index.html
-    python render_index.py --color "#3a3"
 """
 
 import argparse
@@ -18,10 +10,6 @@ import json
 import sys
 from pathlib import Path
 
-
-# ---------------------------------------------------------------------------
-# Color palette (mirrors render_song.py so the index matches the song pages)
-# ---------------------------------------------------------------------------
 
 TITLE_LIGHTNESS = 0.22
 ACCENT_LIGHTNESS = 0.48
@@ -48,9 +36,7 @@ def derive_palette(base_hex):
     return rgb_to_hex(title_rgb), rgb_to_hex(accent_rgb)
 
 
-# ---------------------------------------------------------------------------
 # HTML rendering
-# ---------------------------------------------------------------------------
 
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
@@ -63,7 +49,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     font-size: clamp(13px, 3.2vw, 16px);
   }}
   body {{
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: Courier, "Courier New", monospace;
     max-width: 720px;
     padding: 0 1rem;
     margin: 1.5rem auto;
