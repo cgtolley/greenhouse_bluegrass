@@ -19,12 +19,10 @@ import sys
 from pathlib import Path
 
 
-# ---------------------------------------------------------------------------
 # Color palette (mirrors render_song.py so the index matches the song pages)
-# ---------------------------------------------------------------------------
 
 TITLE_LIGHTNESS = 0.22
-ACCENT_LIGHTNESS = 0.48
+ACCENT_LIGHTNESS = 0.42
 
 
 def parse_hex_color(s):
@@ -48,9 +46,7 @@ def derive_palette(base_hex):
     return rgb_to_hex(title_rgb), rgb_to_hex(accent_rgb)
 
 
-# ---------------------------------------------------------------------------
 # HTML rendering
-# ---------------------------------------------------------------------------
 
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
@@ -63,7 +59,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     font-size: clamp(13px, 3.2vw, 16px);
   }}
   body {{
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: Courier, "Courier New", monospace;
     max-width: 720px;
     padding: 0 1rem;
     margin: 1.5rem auto;
