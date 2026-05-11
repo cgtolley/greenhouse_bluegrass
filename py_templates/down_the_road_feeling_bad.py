@@ -13,7 +13,7 @@ SONG = {
                  "I'm going down that road feeling bad"),
                 ("         4                             1",
                  "Yes, I'm going down that road feeling bad,"),
-                ("    4                            1        6 ",
+                ("    4                            1        6m ",
                  "I'm going down that road feeling bad, oh, Lord,"),
                 ("      1              5              1",
                  "and I don’t wanna be treated this a-way."),

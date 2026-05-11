@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 """
-render_song.py — Render a Nashville-notation song file to HTML in a chosen key.
-
 Usage:
     python render_song.py SONG_FILE KEY [-o OUTPUT_FILE] [--color HEX]
 
@@ -9,9 +7,6 @@ Examples:
     python render_song.py songs/example.py G
     python render_song.py songs/example.py Eb -o example_Eb.html
     python render_song.py songs/example.py D --color "#1a8"
-
-The song file should be a Python module that defines a SONG dict.
-See song_template.py for the format.
 """
 
 import argparse
