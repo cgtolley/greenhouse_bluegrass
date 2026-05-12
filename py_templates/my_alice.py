@@ -119,6 +119,7 @@ SONG = {
                  "I don't like how he looks at my Alice"),
                 ("        b7                      1m ",
                  "I don't like how he looks at my Alice"),
+            ],
         },
     ],
 }
