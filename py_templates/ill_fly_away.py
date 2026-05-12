@@ -119,6 +119,20 @@ SONG = {
             ],
         },
         {
+            "type": "chorus",
+            "label": "Chorus",
+            "lines": [
+                ("1                        17",
+                 "I'll fly away, fly away, oh glory"),
+                ("4        1                      ",
+                 "I'll fly away, (in the morning)"),
+                ("1",
+                 "When I die, Hallelujah by and by"),
+                ("1   57   1",
+                 "I'll fly away")
+            ],
+        },
+        {
             "type": "verse",
             "label": "Verse 4",
             "lines": [
