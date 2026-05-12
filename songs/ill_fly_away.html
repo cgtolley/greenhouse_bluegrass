@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Song Title Here</title>
+<style>
+  html {
+    font-size: clamp(13px, 3.2vw, 16px);
+  }
+  body {
+    font-family: "Courier New", Courier, monospace;
+    max-width: 720px;
+    padding: 0 1rem;
+    margin: 1.1rem auto;
+    color: #222;
+    line-height: 1.4;
+  }
+  h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+  h1 {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: #2b1a56;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .key {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+  }
+  .key select {
+    font-family: inherit;
+    font-size: inherit;
+    color: #5e38bc;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 0.2rem;
+    margin-left: 0.3rem;
+    font-weight: bold;
+  }
+  pre.lyrics {
+    font-family: "Courier New", Courier, monospace;
+    /* Scaled so the longest line (42 chars) fits the available width.
+       0.62 ≈ Courier New character-width / font-size ratio (small safety margin).
+       Worst-case length across all keys, so transposing live never overflows. */
+    font-size: clamp(0.4rem, calc((100vw - 2rem) / 42 / 0.62), 0.95rem);
+    line-height: 1.4;
+    margin: 0;
+    white-space: pre;
+  }
+  pre.lyrics .chord {
+    color: #5e38bc;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body data-default-key="D">
+
+<h1>Song Title Here</h1>
+<div class="key">Key of <select id="key-selector" aria-label="Transpose to key"><option value="C">C</option><option value="Db">Db</option><option value="D" selected>D</option><option value="Eb">Eb</option><option value="E">E</option><option value="F">F</option><option value="F#">F#</option><option value="G">G</option><option value="Ab">Ab</option><option value="A">A</option><option value="Bb">Bb</option><option value="B">B</option></select></div>
+
+<h2>Verse 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1                                   5">D                                   A</span>
+Placeholder lyric line one goes right here
+<span class="chord" data-nash="5                                1">A                                D</span>
+Placeholder lyric line two goes right here
+</pre>
+
+<h2>Chorus 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1">D</span>
+Placeholder chorus line one goes here
+<span class="chord" data-nash="                                  5  1">                                  A  D</span>
+Placeholder chorus line two goes here
+</pre>
+
+<h2>Verse Solo Break</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|1    |5    |5    |1    |">|D    |A    |A    |D    |</span>
+<span class="chord" data-nash="|4 1  |1 6m |2    |5    |">|G D  |D Bm |E    |A    |</span>
+</pre>
+
+<h2>Verse 2</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1                              5">D                              A</span>
+Placeholder lyric line goes here
+</pre>
+
+<h2>Outro</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="  57                 17">  A7                 D7</span>
+Placeholder outro line one
+<span class="chord" data-nash="  5                  1">  A                  D</span>
+Placeholder outro line two
+</pre>
+
+
+<script>
+(function () {
+  var NOTES_SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+  var NOTES_FLAT  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  var KEY_TO_SEMITONE = {"C":0,"C#":1,"Db":1,"D":2,"D#":3,"Eb":3,"E":4,"F":5,"F#":6,"Gb":6,"G":7,"G#":8,"Ab":8,"A":9,"A#":10,"Bb":10,"B":11};
+  var FLAT_KEYS = {"F":1,"Bb":1,"Eb":1,"Ab":1,"Db":1,"Gb":1};
+  var SDS = {1:0,2:2,3:4,4:5,5:7,6:9,7:11};
+  var CHORD_RE = /(?<![A-Za-z0-9])([b#])?([1-7])(m(?!aj)|maj|dim|aug|sus[24]?)?(7|9|11|13)?(?:\/([b#])?([1-7]))?(?![A-Za-z0-9])/g;
+
+  function noteAt(key, offset, preferFlats) {
+    if (preferFlats === null) preferFlats = !!FLAT_KEYS[key];
+    var idx = ((KEY_TO_SEMITONE[key] + offset) % 12 + 12) % 12;
+    return preferFlats ? NOTES_FLAT[idx] : NOTES_SHARP[idx];
+  }
+
+  function transposeChord(m, key) {
+    var acc = m[1], degStr = m[2], qual = m[3], ext = m[4], bassAcc = m[5], bassStr = m[6];
+    var offset = SDS[parseInt(degStr, 10)];
+    var pf = null;
+    if (acc === "b") { offset--; pf = true; }
+    else if (acc === "#") { offset++; pf = false; }
+    var out = noteAt(key, offset, pf);
+    if (qual) out += qual;
+    if (ext) out += ext;
+    if (bassStr) {
+      var bo = SDS[parseInt(bassStr, 10)];
+      var bpf = pf;
+      if (bassAcc === "b") { bo--; bpf = true; }
+      else if (bassAcc === "#") { bo++; bpf = false; }
+      out += "/" + noteAt(key, bo, bpf);
+    }
+    return out;
+  }
+
+  function transposeRow(row, key) {
+    var chars = row.split("");
+    var re = new RegExp(CHORD_RE.source, "g");
+    var m;
+    while ((m = re.exec(row)) !== null) {
+      var start = m.index;
+      var newChord = transposeChord(m, key);
+      for (var j = 0; j < newChord.length; j++) {
+        if (start + j < chars.length) chars[start + j] = newChord[j];
+        else chars.push(newChord[j]);
+      }
+      var oldLen = m[0].length;
+      if (newChord.length < oldLen) {
+        for (var k = newChord.length; k < oldLen; k++) chars[start + k] = " ";
+      }
+    }
+    return chars.join("").replace(/\s+$/, "");
+  }
+
+  function rerender(key) {
+    if (!(key in KEY_TO_SEMITONE)) return false;
+    var spans = document.querySelectorAll(".chord[data-nash]");
+    for (var i = 0; i < spans.length; i++) {
+      spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+    }
+    var sel = document.getElementById("key-selector");
+    if (sel && sel.value !== key) sel.value = key;
+    return true;
+  }
+
+  // Apply ?key=X from the URL on load (if present and valid)
+  var params = new URLSearchParams(window.location.search);
+  var urlKey = params.get("key");
+  if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
+
+  // Wire up the in-page selector
+  var sel = document.getElementById("key-selector");
+  if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
+})();
+</script>
+
+</body>
+</html>

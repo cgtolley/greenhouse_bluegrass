@@ -48,6 +48,17 @@
           "https://tabs.ultimate-guitar.com/tab/harry-mcclintock/big-rock-candy-mountain-chords-974999"
         ]
       ]
+    },
+    {
+      "title": "Song Title Here",
+      "key": "D",
+      "file": "songs/ill_fly_away.html",
+      "sources": [
+        [
+          "ExampleSite",
+          "https://example.com/some-song-page"
+        ]
+      ]
     }
   ]
 }
