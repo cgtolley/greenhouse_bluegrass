@@ -14,16 +14,16 @@ SONG = {
             "label": "Intro",
             "lines": [
                 # Instrumental — second item is None (no lyric row).
-                ("|1m   |7 b 5m|7 b   |1m    |", None),
+                ("|1m   |b7 5m |b7    |1m    |", None),
             ],
         },
         {
             "type": "verse",
             "label": "Verse 1",
             "lines": [
-                ("1m                 7b               5m",
+                ("1m                 b7               5m",
                  "Early in the fall, back deep in the woods"),
-                ("7b                              1m ",
+                ("b7                              1m ",
                  "The first hint of frost is upon you"),
             ],
         },
