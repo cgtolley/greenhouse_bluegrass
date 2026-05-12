@@ -14,7 +14,7 @@ SONG = {
             "label": "Intro",
             "lines": [
                 # Instrumental — second item is None (no lyric row).
-                ("|1m   |7b 5m|7b   |1m    |", None),
+                ("|1m   |7 b 5m|7 b   |1m    |", None),
             ],
         },
         {
