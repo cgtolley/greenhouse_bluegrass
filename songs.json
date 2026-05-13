@@ -92,6 +92,17 @@
           "https://tabs.ultimate-guitar.com/tab/billy-bragg/way-over-yonder-in-the-minor-key-chords-970744"
         ]
       ]
+    },
+    {
+      "title": "Sweet Tequila Blues by Chip Taylor and Carrie Rodriguez",
+      "key": "G",
+      "file": "songs/sweet_tequila_blues.html",
+      "sources": [
+        [
+          "cowboylyrics",
+          "https://www.cowboylyrics.com/tabs/chip-taylor-and-carrie-rodriguez/sweet-tequila-blues-19872.html"
+        ]
+      ]
     }
   ]
 }
