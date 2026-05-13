@@ -213,12 +213,10 @@ I been all ’round this world
     return true;
   }
 
-  // Apply ?key=X from the URL on load (if present and valid)
   var params = new URLSearchParams(window.location.search);
   var urlKey = params.get("key");
   if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
 
-  // Wire up the in-page selector
   var sel = document.getElementById("key-selector");
   if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
 })();

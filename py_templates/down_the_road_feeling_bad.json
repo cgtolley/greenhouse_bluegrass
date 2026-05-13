@@ -1,0 +1,145 @@
+{
+    "title": "Going Down the Road Feeling Bad",
+    "color": "#363",
+    "sources": [
+        ["harper college", "https://ce.harpercollege.edu/upload/LMU-Music-Back-Porch-Revue-Chord-Sheet-Going_Down_the_Road_Feeling_Bad.pdf"]
+        ],
+    "sections": [
+        {
+            "type": "chorus",
+            "label": "Chorus",
+            "lines": [
+                ["1                                   ",
+                 "I'm going down that road feeling bad"],
+                ["         4                             1",
+                 "Yes, I'm going down that road feeling bad,"],
+                ["    4                            1        6m ",
+                 "I'm going down that road feeling bad, oh, Lord,"],
+                ["      1              5              1",
+                 "and I don’t wanna be treated this a-way."]
+            ]
+        },
+        {
+            "type": "verse",
+            "label": "Verse 1",
+            "lines": [
+                ["1                                   ",
+                 "I'm going where the climate suits my clothes,"],
+                ["    4                                1",
+                 "I'm going where the climate suits my clothes,"],
+                ["    4                                1              6m ",
+                 "I'm going where the climate suits my clothes, lord, lord"],
+                ["  1              5              1",
+                 "I don’t wanna be treated this-a-way."]
+            ]
+        },
+        {
+            "type": "chorus",
+            "label": "Chorus",
+            "lines": [
+                ["1                                   ",
+                 "I'm going down that road feeling bad"],
+                ["         4                             1",
+                 "Yes, I'm going down that road feeling bad,"],
+                ["    4                            1        6m ",
+                 "I'm going down that road feeling bad, oh, Lord,"],
+                ["      1              5              1",
+                 "and I don’t wanna be treated this a-way."]
+            ]
+        },
+        {
+            "type": "solo",
+            "label": "Instrumental",
+            "lines": [
+                ["|1    |1    |4    |1    |", null],
+                ["|4    |1 6m |1 5  |1    |", null]
+            ]
+        },
+        {
+            "type": "chorus",
+            "label": "Chorus",
+            "lines": [
+                ["1                                   ",
+                 "I'm going down that road feeling bad"],
+                ["         4                             1",
+                 "Yes, I'm going down that road feeling bad,"],
+                ["    4                            1        6m ",
+                 "I'm going down that road feeling bad, oh, Lord,"],
+                ["      1              5              1",
+                 "and I don’t wanna be treated this a-way."]
+            ]
+        },
+        {
+            "type": "verse",
+            "label": "Verse 2",
+            "lines": [
+                ["1                                   ",
+                 "I'm going where the water tastes like wine,"],
+                ["    4                                 1",
+                 "I'm going where the water tastes like wine"],
+                ["    4                                 1         6m ",
+                 "I'm going where the water tastes like wine, oh, lord"],
+                ["  1              5              1",
+                 "I don’t wanna be treated this-a-way."]
+            ]
+        },
+        {
+            "type": "chorus",
+            "label": "Chorus",
+            "lines": [
+                ["1                                   ",
+                 "I'm going down that road feeling bad"],
+                ["         4                             1",
+                 "Yes, I'm going down that road feeling bad,"],
+                ["    4                            1        6m ",
+                 "I'm going down that road feeling bad, oh, Lord,"],
+                ["      1              5              1",
+                 "and I don’t wanna be treated this a-way."]
+            ]
+        },
+        {
+            "type": "solo",
+            "label": "Instrumental",
+            "lines": [
+                ["|1    |1    |4    |1    |", null],
+                ["|4    |1 6m |1 5  |1    |", null]
+            ]
+        },
+        {
+            "type": "chorus",
+            "label": "Chorus",
+            "lines": [
+                ["1                                   ",
+                 "I'm going down that road feeling bad"],
+                ["         4                             1",
+                 "Yes, I'm going down that road feeling bad,"],
+                ["    4                            1        6m ",
+                 "I'm going down that road feeling bad, oh, Lord,"],
+                ["      1              5              1",
+                 "and I don’t wanna be treated this a-way."]
+            ]
+        },
+        {
+            "type": "verse",
+            "label": "Verse 2",
+            "lines": [
+                ["1                                   ",
+                 "I'm going where my friends are all around"],
+                ["    4                                1",
+                 "I'm going where my friends are all around"],
+                ["    4                              1           6m ",
+                 "I'm going where my friends are all around, oh, Lord"],
+                ["  1              5              1",
+                 "I don’t wanna be treated this-a-way."]
+            ]
+        },
+        {
+            "type": "outro",
+            "label": "Outro [Slow]",
+            "lines": [
+                ["  1              5              1",
+                 "I don’t wanna be treated this-a-way. x3"]
+            ]
+        }
+    ]
+}

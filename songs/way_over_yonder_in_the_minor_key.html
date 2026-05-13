@@ -27,7 +27,7 @@
   h1 {
     font-size: 1rem;
     letter-spacing: 0.1em;
-    color: #2b1a56;
+    color: #541c38;
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.25rem;
     margin-top: 0.5rem;
@@ -41,7 +41,7 @@
   .key select {
     font-family: inherit;
     font-size: inherit;
-    color: #5e38bc;
+    color: #b83d7a;
     background: transparent;
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -60,7 +60,7 @@
     white-space: pre;
   }
   pre.lyrics .chord {
-    color: #5e38bc;
+    color: #b83d7a;
     font-weight: bold;
   }
 </style>
@@ -158,32 +158,6 @@ There ain&#x27;t nobody that can sing like me
 There ain&#x27;t nobody that can sing like me 
 </pre>
 
-<h2>Instrumental x2</h2>
-<pre class="lyrics">
-<span class="chord" data-nash="|1    |1  17|4    |1    |">|G    |G  G7|C    |G    |</span>
-<span class="chord" data-nash="|1    |1    |5    |1    |">|G    |G    |D    |G    |</span>
-</pre>
-
-<h2>Verse 2</h2>
-<pre class="lyrics">
-<span class="chord" data-nash="1                              17">G                              G7</span>
-Oh, how glad and happy when we meet
-<span class="chord" data-nash="4        1">C        G</span>
-I&#x27;ll fly away
-<span class="chord" data-nash="1                               ">G</span>
-No more cold iron shackles on my feet
-<span class="chord" data-nash="    5   1">    D   G</span>
-I&#x27;ll fly away
-</pre>
-
-<h2>Outro</h2>
-<pre class="lyrics">
-<span class="chord" data-nash="  57                 17">  D7                 G7</span>
-Placeholder outro line one
-<span class="chord" data-nash="  5                  1">  D                  G</span>
-Placeholder outro line two
-</pre>
-
 
 <script>
 (function () {
@@ -249,12 +223,10 @@ Placeholder outro line two
     return true;
   }
 
-  // Apply ?key=X from the URL on load (if present and valid)
   var params = new URLSearchParams(window.location.search);
   var urlKey = params.get("key");
   if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
 
-  // Wire up the in-page selector
   var sel = document.getElementById("key-selector");
   if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
 })();

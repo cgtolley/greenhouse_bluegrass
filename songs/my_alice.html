@@ -27,7 +27,7 @@
   h1 {
     font-size: 1rem;
     letter-spacing: 0.1em;
-    color: #203050;
+    color: #561a1a;
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.25rem;
     margin-top: 0.5rem;
@@ -41,7 +41,7 @@
   .key select {
     font-family: inherit;
     font-size: inherit;
-    color: #4669af;
+    color: #bc3838;
     background: transparent;
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -60,7 +60,7 @@
     white-space: pre;
   }
   pre.lyrics .chord {
-    color: #4669af;
+    color: #bc3838;
     font-weight: bold;
   }
 </style>
@@ -232,12 +232,10 @@ I don&#x27;t like how he looks at my Alice
     return true;
   }
 
-  // Apply ?key=X from the URL on load (if present and valid)
   var params = new URLSearchParams(window.location.search);
   var urlKey = params.get("key");
   if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
 
-  // Wire up the in-page selector
   var sel = document.getElementById("key-selector");
   if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
 })();

@@ -27,7 +27,7 @@
   h1 {
     font-size: 1rem;
     letter-spacing: 0.1em;
-    color: #562b1a;
+    color: #5a2d16;
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.25rem;
     margin-top: 0.5rem;
@@ -41,7 +41,7 @@
   .key select {
     font-family: inherit;
     font-size: inherit;
-    color: #bc5e38;
+    color: #c46231;
     background: transparent;
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -60,7 +60,7 @@
     white-space: pre;
   }
   pre.lyrics .chord {
-    color: #bc5e38;
+    color: #c46231;
     font-weight: bold;
   }
 </style>
@@ -93,7 +93,7 @@ I&#x27;ll fly away
 <span class="chord" data-nash="1                        17">D                        D7</span>
 I&#x27;ll fly away, fly away, oh glory
 <span class="chord" data-nash="4        1                      ">G        D</span>
-I&#x27;ll fly away, (in the morning)
+I&#x27;ll fly away, [in the morning]
 <span class="chord" data-nash="1">D</span>
 When I die, Hallelujah by and by
 <span class="chord" data-nash="1   57   1">D   A7   D</span>
@@ -117,7 +117,7 @@ I&#x27;ll fly away
 <span class="chord" data-nash="1                           17">D                           D7</span>
 I&#x27;ll fly away, fly away, oh glory
 <span class="chord" data-nash="4        1                      ">G        D</span>
-I&#x27;ll fly away, (in the morning)
+I&#x27;ll fly away, [in the morning]
 <span class="chord" data-nash="1">D</span>
 When I die, Hallelujah by and by
 <span class="chord" data-nash="1   57   1">D   A7   D</span>
@@ -147,7 +147,7 @@ I&#x27;ll fly away
 <span class="chord" data-nash="1                           17">D                           D7</span>
 I&#x27;ll fly away, fly away, oh glory
 <span class="chord" data-nash="4        1                      ">G        D</span>
-I&#x27;ll fly away, (in the morning)
+I&#x27;ll fly away, [in the morning]
 <span class="chord" data-nash="1">D</span>
 When I die, Hallelujah by and by
 <span class="chord" data-nash="1   57   1">D   A7   D</span>
@@ -165,7 +165,7 @@ I&#x27;ll fly away
 <span class="chord" data-nash="1                        17">D                        D7</span>
 I&#x27;ll fly away, fly away, oh glory
 <span class="chord" data-nash="4        1                      ">G        D</span>
-I&#x27;ll fly away, (in the morning)
+I&#x27;ll fly away, [in the morning]
 <span class="chord" data-nash="1">D</span>
 When I die, Hallelujah by and by
 <span class="chord" data-nash="1   57   1">D   A7   D</span>
@@ -189,7 +189,7 @@ I&#x27;ll fly away
 <span class="chord" data-nash="1                           17">D                           D7</span>
 I&#x27;ll fly away, fly away, oh glory
 <span class="chord" data-nash="4        1                      ">G        D</span>
-I&#x27;ll fly away, (in the morning)
+I&#x27;ll fly away, [in the morning]
 <span class="chord" data-nash="1">D</span>
 When I die, Hallelujah by and by
 <span class="chord" data-nash="1   57   1">D   A7   D</span>
@@ -263,12 +263,10 @@ I&#x27;ll fly away
     return true;
   }
 
-  // Apply ?key=X from the URL on load (if present and valid)
   var params = new URLSearchParams(window.location.search);
   var urlKey = params.get("key");
   if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
 
-  // Wire up the in-page selector
   var sel = document.getElementById("key-selector");
   if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
 })();

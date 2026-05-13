@@ -27,7 +27,7 @@
   h1 {
     font-size: 1rem;
     letter-spacing: 0.1em;
-    color: #541c38;
+    color: #195757;
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.25rem;
     margin-top: 0.5rem;
@@ -41,7 +41,7 @@
   .key select {
     font-family: inherit;
     font-size: inherit;
-    color: #b83d7a;
+    color: #36bebe;
     background: transparent;
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -60,7 +60,7 @@
     white-space: pre;
   }
   pre.lyrics .chord {
-    color: #b83d7a;
+    color: #36bebe;
     font-weight: bold;
   }
 </style>
@@ -247,12 +247,10 @@ I got them sweet tequila blues comin&#x27; down
     return true;
   }
 
-  // Apply ?key=X from the URL on load (if present and valid)
   var params = new URLSearchParams(window.location.search);
   var urlKey = params.get("key");
   if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
 
-  // Wire up the in-page selector
   var sel = document.getElementById("key-selector");
   if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
 })();

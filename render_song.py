@@ -1,23 +1,27 @@
 #!/usr/bin/env python3
 """
-render_song.py — Render a Nashville-notation song file to HTML in a chosen key.
+render_song.py — Render a Nashville-notation song JSON to HTML in a chosen key.
 
 Usage:
     python render_song.py SONG_FILE KEY [-o OUTPUT_FILE] [--color HEX]
 
 Examples:
-    python render_song.py songs/example.py G
-    python render_song.py songs/example.py Eb -o example_Eb.html
-    python render_song.py songs/example.py D --color "#1a8"
+    python render_song.py songs/example.json G
+    python render_song.py songs/example.json Eb -o example_Eb.html
+    python render_song.py songs/example.json D --color "#1a8"
 
-The song file should be a Python module that defines a SONG dict.
-See song_template.py for the format.
+The song file is a JSON document. See song_template.json for the format.
+
+Color resolution order:
+    1. --color CLI argument (if given)
+    2. "color" field in the song JSON (if present)
+    3. Default: "#b54"
 """
 
 import argparse
 import colorsys
 import html as htmllib
-import importlib.util
+import json
 import re
 import sys
 from pathlib import Path
@@ -115,14 +119,12 @@ def transpose_chord_row(chord_row, key):
 # Color palette
 # ---------------------------------------------------------------------------
 
-# Lightness targets for the derived colors (0.0 = black, 1.0 = white).
-# Adjust these to taste — lower = darker, higher = lighter.
-TITLE_LIGHTNESS = 0.22  # darker version of the base color
-CHORD_LIGHTNESS = 0.48  # lighter, but still very visible
+TITLE_LIGHTNESS = 0.22
+CHORD_LIGHTNESS = 0.48
+DEFAULT_COLOR = "#b54"
 
 
 def parse_hex_color(s):
-    """Accept '#abc', '#aabbcc', 'abc', or 'aabbcc'. Return (r, g, b) in 0..1."""
     s = s.lstrip("#").strip()
     if len(s) == 3:
         s = "".join(c * 2 for c in s)
@@ -136,8 +138,6 @@ def rgb_to_hex(rgb):
 
 
 def derive_palette(base_hex):
-    """From one base color, derive (title_hex, chord_hex) sharing its hue/saturation
-    but at fixed lightness levels."""
     r, g, b = parse_hex_color(base_hex)
     h, _l, s = colorsys.rgb_to_hls(r, g, b)
     title_rgb = colorsys.hls_to_rgb(h, TITLE_LIGHTNESS, s)
@@ -287,12 +287,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     return true;
   }}
 
-  // Apply ?key=X from the URL on load (if present and valid)
   var params = new URLSearchParams(window.location.search);
   var urlKey = params.get("key");
   if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
 
-  // Wire up the in-page selector
   var sel = document.getElementById("key-selector");
   if (sel) sel.addEventListener("change", function () {{ rerender(sel.value); }});
 }})();
@@ -310,7 +308,8 @@ def esc(s):
 def render_section(section, key):
     label = section.get("label", section["type"].title())
     blocks = []
-    for chord_row, lyric_row in section["lines"]:
+    for line in section["lines"]:
+        chord_row, lyric_row = line[0], line[1] if len(line) > 1 else None
         chord_html = esc(transpose_chord_row(chord_row, key))
         nash_attr = esc(chord_row)
         if lyric_row:
@@ -327,29 +326,27 @@ def render_section(section, key):
 
 def compute_longest_line(song):
     """Worst-case line width across all 12 keys, so the CSS-baked font size
-    is small enough to fit even after live JS transposition."""
+    accommodates any live JS transposition."""
     longest = 1
     for section in song["sections"]:
-        for chord_row, lyric_row in section["lines"]:
+        for line in section["lines"]:
+            chord_row = line[0]
+            lyric_row = line[1] if len(line) > 1 else None
             if lyric_row:
                 longest = max(longest, len(lyric_row))
-            for key in KEY_TO_SEMITONE:
-                longest = max(longest, len(transpose_chord_row(chord_row, key)))
+            for k in KEY_TO_SEMITONE:
+                longest = max(longest, len(transpose_chord_row(chord_row, k)))
     return longest
 
 
-# Keys offered in the on-page selector (sharps preferred for sharp keys,
-# flats preferred for flat keys; both spellings included for ambiguous ones).
 KEY_ORDER = ["C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
 
 
 def render_key_options(current_key):
-    """Build <option> tags for the in-page key selector."""
     options = []
     for k in KEY_ORDER:
         selected = " selected" if k == current_key else ""
         options.append(f'<option value="{k}"{selected}>{k}</option>')
-    # Include the current key even if it's not in KEY_ORDER (e.g. enharmonic spelling)
     if current_key not in KEY_ORDER:
         options.insert(0, f'<option value="{current_key}" selected>{current_key}</option>')
     return "".join(options)
@@ -369,59 +366,22 @@ def render_song(song, key, title_color, chord_color):
 
 
 def load_song(path):
-    spec = importlib.util.spec_from_file_location("song_module", path)
-    if spec is None or spec.loader is None:
-        sys.exit(f"Could not load: {path}")
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    if not hasattr(mod, "SONG"):
-        sys.exit(f"{path} does not define a SONG dict")
-    return mod.SONG
-
-
-def main():
-    parser = argparse.ArgumentParser(
-        description="Render a Nashville-notation song file to HTML in any key."
-    )
-    parser.add_argument("song", help="path to a song .py file (defines SONG dict)")
-    parser.add_argument("key", help="target key, e.g. C, G, Eb, F#")
-    parser.add_argument("-o", "--output", help="output HTML file (default: stdout)")
-    parser.add_argument(
-        "--color",
-        default="#b54",
-        help="base color (hex, e.g. '#b54' or '#1a8866'). "
-             "Title is rendered as a darker version, chords as a lighter version. "
-             "Default: #b54 (warm red).",
-    )
-    args = parser.parse_args()
-
-    if args.key not in KEY_TO_SEMITONE:
-        sys.exit(
-            f"Unknown key: {args.key}\n"
-            f"Valid keys: {', '.join(sorted(KEY_TO_SEMITONE))}"
-        )
-
     try:
-        title_color, chord_color = derive_palette(args.color)
-    except ValueError as e:
-        sys.exit(str(e))
-
-    song = load_song(args.song)
-    out = render_song(song, args.key, title_color, chord_color)
-
-    if args.output:
-        Path(args.output).write_text(out)
-        print(f"Wrote {args.output} (title {title_color}, chord {chord_color})",
-              file=sys.stderr)
-        update_manifest(args.output, song, args.key)
-    else:
-        print(out)
+        text = Path(path).read_text()
+    except OSError as e:
+        sys.exit(f"Could not open {path}: {e}")
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError as e:
+        sys.exit(f"Invalid JSON in {path}: {e}")
+    for required in ("title", "sections"):
+        if required not in data:
+            sys.exit(f"{path} is missing required field: {required!r}")
+    return data
 
 
 def update_manifest(output_path, song, key, manifest_path="songs.json"):
     """Add or update this song's entry in songs.json, matched by file path."""
-    import json
-
     path = Path(manifest_path)
     if path.exists():
         data = json.loads(path.read_text())
@@ -445,6 +405,47 @@ def update_manifest(output_path, song, key, manifest_path="songs.json"):
 
     path.write_text(json.dumps(data, indent=2) + "\n")
     print(f"Updated {manifest_path}", file=sys.stderr)
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Render a Nashville-notation song JSON to HTML in any key."
+    )
+    parser.add_argument("song", help="path to a song .json file")
+    parser.add_argument("key", help="target key, e.g. C, G, Eb, F#")
+    parser.add_argument("-o", "--output", help="output HTML file (default: stdout)")
+    parser.add_argument(
+        "--color",
+        default=None,
+        help='base hex color (e.g. "#b54"). Overrides the "color" field in the '
+             'song JSON. If neither is set, defaults to "#b54".',
+    )
+    args = parser.parse_args()
+
+    if args.key not in KEY_TO_SEMITONE:
+        sys.exit(
+            f"Unknown key: {args.key}\n"
+            f"Valid keys: {', '.join(sorted(KEY_TO_SEMITONE))}"
+        )
+
+    song = load_song(args.song)
+
+    # Color: CLI flag > song JSON > default
+    color = args.color or song.get("color") or DEFAULT_COLOR
+    try:
+        title_color, chord_color = derive_palette(color)
+    except ValueError as e:
+        sys.exit(str(e))
+
+    out = render_song(song, args.key, title_color, chord_color)
+
+    if args.output:
+        Path(args.output).write_text(out)
+        print(f"Wrote {args.output} (color {color} → title {title_color}, chord {chord_color})",
+              file=sys.stderr)
+        update_manifest(args.output, song, args.key)
+    else:
+        print(out)
 
 
 if __name__ == "__main__":
