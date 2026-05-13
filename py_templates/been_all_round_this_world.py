@@ -93,4 +93,18 @@ SONG = {
                  "I been all ’round this world"),
             ],
         },
+        {
+            "type": "verse",
+            "label": "Verse 5",
+            "lines": [
+                ("1                                     ",
+                 "Put the rope around my neck and hang me up so high"),
+                ("57                     1        4            1",
+                 "Put the rope around my neck and hung me up so high"),
+                ("4                           1",
+                 "Last words I heard 'em say, 'won't be long now 'fore you die, poor boy'"),
+                ("   57                  1",
+                 "I been all ’round this world"),
+            ],
+         },
 }
