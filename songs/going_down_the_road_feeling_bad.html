@@ -68,7 +68,7 @@
 <body data-default-key="C">
 
 <h1>Going Down the Road Feeling Bad</h1>
-<div class="key">Key of <select id="key-selector" aria-label="Transpose to key"><option value="C" selected>C</option><option value="Db">Db</option><option value="D">D</option><option value="Eb">Eb</option><option value="E">E</option><option value="F">F</option><option value="F#">F#</option><option value="G">G</option><option value="Ab">Ab</option><option value="A">A</option><option value="Bb">Bb</option><option value="B">B</option></select></div>
+<div class="key">Key of <select id="key-selector" aria-label="Transpose to key"><option value="Nashville">Nashville</option><option value="C" selected>C</option><option value="Db">Db</option><option value="D">D</option><option value="Eb">Eb</option><option value="E">E</option><option value="F">F</option><option value="F#">F#</option><option value="G">G</option><option value="Ab">Ab</option><option value="A">A</option><option value="Bb">Bb</option><option value="B">B</option></select></div>
 
 <h2>Chorus</h2>
 <pre class="lyrics">
@@ -239,10 +239,17 @@ I don’t wanna be treated this-a-way. x3
   }
 
   function rerender(key) {
-    if (!(key in KEY_TO_SEMITONE)) return false;
     var spans = document.querySelectorAll(".chord[data-nash]");
-    for (var i = 0; i < spans.length; i++) {
-      spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+    if (key === "Nashville") {
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].textContent = spans[i].dataset.nash.replace(/\s+$/, "");
+      }
+    } else if (key in KEY_TO_SEMITONE) {
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+      }
+    } else {
+      return false;
     }
     var sel = document.getElementById("key-selector");
     if (sel && sel.value !== key) sel.value = key;
@@ -251,7 +258,7 @@ I don’t wanna be treated this-a-way. x3
 
   var params = new URLSearchParams(window.location.search);
   var urlKey = params.get("key");
-  if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
+  if (urlKey && (urlKey === "Nashville" || urlKey in KEY_TO_SEMITONE)) rerender(urlKey);
 
   var sel = document.getElementById("key-selector");
   if (sel) sel.addEventListener("change", function () { rerender(sel.value); });

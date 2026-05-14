@@ -277,10 +277,17 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   }}
 
   function rerender(key) {{
-    if (!(key in KEY_TO_SEMITONE)) return false;
     var spans = document.querySelectorAll(".chord[data-nash]");
-    for (var i = 0; i < spans.length; i++) {{
-      spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+    if (key === "Nashville") {{
+      for (var i = 0; i < spans.length; i++) {{
+        spans[i].textContent = spans[i].dataset.nash.replace(/\\s+$/, "");
+      }}
+    }} else if (key in KEY_TO_SEMITONE) {{
+      for (var i = 0; i < spans.length; i++) {{
+        spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+      }}
+    }} else {{
+      return false;
     }}
     var sel = document.getElementById("key-selector");
     if (sel && sel.value !== key) sel.value = key;
@@ -289,7 +296,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
   var params = new URLSearchParams(window.location.search);
   var urlKey = params.get("key");
-  if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
+  if (urlKey && (urlKey === "Nashville" || urlKey in KEY_TO_SEMITONE)) rerender(urlKey);
 
   var sel = document.getElementById("key-selector");
   if (sel) sel.addEventListener("change", function () {{ rerender(sel.value); }});
@@ -343,12 +350,12 @@ KEY_ORDER = ["C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
 
 
 def render_key_options(current_key):
-    options = []
+    options = ['<option value="Nashville">Nashville</option>']
     for k in KEY_ORDER:
         selected = " selected" if k == current_key else ""
         options.append(f'<option value="{k}"{selected}>{k}</option>')
-    if current_key not in KEY_ORDER:
-        options.insert(0, f'<option value="{current_key}" selected>{current_key}</option>')
+    if current_key not in KEY_ORDER and current_key != "Nashville":
+        options.insert(1, f'<option value="{current_key}" selected>{current_key}</option>')
     return "".join(options)
 
 
