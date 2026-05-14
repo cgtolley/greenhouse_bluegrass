@@ -1,7 +1,7 @@
 {
   "title": "Heaven in a Glass",
   "artist": "Brotherkenzie",
-  "color": "#b54",
+  "color": "#147",
   "listen": "https://www.youtube.com/watch?v=lsEXYGDEFhw",
   "sources": [
     ["chordify", "https://chordify.net/chords/heaven-in-a-glass-brotherkenzie-topic"]
@@ -11,7 +11,7 @@
       "type": "intro",
       "label": "Intro",
       "lines": [
-        ["|1    |1    |1    |", null],
+        ["|1    |1    |1    |", null]
       ]
     },
     {
@@ -20,7 +20,7 @@
       "lines": [
         ["         1                                         5     ", 
          "My truck broke down at the only stop light in this ghost town"],
-        [""                          1                              5,   
+        ["                           1                              5", 
          "I sure don't know where to go now, maybe find someone who knows how"],
         ["                           1",
          "The beauty of life carries on."],
@@ -121,6 +121,6 @@
         ["                            1",
          "Still got the whole week to go."]
       ]
-    },
+    }
   ]
 }

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heaven in a Glass</title>
+<style>
+  html {
+    font-size: clamp(13px, 3.2vw, 16px);
+  }
+  body {
+    font-family: "Courier New", Courier, monospace;
+    max-width: 720px;
+    padding: 0 1rem;
+    margin: 1.1rem auto;
+    color: #222;
+    line-height: 1.4;
+  }
+  h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+  h1 {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: #0e3862;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .key {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+  }
+  .key select {
+    font-family: inherit;
+    font-size: inherit;
+    color: #1f7ad6;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 0.2rem;
+    margin-left: 0.3rem;
+    font-weight: bold;
+  }
+  pre.lyrics {
+    font-family: "Courier New", Courier, monospace;
+    /* Scaled so the longest line (71 chars) fits the available width.
+       0.62 ≈ Courier New character-width / font-size ratio (small safety margin).
+       Worst-case length across all keys, so transposing live never overflows. */
+    font-size: clamp(0.4rem, calc((100vw - 2rem) / 71 / 0.62), 0.95rem);
+    line-height: 1.4;
+    margin: 0;
+    white-space: pre;
+  }
+  pre.lyrics .chord {
+    color: #1f7ad6;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body data-default-key="Bb">
+
+<h1>Heaven in a Glass</h1>
+<div class="key">Key of <select id="key-selector" aria-label="Transpose to key"><option value="Nashville">Nashville</option><option value="C">C</option><option value="Db">Db</option><option value="D">D</option><option value="Eb">Eb</option><option value="E">E</option><option value="F">F</option><option value="F#">F#</option><option value="G">G</option><option value="Ab">Ab</option><option value="A">A</option><option value="Bb" selected>Bb</option><option value="B">B</option></select></div>
+
+<h2>Intro</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|1    |1    |1    |">|Bb   |Bb   |Bb   |</span>
+</pre>
+
+<h2>Verse 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="         1                                         5     ">         Bb                                        F</span>
+My truck broke down at the only stop light in this ghost town
+<span class="chord" data-nash="                           1                              5">                           Bb                             F</span>
+I sure don&#x27;t know where to go now, maybe find someone who knows how
+<span class="chord" data-nash="                           1">                           Bb</span>
+The beauty of life carries on.
+<span class="chord" data-nash="                                               4">                                               Eb</span>
+Guess I&#x27;ll wallk it, won&#x27;t be long now til I&#x27;m talking
+<span class="chord" data-nash="                             1                                 5">                             Bb                                F</span>
+To you about how the world&#x27;s over, but I just want you to talk slower
+<span class="chord" data-nash="                          1">                          Bb</span>
+So I can taste every last drop.
+</pre>
+
+<h2>Chorus</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="           4                                1">           Eb                               Bb</span>
+And that&#x27;s you babe, heaven in a glass on a tuesday
+<span class="chord" data-nash="                          5">                          F</span>
+Makin it last til the ice melts
+<span class="chord" data-nash="                            1">                            Bb</span>
+Still got the whole week to go.
+<span class="chord" data-nash="           4                              1">           Eb                             Bb</span>
+And you&#x27;re gorgeous, bigger than life in a moment
+<span class="chord" data-nash="                                     5">                                     F</span>
+While I&#x27;m holding you tight, out of focus
+<span class="chord" data-nash="                             1 ">                             Bb</span>
+Still got the whole week to go.
+</pre>
+
+<h2>Verse 2</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="           1                                     5">           Bb                                    F</span>
+Things are changin, things don&#x27;t seem to be what they&#x27;ve been
+<span class="chord" data-nash="                          1                                     5">                          Bb                                    F</span>
+Things that I can&#x27;t put a name to, things I&#x27;ve been thinkin I&#x27;d hate to
+<span class="chord" data-nash="                      1">                      Bb</span>
+Find a bunch more of around.
+<span class="chord" data-nash="            1                                   5">            Bb                                  F</span>
+But there&#x27;s beauty, there&#x27;s still a world, absolutely,
+<span class="chord" data-nash="                         1                            1">                         Bb                           Bb</span>
+Invested in keeping its boots on, never too old for a new song,
+<span class="chord" data-nash="                          1">                          Bb</span>
+And never too saddened to care.
+</pre>
+
+<h2>Chorus</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="            4                                1">            Eb                               Bb</span>
+And that&#x27;s you babe, heaven in a glass on a tuesday
+<span class="chord" data-nash="                       5">                       F</span>
+Makin it last til the ice melts
+<span class="chord" data-nash="                            1">                            Bb</span>
+Still got the whole week to go.
+<span class="chord" data-nash="           4                              1">           Eb                             Bb</span>
+And you&#x27;re gorgeous, bigger than life in a moment
+<span class="chord" data-nash="                                    5">                                    F</span>
+While I&#x27;m holding you tight, out of focus
+<span class="chord" data-nash="                            1">                            Bb</span>
+Still got the whole week to go.
+</pre>
+
+<h2>Verse 3</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="                                         5">                                         F</span>
+Been a long day, maybe my heart needs a repave
+<span class="chord" data-nash="                      1                           5">                      Bb                          F</span>
+Too many cars on the freeway, burnin a hole in my pocket
+<span class="chord" data-nash="                   1">                   Bb</span>
+Bout as good as it gets.
+<span class="chord" data-nash="                                                  5">                                                  F</span>
+That&#x27;s something, you live and you learn that the hard winds
+<span class="chord" data-nash="                       1                             5">                       Bb                            F</span>
+Are blowing forever until it all settles down and I knew it
+<span class="chord" data-nash="                         1">                         Bb</span>
+Wouldn&#x27;t be too hard for long.
+</pre>
+
+<h2>Chorus</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="           4                                 1">           Eb                                Bb</span>
+And that&#x27;s you babe, heaven in a glass on a tuesday
+<span class="chord" data-nash="                       5">                       F</span>
+Making it last til the ice melts
+<span class="chord" data-nash="                            1">                            Bb</span>
+Still got the whole week to go.
+<span class="chord" data-nash="            4                              1">            Eb                             Bb</span>
+And you&#x27;re gorgeous, bigger than life in a moment
+<span class="chord" data-nash="                                     5">                                     F</span>
+While I&#x27;m holding you tight, out of focus
+<span class="chord" data-nash="                            1">                            Bb</span>
+Still got the whole week to go.
+</pre>
+
+
+<script>
+(function () {
+  var NOTES_SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+  var NOTES_FLAT  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  var KEY_TO_SEMITONE = {"C":0,"C#":1,"Db":1,"D":2,"D#":3,"Eb":3,"E":4,"F":5,"F#":6,"Gb":6,"G":7,"G#":8,"Ab":8,"A":9,"A#":10,"Bb":10,"B":11};
+  var FLAT_KEYS = {"F":1,"Bb":1,"Eb":1,"Ab":1,"Db":1,"Gb":1};
+  var SDS = {1:0,2:2,3:4,4:5,5:7,6:9,7:11};
+  var CHORD_RE = /(?<![A-Za-z0-9])([b#])?([1-7])(m(?!aj)|maj|dim|aug|sus[24]?)?(7|9|11|13)?(?:\/([b#])?([1-7]))?(?![A-Za-z0-9])/g;
+
+  function noteAt(key, offset, preferFlats) {
+    if (preferFlats === null) preferFlats = !!FLAT_KEYS[key];
+    var idx = ((KEY_TO_SEMITONE[key] + offset) % 12 + 12) % 12;
+    return preferFlats ? NOTES_FLAT[idx] : NOTES_SHARP[idx];
+  }
+
+  function transposeChord(m, key) {
+    var acc = m[1], degStr = m[2], qual = m[3], ext = m[4], bassAcc = m[5], bassStr = m[6];
+    var offset = SDS[parseInt(degStr, 10)];
+    var pf = null;
+    if (acc === "b") { offset--; pf = true; }
+    else if (acc === "#") { offset++; pf = false; }
+    var out = noteAt(key, offset, pf);
+    if (qual) out += qual;
+    if (ext) out += ext;
+    if (bassStr) {
+      var bo = SDS[parseInt(bassStr, 10)];
+      var bpf = pf;
+      if (bassAcc === "b") { bo--; bpf = true; }
+      else if (bassAcc === "#") { bo++; bpf = false; }
+      out += "/" + noteAt(key, bo, bpf);
+    }
+    return out;
+  }
+
+  function transposeRow(row, key) {
+    var chars = row.split("");
+    var re = new RegExp(CHORD_RE.source, "g");
+    var m;
+    while ((m = re.exec(row)) !== null) {
+      var start = m.index;
+      var newChord = transposeChord(m, key);
+      for (var j = 0; j < newChord.length; j++) {
+        if (start + j < chars.length) chars[start + j] = newChord[j];
+        else chars.push(newChord[j]);
+      }
+      var oldLen = m[0].length;
+      if (newChord.length < oldLen) {
+        for (var k = newChord.length; k < oldLen; k++) chars[start + k] = " ";
+      }
+    }
+    return chars.join("").replace(/\s+$/, "");
+  }
+
+  function rerender(key) {
+    var spans = document.querySelectorAll(".chord[data-nash]");
+    if (key === "Nashville") {
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].textContent = spans[i].dataset.nash.replace(/\s+$/, "");
+      }
+    } else if (key in KEY_TO_SEMITONE) {
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+      }
+    } else {
+      return false;
+    }
+    var sel = document.getElementById("key-selector");
+    if (sel && sel.value !== key) sel.value = key;
+    return true;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var urlKey = params.get("key");
+  if (urlKey && (urlKey === "Nashville" || urlKey in KEY_TO_SEMITONE)) rerender(urlKey);
+
+  var sel = document.getElementById("key-selector");
+  if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
+})();
+</script>
+
+</body>
+</html>
