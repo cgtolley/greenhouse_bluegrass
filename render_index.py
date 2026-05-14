@@ -147,11 +147,39 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     font-style: italic;
     margin-top: 1rem;
   }}
+  #song-search {{
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fafafa;
+    box-sizing: border-box;
+  }}
+  #song-search:focus {{
+    outline: none;
+    border-color: {accent_color};
+    background: #fff;
+  }}
+  .no-results {{
+    color: #aaa;
+    font-style: italic;
+    margin-top: 1rem;
+    display: none;
+  }}
+  .no-results.visible {{
+    display: block;
+  }}
 </style>
 </head>
 <body>
 
 <h1>{site_title}</h1>
+
+<input type="search" id="song-search" placeholder="Search by song or artist…" autocomplete="off" />
+<p class="no-results">No songs match your search.</p>
 
 {table}
 
@@ -257,6 +285,28 @@ INDEX_SCRIPT = """
       if (v.length > 0) input.value = normalize(v);
     });
   });
+
+  // --- Search filter ---
+  var search = document.getElementById("song-search");
+  var rows = document.querySelectorAll("tbody tr");
+  var noResults = document.querySelector(".no-results");
+
+  if (search) {
+    search.addEventListener("input", function () {
+      var q = search.value.trim().toLowerCase();
+      var anyVisible = false;
+      rows.forEach(function (row) {
+        var titleEl = row.querySelector(".song-link");
+        var artistEl = row.querySelector(".artist");
+        var title = titleEl ? titleEl.textContent.toLowerCase() : "";
+        var artist = artistEl ? artistEl.textContent.toLowerCase() : "";
+        var match = !q || title.indexOf(q) !== -1 || artist.indexOf(q) !== -1;
+        row.style.display = match ? "" : "none";
+        if (match) anyVisible = true;
+      });
+      if (noResults) noResults.classList.toggle("visible", !anyVisible && q.length > 0);
+    });
+  }
 })();
 </script>
 """
@@ -275,8 +325,8 @@ def main():
         help="output HTML file (default: index.html)",
     )
     parser.add_argument(
-        "--color", default="#363",
-        help="base accent color (default: #363)",
+        "--color", default="#b54",
+        help="base accent color (default: #b54)",
     )
     args = parser.parse_args()
 

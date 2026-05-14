@@ -19,7 +19,7 @@
   h1 {
     font-size: 1.6rem;
     letter-spacing: 0.04em;
-    color: #254b25;
+    color: #52251e;
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.4rem;
     margin-bottom: 1rem;
@@ -49,7 +49,7 @@
   td.key input {
     font-family: "Courier New", Courier, monospace;
     font-size: 0.95rem;
-    color: #52a352;
+    color: #b45241;
     font-weight: bold;
     width: 3.2em;
     padding: 0.15rem 0.3rem;
@@ -62,7 +62,7 @@
     background: #fff0f0;
   }
   td.key input.changed {
-    border-color: #52a352;
+    border-color: #b45241;
     background: #fff;
   }
   td.sources {
@@ -82,7 +82,7 @@
     text-decoration: none;
   }
   a {
-    color: #52a352;
+    color: #b45241;
     text-decoration: none;
   }
   a:hover {
@@ -93,11 +93,39 @@
     font-style: italic;
     margin-top: 1rem;
   }
+  #song-search {
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fafafa;
+    box-sizing: border-box;
+  }
+  #song-search:focus {
+    outline: none;
+    border-color: #b45241;
+    background: #fff;
+  }
+  .no-results {
+    color: #aaa;
+    font-style: italic;
+    margin-top: 1rem;
+    display: none;
+  }
+  .no-results.visible {
+    display: block;
+  }
 </style>
 </head>
 <body>
 
 <h1>Greenhouse Bluegrass</h1>
+
+<input type="search" id="song-search" placeholder="Search by song or artist…" autocomplete="off" />
+<p class="no-results">No songs match your search.</p>
 
 <table>
   <thead>
@@ -120,7 +148,7 @@
     </tr>
     <tr>
       <td><a class="song-link" href="songs/look_at_miss_ohio.html" data-base="songs/look_at_miss_ohio.html">Look at Miss Ohio</a></td>
-      <td class="artist">Gillian Welsh</td>
+      <td class="artist">Gillian Welch</td>
       <td class="key"><input type="text" class="key-input" value="C" data-original="C" maxlength="4" aria-label="Transpose key" /></td>
       <td class="listen"><a href="https://www.youtube.com/watch?v=B8aH4cRdplE" aria-label="Listen" title="Listen">▶</a></td>
       <td class="sources"><a href="https://tabs.ultimate-guitar.com/tab/gillian-welch/look-at-miss-ohio-chords-1089277">UltimateGuitar</a></td>
@@ -226,6 +254,28 @@
       if (v.length > 0) input.value = normalize(v);
     });
   });
+
+  // --- Search filter ---
+  var search = document.getElementById("song-search");
+  var rows = document.querySelectorAll("tbody tr");
+  var noResults = document.querySelector(".no-results");
+
+  if (search) {
+    search.addEventListener("input", function () {
+      var q = search.value.trim().toLowerCase();
+      var anyVisible = false;
+      rows.forEach(function (row) {
+        var titleEl = row.querySelector(".song-link");
+        var artistEl = row.querySelector(".artist");
+        var title = titleEl ? titleEl.textContent.toLowerCase() : "";
+        var artist = artistEl ? artistEl.textContent.toLowerCase() : "";
+        var match = !q || title.indexOf(q) !== -1 || artist.indexOf(q) !== -1;
+        row.style.display = match ? "" : "none";
+        if (match) anyVisible = true;
+      });
+      if (noResults) noResults.classList.toggle("visible", !anyVisible && q.length > 0);
+    });
+  }
 })();
 </script>
 
