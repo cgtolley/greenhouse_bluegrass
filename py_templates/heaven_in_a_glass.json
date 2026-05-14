@@ -1,0 +1,48 @@
+{
+  "title": "Heaven in a Glass",
+  "color": "#b54",
+  "sources": [
+    ["chordify", "https://chordify.net/chords/heaven-in-a-glass-brotherkenzie-topic"]
+  ],
+  "sections": [
+    {
+      "type": "verse",
+      "label": "Verse 1",
+      "lines": [
+        ["1                                   5", "Placeholder lyric line one goes right here"],
+        ["5                                1",    "Placeholder lyric line two goes right here"]
+      ]
+    },
+    {
+      "type": "chorus",
+      "label": "Chorus 1",
+      "lines": [
+        ["1",                                "Placeholder chorus line one goes here"],
+        ["                                  5  1", "Placeholder chorus line two goes here"]
+      ]
+    },
+    {
+      "type": "solo",
+      "label": "Verse Solo Break",
+      "lines": [
+        ["|1    |5    |5    |1    |", null],
+        ["|4 1  |1 6m |2    |5    |", null]
+      ]
+    },
+    {
+      "type": "verse",
+      "label": "Verse 2",
+      "lines": [
+        ["1                              5", "Placeholder lyric line goes here"]
+      ]
+    },
+    {
+      "type": "outro",
+      "label": "Outro",
+      "lines": [
+        ["  57                 17", "Placeholder outro line one"],
+        ["  5                  1",  "Placeholder outro line two"]
+      ]
+    }
+  ]
+}
