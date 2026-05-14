@@ -325,8 +325,8 @@ def main():
         help="output HTML file (default: index.html)",
     )
     parser.add_argument(
-        "--color", default="#b54",
-        help="base accent color (default: #b54)",
+        "--color", default="#363",
+        help="base accent color (default: #363)",
     )
     args = parser.parse_args()
 
