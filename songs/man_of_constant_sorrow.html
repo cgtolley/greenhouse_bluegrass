@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Man of Constant Sorrow</title>
+<style>
+  html {
+    font-size: clamp(13px, 3.2vw, 16px);
+  }
+  body {
+    font-family: "Courier New", Courier, monospace;
+    max-width: 720px;
+    padding: 0 1rem;
+    margin: 1.1rem auto;
+    color: #222;
+    line-height: 1.4;
+  }
+  h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+  h1 {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: #562b1a;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .key {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+  }
+  .key select {
+    font-family: inherit;
+    font-size: inherit;
+    color: #bc5e38;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 0.2rem;
+    margin-left: 0.3rem;
+    font-weight: bold;
+  }
+  pre.lyrics {
+    font-family: "Courier New", Courier, monospace;
+    /* Scaled so the longest line (44 chars) fits the available width.
+       0.62 ≈ Courier New character-width / font-size ratio (small safety margin).
+       Worst-case length across all keys, so transposing live never overflows. */
+    font-size: clamp(0.4rem, calc((100vw - 2rem) / 44 / 0.62), 0.95rem);
+    line-height: 1.4;
+    margin: 0;
+    white-space: pre;
+  }
+  pre.lyrics .chord {
+    color: #bc5e38;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body data-default-key="F">
+
+<h1>Man of Constant Sorrow</h1>
+<div class="key">Key of <select id="key-selector" aria-label="Transpose to key"><option value="C">C</option><option value="Db">Db</option><option value="D">D</option><option value="Eb">Eb</option><option value="E">E</option><option value="F" selected>F</option><option value="F#">F#</option><option value="G">G</option><option value="Ab">Ab</option><option value="A">A</option><option value="Bb">Bb</option><option value="B">B</option></select></div>
+
+<h2>Intro</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1">F</span>
+<span class="chord" data-nash="1     5        1">F     C        F</span>
+In constant sorrow all through his days
+</pre>
+
+<h2>Verse 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1                      4">F                      Bb</span>
+I am a man of constant sorrow
+<span class="chord" data-nash="          5              1">          C              F</span>
+I&#x27;ve seen trouble all my days
+<span class="chord" data-nash="                         4">                         Bb</span>
+I bid farewell to old Kentucky
+<span class="chord" data-nash="                5              1">                C              F</span>
+The place where I was born and raised
+<span class="chord" data-nash="                5               1">                C               F</span>
+The place where he was born and raised
+</pre>
+
+<h2>Instrumental</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|1   |1   |4   |5   |1   |">|F   |F   |Bb  |C   |F   |</span>
+</pre>
+
+<h2>Verse 2</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1                               4">F                               Bb</span>
+For six long years I&#x27;ve been in trouble
+<span class="chord" data-nash="             5                  1">             C                  F</span>
+No pleasures here on earth I&#x27;ve found 
+<span class="chord" data-nash="                               4">                               Bb</span>
+For in this world I&#x27;m bound to ramble
+<span class="chord" data-nash="          5                  1">          C                  F</span>
+I have no friends to help me now
+<span class="chord" data-nash="           5                  1">           C                  F</span>
+He has no friends to help him now
+</pre>
+
+<h2>Instrumental</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|1   |1   |4   |5   |1   |">|F   |F   |Bb  |C   |F   |</span>
+</pre>
+
+<h2>Verse 3</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1                          4">F                          Bb</span>
+It&#x27;s fare thee well my old lover
+<span class="chord" data-nash="           5               1">           C               F</span>
+I never expect to see you again
+<span class="chord" data-nash="                                    4">                                    Bb</span>
+For I&#x27;m bound to ride that northern railroad
+<span class="chord" data-nash="             5             1">             C             F</span>
+Perhaps I&#x27;ll die upon this train.
+<span class="chord" data-nash="              5             1">              C             F</span>
+Perhaps he&#x27;ll die upon this train. 
+</pre>
+
+<h2>Instrumental</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|1   |1   |4   |5   |1   |">|F   |F   |Bb  |C   |F   |</span>
+</pre>
+
+<h2>Verse 4</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1                            4">F                            Bb</span>
+You can bury me in some deep valley
+<span class="chord" data-nash="          5                1">          C                F</span>
+For many years where I may lay
+<span class="chord" data-nash="                             4">                             Bb</span>
+Then you may learn to love another
+<span class="chord" data-nash="           5              1">           C              F</span>
+While I am sleeping in my grave.
+<span class="chord" data-nash="            5               1">            C               F</span>
+While he is sleeping in his grave.
+</pre>
+
+<h2>Instrumental</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|1   |1   |4   |5   |1   |">|F   |F   |Bb  |C   |F   |</span>
+</pre>
+
+<h2>Verse 5</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1                                   4">F                                   Bb</span>
+Maybe your friends think I&#x27;m just a stranger
+<span class="chord" data-nash="               5              1">               C              F</span>
+My face you&#x27;ll never see no more.
+<span class="chord" data-nash="                                 4">                                 Bb</span>
+But there is one promise that is given
+<span class="chord" data-nash="              5               1">              C               F</span>
+I&#x27;ll meet you on God&#x27;s golden shore.
+<span class="chord" data-nash="               5               1">               C               F</span>
+He&#x27;ll meet you on God&#x27;s golden shore.
+</pre>
+
+
+<script>
+(function () {
+  var NOTES_SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+  var NOTES_FLAT  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  var KEY_TO_SEMITONE = {"C":0,"C#":1,"Db":1,"D":2,"D#":3,"Eb":3,"E":4,"F":5,"F#":6,"Gb":6,"G":7,"G#":8,"Ab":8,"A":9,"A#":10,"Bb":10,"B":11};
+  var FLAT_KEYS = {"F":1,"Bb":1,"Eb":1,"Ab":1,"Db":1,"Gb":1};
+  var SDS = {1:0,2:2,3:4,4:5,5:7,6:9,7:11};
+  var CHORD_RE = /(?<![A-Za-z0-9])([b#])?([1-7])(m(?!aj)|maj|dim|aug|sus[24]?)?(7|9|11|13)?(?:\/([b#])?([1-7]))?(?![A-Za-z0-9])/g;
+
+  function noteAt(key, offset, preferFlats) {
+    if (preferFlats === null) preferFlats = !!FLAT_KEYS[key];
+    var idx = ((KEY_TO_SEMITONE[key] + offset) % 12 + 12) % 12;
+    return preferFlats ? NOTES_FLAT[idx] : NOTES_SHARP[idx];
+  }
+
+  function transposeChord(m, key) {
+    var acc = m[1], degStr = m[2], qual = m[3], ext = m[4], bassAcc = m[5], bassStr = m[6];
+    var offset = SDS[parseInt(degStr, 10)];
+    var pf = null;
+    if (acc === "b") { offset--; pf = true; }
+    else if (acc === "#") { offset++; pf = false; }
+    var out = noteAt(key, offset, pf);
+    if (qual) out += qual;
+    if (ext) out += ext;
+    if (bassStr) {
+      var bo = SDS[parseInt(bassStr, 10)];
+      var bpf = pf;
+      if (bassAcc === "b") { bo--; bpf = true; }
+      else if (bassAcc === "#") { bo++; bpf = false; }
+      out += "/" + noteAt(key, bo, bpf);
+    }
+    return out;
+  }
+
+  function transposeRow(row, key) {
+    var chars = row.split("");
+    var re = new RegExp(CHORD_RE.source, "g");
+    var m;
+    while ((m = re.exec(row)) !== null) {
+      var start = m.index;
+      var newChord = transposeChord(m, key);
+      for (var j = 0; j < newChord.length; j++) {
+        if (start + j < chars.length) chars[start + j] = newChord[j];
+        else chars.push(newChord[j]);
+      }
+      var oldLen = m[0].length;
+      if (newChord.length < oldLen) {
+        for (var k = newChord.length; k < oldLen; k++) chars[start + k] = " ";
+      }
+    }
+    return chars.join("").replace(/\s+$/, "");
+  }
+
+  function rerender(key) {
+    if (!(key in KEY_TO_SEMITONE)) return false;
+    var spans = document.querySelectorAll(".chord[data-nash]");
+    for (var i = 0; i < spans.length; i++) {
+      spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+    }
+    var sel = document.getElementById("key-selector");
+    if (sel && sel.value !== key) sel.value = key;
+    return true;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var urlKey = params.get("key");
+  if (urlKey && urlKey in KEY_TO_SEMITONE) rerender(urlKey);
+
+  var sel = document.getElementById("key-selector");
+  if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
+})();
+</script>
+
+</body>
+</html>

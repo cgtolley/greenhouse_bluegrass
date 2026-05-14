@@ -1,6 +1,6 @@
 {
   "title": "Man of Constant Sorrow",
-  "color": "#b54",
+  "color": "#c75",
   "sources": [
     ["UltimateGuitar", "https://tabs.ultimate-guitar.com/tab/misc-soundtrack/o-brother-where-art-thou-i-am-a-man-of-constant-sorrow-chords-1113648"]
   ],
@@ -14,7 +14,6 @@
           ["1     5        1",
            "In constant sorrow all through his days"]
       ]
-    } 
     },
     {
       "type": "verse",
@@ -35,7 +34,8 @@
     {"type": "solo",
      "label": "Instrumental",
      "lines": [
-         ["|1   |1   |4   |5   |1   |", null],
+         ["|1   |1   |4   |5   |1   |", null]
+      ]
     },
     {
       "type": "verse",
@@ -56,7 +56,8 @@
     {"type": "solo",
      "label": "Instrumental",
      "lines": [
-         ["|1   |1   |4   |5   |1   |", null],
+         ["|1   |1   |4   |5   |1   |", null]
+      ]
     },
     {
       "type": "verse",
@@ -77,7 +78,8 @@
     {"type": "solo",
      "label": "Instrumental",
      "lines": [
-         ["|1   |1   |4   |5   |1   |", null],
+         ["|1   |1   |4   |5   |1   |", null]
+      ]
     },
     {
       "type": "verse",
@@ -98,7 +100,8 @@
     {"type": "solo",
      "label": "Instrumental",
      "lines": [
-         ["|1   |1   |4   |5   |1   |", null],
+         ["|1   |1   |4   |5   |1   |", null]
+      ]
     },
     {
       "type": "verse",
