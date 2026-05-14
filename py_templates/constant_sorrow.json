@@ -64,35 +64,36 @@
          "Perhaps he'll die upon this train. "]
       ]
     },
-{
-      "type": "chorus",
-      "label": "Chorus 1",
-      "lines": [
-        ["1",                                "Placeholder chorus line one goes here"],
-        ["                                  5  1", "Placeholder chorus line two goes here"]
-      ]
-    },
     {
-      "type": "solo",
-      "label": "Verse Solo Break",
+      "type": "verse",
+      "label": "Verse 4",
       "lines": [
-        ["|1    |5    |5    |1    |", null],
-        ["|4 1  |1 6m |2    |5    |", null]
+        ["1                      4", 
+         "You can bury me in some deep valley"],
+        ["          5              1",    
+         "For many years where I may lay"],
+        ["                         4",    
+         "Then you may learn to love another"],
+        ["                5              1",
+         "While I am sleeping in my grave."],
+        ["                5               1",
+         "While he is sleeping in his grave."]
       ]
     },
     {
       "type": "verse",
-      "label": "Verse 2",
+      "label": "Verse 5",
       "lines": [
-        ["1                              5", "Placeholder lyric line goes here"]
-      ]
-    },
-    {
-      "type": "outro",
-      "label": "Outro",
-      "lines": [
-        ["  57                 17", "Placeholder outro line one"],
-        ["  5                  1",  "Placeholder outro line two"]
+        ["1                      4", 
+         "Maybe your friends think I'm just a stranger"],
+        ["          5              1",    
+         "My face you'll never see no more."],
+        ["                         4",    
+         "But there is one promise that is given"],
+        ["                5              1",
+         "I'll meet you on God's golden shore."],
+        ["                5               1",
+         "He'll meet you on God's golden shore."]
       ]
     }
   ]
