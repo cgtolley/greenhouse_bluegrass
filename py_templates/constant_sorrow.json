@@ -1,0 +1,83 @@
+{
+  "title": "Man of Constant Sorrow",
+  "color": "#b54",
+  "sources": [
+    ["UltimateGuitar", "https://tabs.ultimate-guitar.com/tab/misc-soundtrack/o-brother-where-art-thou-i-am-a-man-of-constant-sorrow-chords-1113648"]
+  ],
+  "sections": [
+    {
+      "type": "intro",
+      "label": "Intro",
+      "lines": [
+          ["1",
+           null],
+          ["1     5        1",
+           "In constant sorrow all through his days"]
+      ]
+    } 
+    },
+    {
+      "type": "verse",
+      "label": "Verse 1",
+      "lines": [
+        ["1                      4", 
+         "I am a man of constant sorrow"],
+        ["          5              1",    
+         "I've seen trouble all my days"],
+        ["                         4",    
+         "I bid farewell to old Kentucky"],
+        ["                5              1",
+         "The place where I was born and raised"],
+        ["                5               1",
+         "The place where he was born and raised"]
+      ]
+    },
+    {
+      "type": "verse",
+      "label": "Verse 2",
+      "lines": [
+        ["1                      4", 
+         "For six long years I've been in trouble" ],
+        ["          5              1",    
+         "No pleasures here on earth I've found "],
+        ["                         4",    
+         "For in this world I'm bound to ramble"],
+        ["                5              1",
+         "I have no friends to help me now"],
+        ["                5               1",
+         "He has no friends to help him now"]
+      ]
+    },
+{
+      "type": "chorus",
+      "label": "Chorus 1",
+      "lines": [
+        ["1",                                "Placeholder chorus line one goes here"],
+        ["                                  5  1", "Placeholder chorus line two goes here"]
+      ]
+    },
+    {
+      "type": "solo",
+      "label": "Verse Solo Break",
+      "lines": [
+        ["|1    |5    |5    |1    |", null],
+        ["|4 1  |1 6m |2    |5    |", null]
+      ]
+    },
+    {
+      "type": "verse",
+      "label": "Verse 2",
+      "lines": [
+        ["1                              5", "Placeholder lyric line goes here"]
+      ]
+    },
+    {
+      "type": "outro",
+      "label": "Outro",
+      "lines": [
+        ["  57                 17", "Placeholder outro line one"],
+        ["  5                  1",  "Placeholder outro line two"]
+      ]
+    }
+  ]
+}
