@@ -63,7 +63,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     font-size: clamp(13px, 3.2vw, 16px);
   }}
   body {{
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: "Courier New", Courier, monospace;
     max-width: 720px;
     padding: 0 1rem;
     margin: 1.5rem auto;
