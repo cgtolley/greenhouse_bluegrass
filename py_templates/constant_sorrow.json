@@ -32,67 +32,87 @@
          "The place where he was born and raised"]
       ]
     },
+    {"type": "solo",
+     "label": "Instrumental",
+     "lines": [
+         ["|1   |1   |4   |5   |1   |", null],
+    },
     {
       "type": "verse",
       "label": "Verse 2",
       "lines": [
-        ["1                      4", 
+        ["1                               4", 
          "For six long years I've been in trouble" ],
-        ["          5              1",    
+        ["             5                  1",    
          "No pleasures here on earth I've found "],
-        ["                         4",    
+        ["                               4",    
          "For in this world I'm bound to ramble"],
-        ["                5              1",
+        ["          5                  1",
          "I have no friends to help me now"],
-        ["                5               1",
+        ["           5                  1",
          "He has no friends to help him now"]
       ]
+    },
+    {"type": "solo",
+     "label": "Instrumental",
+     "lines": [
+         ["|1   |1   |4   |5   |1   |", null],
     },
     {
       "type": "verse",
       "label": "Verse 3",
       "lines": [
-        ["1                      4", 
+        ["1                          4", 
          "It's fare thee well my old lover" ],
-        ["          5              1",    
+        ["           5               1",    
          "I never expect to see you again"],
-        ["                         4",    
+        ["                                    4",    
          "For I'm bound to ride that northern railroad"],
-        ["                5              1",
+        ["             5             1",
          "Perhaps I'll die upon this train."],
-        ["                5               1",
+        ["              5             1",
          "Perhaps he'll die upon this train. "]
       ]
+    },
+    {"type": "solo",
+     "label": "Instrumental",
+     "lines": [
+         ["|1   |1   |4   |5   |1   |", null],
     },
     {
       "type": "verse",
       "label": "Verse 4",
       "lines": [
-        ["1                      4", 
+        ["1                            4", 
          "You can bury me in some deep valley"],
-        ["          5              1",    
+        ["          5                1",    
          "For many years where I may lay"],
-        ["                         4",    
+        ["                             4",    
          "Then you may learn to love another"],
-        ["                5              1",
+        ["           5              1",
          "While I am sleeping in my grave."],
-        ["                5               1",
+        ["            5               1",
          "While he is sleeping in his grave."]
       ]
+    },
+    {"type": "solo",
+     "label": "Instrumental",
+     "lines": [
+         ["|1   |1   |4   |5   |1   |", null],
     },
     {
       "type": "verse",
       "label": "Verse 5",
       "lines": [
-        ["1                      4", 
+        ["1                                   4", 
          "Maybe your friends think I'm just a stranger"],
-        ["          5              1",    
+        ["               5              1",    
          "My face you'll never see no more."],
-        ["                         4",    
+        ["                                 4",    
          "But there is one promise that is given"],
-        ["                5              1",
+        ["              5               1",
          "I'll meet you on God's golden shore."],
-        ["                5               1",
+        ["               5               1",
          "He'll meet you on God's golden shore."]
       ]
     }
