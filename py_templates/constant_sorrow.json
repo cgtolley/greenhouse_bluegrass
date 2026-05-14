@@ -48,6 +48,22 @@
          "He has no friends to help him now"]
       ]
     },
+    {
+      "type": "verse",
+      "label": "Verse 3",
+      "lines": [
+        ["1                      4", 
+         "It's fare thee well my old lover" ],
+        ["          5              1",    
+         "I never expect to see you again"],
+        ["                         4",    
+         "For I'm bound to ride that northern railroad"],
+        ["                5              1",
+         "Perhaps I'll die upon this train."],
+        ["                5               1",
+         "Perhaps he'll die upon this train. "]
+      ]
+    },
 {
       "type": "chorus",
       "label": "Chorus 1",
