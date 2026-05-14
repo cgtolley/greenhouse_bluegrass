@@ -11,7 +11,7 @@
             "type": "verse",
             "label": "Verse 1",
             "lines": [
-                ["1                         4",
+                ["1                              4",
                  "I lived in a place called Okfuskee"],
                 ["4                                   1",
                  "And I had a little girl in a holler tree"],
@@ -27,9 +27,9 @@
             "type": "verse",
             "label": "Verse 2",
             "lines": [
-                ["1                         4",
+                ["1                            4",
                  "She said it's hard for me to see"],
-                ["4                         1",
+                ["4                            1",
                  "How one little boy got so ugly"],
                 ["4                                    1  ",
                  "I said, yes my lil girlie that might be"],
@@ -57,10 +57,10 @@
             "lines": [
                 ["1                             4",
                  "We walked down by the buckeye creek"],
-                ["4                         1",
+                ["4                                  1",
                  "To see the frog eat the goggle-eye bee"],
-                ["4                                    1  ",
-                 "Here that whistlin whistle to the east"],
+                ["4                                 1  ",
+                 "Hear that whistlin whistle to the east"],
                 ["      5                               1",
                  "There ain't nobody that can sing like me"],
                 ["5                               6",
@@ -71,31 +71,14 @@
             "type": "verse",
             "label": "Verse 4",
             "lines": [
-                ["1                             4",
+                ["1                                   4",
                  "Oh my little girlie will you let me see"],
-                ["4                         1",
+                ["4                                    1",
                  "Way over yonder where the wind blows free"],
                 ["4                            1  ",
                  "Nobody can see in our holler tree"],
                 ["          5                               1",
                  "And there ain't nobody that can sing like me"],
-                ["5                               6",
-                 "Ain't nobody that can sing like me"]
-            ]
-        },
-
-        {
-            "type": "verse",
-            "label": "Verse 5",
-            "lines": [
-                ["1                         4",
-                 "Her mama cut a switch from a cherry tree"],
-                ["4                                   1",
-                 "And laid it for she and me"],
-                ["4                                  1  ",
-                 "It stung lots worse than a hive of bees"],
-                ["          5                               1",
-                 "But there ain't nobody that can sing like me"],
                 ["5                               6",
                  "Ain't nobody that can sing like me"]
             ]
@@ -118,6 +101,23 @@
             "lines": [
                 ["|1  |4  |4  |1  |", null],
                 ["|4  |1  |5  |6  |", null] 
+            ]
+        },
+
+        {
+            "type": "verse",
+            "label": "Verse 5",
+            "lines": [
+                ["1                         4",
+                 "Her mama cut a switch from a cherry tree"],
+                ["4                       1",
+                 "And laid it for she and me"],
+                ["4                                  1  ",
+                 "It stung lots worse than a hive of bees"],
+                ["          5                               1",
+                 "But there ain't nobody that can sing like me"],
+                ["5                               6",
+                 "Ain't nobody that can sing like me"]
             ]
         },
         {
