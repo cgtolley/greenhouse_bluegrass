@@ -8,43 +8,119 @@
   ],
   "sections": [
     {
+      "type": "intro",
+      "label": "Intro",
+      "lines": [
+        ["|1    |1    |1    |", null],
+      ]
+    },
+    {
       "type": "verse",
       "label": "Verse 1",
       "lines": [
-        ["1                                   5", "Placeholder lyric line one goes right here"],
-        ["5                                1",    "Placeholder lyric line two goes right here"]
+        ["1               ", 
+         "My truck broke down at the only stop light in this ghost town"],
+        [""                          5                              1,   
+         "I sure don't know where to go now, maybe find someone who knows how"],
+        ["",
+         "The beauty of life carries on."],
+        ["1                                   5", 
+         "Guess I'll wallk it, won't be long now til I'm talking"],
+        ["5                                1",   
+         "To you about how the world's over, but I just want you to talk slower"],
+        ["",
+         "So I can taste every last drop."]
       ]
     },
     {
       "type": "chorus",
-      "label": "Chorus 1",
+      "label": "Chorus",
       "lines": [
-        ["1",                                "Placeholder chorus line one goes here"],
-        ["                                  5  1", "Placeholder chorus line two goes here"]
-      ]
-    },
-    {
-      "type": "solo",
-      "label": "Verse Solo Break",
-      "lines": [
-        ["|1    |5    |5    |1    |", null],
-        ["|4 1  |1 6m |2    |5    |", null]
+        ["1",                                
+         "And that's you babe, heaven in a glass on a tuesday"],
+        ["5                                1",   
+         "To you about how the world's over, but I just want you to talk slower"],
+        ["",
+         "Still got the whole week to go."],
+        ["1                                   5", 
+         "And you're gorgeous, bigger than life in a moment"],
+        ["5                                1",   
+         "While I'm holding you tight, out of focus"],
+        ["",
+         "Still got the whole week to go."]
       ]
     },
     {
       "type": "verse",
       "label": "Verse 2",
       "lines": [
-        ["1                              5", "Placeholder lyric line goes here"]
+        ["1                                   5", 
+         "Things are changin, things don't seem to be what they've been"],
+        ["5                                1",   
+         "Things that I can't put a name to, things I've been thinkin I'd hate to"],
+        ["",
+         "Find a bunch more of around."],
+        ["1                                   5", 
+         "But there's beauty, there's still a world, absolutely,"],
+        ["5                                1",   
+         "Invested in keeping its boots on, never too old for a new song,"],
+        ["",
+         "And never too saddened to care."]
       ]
     },
     {
-      "type": "outro",
-      "label": "Outro",
+      "type": "chorus",
+      "label": "Chorus",
       "lines": [
-        ["  57                 17", "Placeholder outro line one"],
-        ["  5                  1",  "Placeholder outro line two"]
+        ["1",                                
+         "And that's you babe, heaven in a glass on a tuesday"],
+        ["5                                1",   
+         "To you about how the world's over, but I just want you to talk slower"],
+        ["",
+         "Still got the whole week to go."],
+        ["1                                   5", 
+         "And you're gorgeous, bigger than life in a moment"],
+        ["5                                1",   
+         "While I'm holding you tight, out of focus"],
+        ["",
+         "Still got the whole week to go."]
       ]
-    }
+    },
+    {
+      "type": "verse",
+      "label": "Verse 3",
+      "lines": [
+        ["1                                   5", 
+         "Been a long day, maybe my heart needs a repave"],
+        ["5                                1",   
+         "Too many cars on the freeway, burnin a hole in my pocket"],
+        ["",
+         "Bout as good as it gets."],
+        ["1                                   5", 
+         "That's something, you live and you learn that the hard winds"],
+        ["5                                1",   
+         "Are blowing forever until it all settles down and I knew it"],
+        ["",
+         "Wouldn't be too hard for long."]
+      ]
+    },
+    {
+      "type": "chorus",
+      "label": "Chorus",
+      "lines": [
+        ["1",                                
+         "And that's you babe, heaven in a glass on a tuesday"],
+        ["5                                1",   
+         "To you about how the world's over, but I just want you to talk slower"],
+        ["",
+         "Still got the whole week to go."],
+        ["1                                   5", 
+         "And you're gorgeous, bigger than life in a moment"],
+        ["5                                1",   
+         "While I'm holding you tight, out of focus"],
+        ["",
+         "Still got the whole week to go."]
+      ]
+    },
   ]
 }
