@@ -29,12 +29,12 @@
             "lines": [
                 ["1                         4",
                  "She said it's hard for me to see"],
-                ["4                                   1",
-                 "And I had a little girl in a holler tree"],
-                ["4                                  1  ",
-                 "I said, little girl, it's plain to see"],
-                ["5                               1",
-                 "Ain't nobody that can sing like me"],
+                ["4                         1",
+                 "How one little boy got so ugly"],
+                ["4                                    1  ",
+                 "I said, yes my lil girlie that might be"],
+                ["          5                               1",
+                 "But there ain't nobody that can sing like me"],
                 ["5                               6",
                  "Ain't nobody that can sing like me"]
             ]
@@ -55,6 +55,39 @@
             "type": "verse",
             "label": "Verse 3",
             "lines": [
+                ["1                             4",
+                 "We walked down by the buckeye creek"],
+                ["4                         1",
+                 "To see the frog eat the goggle-eye bee"],
+                ["4                                    1  ",
+                 "Here that whistlin whistle to the east"],
+                ["      5                               1",
+                 "There ain't nobody that can sing like me"],
+                ["5                               6",
+                 "Ain't nobody that can sing like me"]
+            ]
+        },
+        {
+            "type": "verse",
+            "label": "Verse 4",
+            "lines": [
+                ["1                             4",
+                 "Oh my little girlie will you let me see"],
+                ["4                         1",
+                 "Way over yonder where the wind blows free"],
+                ["4                            1  ",
+                 "Nobody can see in our holler tree"],
+                ["          5                               1",
+                 "And there ain't nobody that can sing like me"],
+                ["5                               6",
+                 "Ain't nobody that can sing like me"]
+            ]
+        },
+
+        {
+            "type": "verse",
+            "label": "Verse 5",
+            "lines": [
                 ["1                         4",
                  "Her mama cut a switch from a cherry tree"],
                 ["4                                   1",
@@ -68,8 +101,28 @@
             ]
         },
         {
+            "type": "chorus",
+            "label": "Chorus",
+            "lines": [
+                ["4                            1",
+                 "Way over yonder in the minor key"],
+                ["6                            1",
+                 "Way over yonder in the minor key"],
+                ["5                                     6",
+                 "There ain't nobody that can sing like me "]
+            ]
+        },
+        {
+            "type": "instrumental",
+            "label":"Instrumental",
+            "lines": [
+                ["|1  |4  |4  |1  |", null],
+                ["|4  |1  |5  |6  |", null] 
+            ]
+        },
+        {
             "type": "verse",
-            "label": "Verse 4",
+            "label": "Verse 6",
             "lines": [
                 ["1                             4",
                  "Now I have walked a long long ways"],
