@@ -1,6 +1,8 @@
 {
-    "title": "Sweet Tequila Blues by Chip Taylor and Carrie Rodriguez",
+    "title": "Sweet Tequila Blues",
+    "artist": "Chip Taylor and Carrie Rodriguez",
     "color": "#277",
+    "listen": "https://www.youtube.com/watch?v=gkwvJ2e3xsA&list=RDgkwvJ2e3xsA&index=1",
     "sources": [
         ["cowboylyrics", "https://www.cowboylyrics.com/tabs/chip-taylor-and-carrie-rodriguez/sweet-tequila-blues-19872.html"]
     ],

@@ -1,6 +1,8 @@
 {
   "title": "Song Title Here",
+  "artist": "Artist Name",
   "color": "#b54",
+  "listen": "https://www.youtube.com/watch?v=VIDEO_ID",
   "sources": [
     ["ExampleSite", "https://example.com/some-song-page"]
   ],

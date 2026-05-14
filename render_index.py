@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """
 render_index.py — Generate index.html from songs.json.
+
+The manifest songs.json is maintained automatically by render_song.py;
+this script reads it and emits a homepage with a table of all songs.
+
+Usage:
+    python render_index.py
+    python render_index.py -o index.html
+    python render_index.py --color "#3a3"
 """
 
 import argparse
@@ -11,8 +19,12 @@ import sys
 from pathlib import Path
 
 
+# ---------------------------------------------------------------------------
+# Color palette (mirrors render_song.py so the index matches the song pages)
+# ---------------------------------------------------------------------------
+
 TITLE_LIGHTNESS = 0.22
-ACCENT_LIGHTNESS = 0.42
+ACCENT_LIGHTNESS = 0.48
 
 
 def parse_hex_color(s):
@@ -36,7 +48,9 @@ def derive_palette(base_hex):
     return rgb_to_hex(title_rgb), rgb_to_hex(accent_rgb)
 
 
+# ---------------------------------------------------------------------------
 # HTML rendering
+# ---------------------------------------------------------------------------
 
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
@@ -49,7 +63,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     font-size: clamp(13px, 3.2vw, 16px);
   }}
   body {{
-    font-family: Courier, "Courier New", monospace;
+    font-family: Georgia, "Times New Roman", serif;
     max-width: 720px;
     padding: 0 1rem;
     margin: 1.5rem auto;
@@ -108,6 +122,19 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   td.sources {{
     font-size: 0.85rem;
   }}
+  td.artist {{
+    font-style: italic;
+    color: #555;
+    font-size: 0.9rem;
+  }}
+  td.listen {{
+    text-align: center;
+    width: 2.5em;
+  }}
+  td.listen a {{
+    font-size: 1.1rem;
+    text-decoration: none;
+  }}
   a {{
     color: {accent_color};
     text-decoration: none;
@@ -157,17 +184,26 @@ def render_table(songs):
     rows = []
     for s in songs:
         key = s["key"]
+        artist = s.get("artist") or ""
+        listen_url = s.get("listen") or ""
+        artist_cell = esc(artist) if artist else "&mdash;"
+        listen_cell = (
+            f'<a href="{esc(listen_url)}" aria-label="Listen" title="Listen">▶</a>'
+            if listen_url else "&mdash;"
+        )
         rows.append(
             "    <tr>\n"
             f'      <td><a class="song-link" href="{esc(s["file"])}" data-base="{esc(s["file"])}">{esc(s["title"])}</a></td>\n'
-            f'      <td class="key"><input type="text" class="key-input" value="{esc(key)}" data-original="{esc(key)}" maxlength="3" aria-label="Transpose key" /></td>\n'
+            f'      <td class="artist">{artist_cell}</td>\n'
+            f'      <td class="key"><input type="text" class="key-input" value="{esc(key)}" data-original="{esc(key)}" maxlength="4" aria-label="Transpose key" /></td>\n'
+            f'      <td class="listen">{listen_cell}</td>\n'
             f'      <td class="sources">{render_sources(s.get("sources", []))}</td>\n'
             "    </tr>"
         )
     table_html = (
         "<table>\n"
         "  <thead>\n"
-        "    <tr><th>Song</th><th>Key</th><th>Sources</th></tr>\n"
+        "    <tr><th>Song</th><th>Artist</th><th>Key</th><th>Listen</th><th>Sources</th></tr>\n"
         "  </thead>\n"
         "  <tbody>\n"
         + "\n".join(rows) + "\n"
@@ -181,7 +217,20 @@ INDEX_SCRIPT = """
 
 <script>
 (function () {
-  var VALID = {"C":1,"C#":1,"Db":1,"D":1,"D#":1,"Eb":1,"E":1,"F":1,"F#":1,"Gb":1,"G":1,"G#":1,"Ab":1,"A":1,"A#":1,"Bb":1,"B":1};
+  var VALID = {
+    // Majors
+    "C":1,"C#":1,"Db":1,"D":1,"D#":1,"Eb":1,"E":1,"F":1,"F#":1,"Gb":1,
+    "G":1,"G#":1,"Ab":1,"A":1,"A#":1,"Bb":1,"B":1,
+    // Minors (both spellings of enharmonic ones accepted)
+    "Cm":1,"C#m":1,"Dbm":1,"Dm":1,"D#m":1,"Ebm":1,"Em":1,"Fm":1,"F#m":1,
+    "Gbm":1,"Gm":1,"G#m":1,"Abm":1,"Am":1,"A#m":1,"Bbm":1,"Bm":1
+  };
+
+  function normalize(v) {
+    if (v.length === 0) return v;
+    // Capitalize first letter only; lowercase the rest (so "ebm" -> "Ebm", "F#M" -> "F#m")
+    return v[0].toUpperCase() + v.slice(1).toLowerCase();
+  }
 
   document.querySelectorAll(".key-input").forEach(function (input) {
     var link = input.closest("tr").querySelector(".song-link");
@@ -189,9 +238,7 @@ INDEX_SCRIPT = """
     var original = input.getAttribute("data-original");
 
     function update() {
-      var v = input.value.trim();
-      // Normalize first char to uppercase (so "eb" → "Eb")
-      if (v.length > 0) v = v[0].toUpperCase() + v.slice(1);
+      var v = normalize(input.value.trim());
 
       input.classList.toggle("invalid", v.length > 0 && !(v in VALID));
       input.classList.toggle("changed", v in VALID && v !== original);
@@ -205,9 +252,9 @@ INDEX_SCRIPT = """
 
     input.addEventListener("input", update);
     input.addEventListener("blur", function () {
-      // Tidy display: capitalize as user leaves the field
+      // Tidy display: normalize as user leaves the field
       var v = input.value.trim();
-      if (v.length > 0) input.value = v[0].toUpperCase() + v.slice(1);
+      if (v.length > 0) input.value = normalize(v);
     });
   });
 })();
@@ -228,8 +275,8 @@ def main():
         help="output HTML file (default: index.html)",
     )
     parser.add_argument(
-        "--color", default="#468",
-        help="base accent color (default: #468)",
+        "--color", default="#b54",
+        help="base accent color (default: #b54)",
     )
     args = parser.parse_args()
 

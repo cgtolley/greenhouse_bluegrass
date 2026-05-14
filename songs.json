@@ -3,8 +3,10 @@
   "songs": [
     {
       "title": "Going Down the Road Feeling Bad",
+      "artist": "Trad",
       "key": "C",
       "file": "songs/going_down_the_road_feeling_bad.html",
+      "listen": "https://www.youtube.com/watch?v=fwdFhWNL0_M",
       "sources": [
         [
           "harper college",
@@ -14,8 +16,10 @@
     },
     {
       "title": "Ragged But Right",
+      "artist": "Trad/Devil Makes Three",
       "key": "C",
       "file": "songs/ragged_but_right.html",
+      "listen": "https://www.youtube.com/watch?v=WS9S3qpYu4w",
       "sources": [
         [
           "banjojudy",
@@ -29,8 +33,10 @@
     },
     {
       "title": "Look at Miss Ohio",
+      "artist": "Gillian Welsh",
       "key": "C",
       "file": "songs/look_at_miss_ohio.html",
+      "listen": "https://www.youtube.com/watch?v=B8aH4cRdplE",
       "sources": [
         [
           "UltimateGuitar",
@@ -40,8 +46,10 @@
     },
     {
       "title": "Big Rock Candy Mountain",
+      "artist": "Harry McClintock",
       "key": "C",
       "file": "songs/big_rock_candy_mountain.html",
+      "listen": "https://www.youtube.com/watch?v=E6F0IhdaaWI",
       "sources": [
         [
           "UltimateGuitar",
@@ -51,8 +59,10 @@
     },
     {
       "title": "I'll Fly Away",
+      "artist": "Alison Krauss, Gillian Welch",
       "key": "D",
       "file": "songs/ill_fly_away.html",
+      "listen": "https://www.youtube.com/watch?v=lFamN-oXRMQ",
       "sources": [
         [
           "UltimateGuitar",
@@ -61,9 +71,11 @@
       ]
     },
     {
-      "title": "My Alice by Billy Strings",
+      "title": "My Alice",
+      "artist": "Billy Strings",
       "key": "G",
       "file": "songs/my_alice.html",
+      "listen": "https://www.youtube.com/watch?v=bpWOeGJiC-w",
       "sources": [
         [
           "UltimateGuitar",
@@ -73,8 +85,10 @@
     },
     {
       "title": "I've Been All Round This World",
+      "artist": "Trad",
       "key": "A",
       "file": "songs/been_all_round_this_world.html",
+      "listen": "https://www.youtube.com/watch?v=4gtwywits2c",
       "sources": [
         [
           "rando site",
@@ -84,8 +98,10 @@
     },
     {
       "title": "Way Over Yonder In the Minor Key",
+      "artist": "Billy Bragg & Wilco",
       "key": "G",
       "file": "songs/way_over_yonder_in_the_minor_key.html",
+      "listen": "https://www.youtube.com/watch?v=oHVo-UKogBs",
       "sources": [
         [
           "UltimateGuitar",
@@ -94,9 +110,11 @@
       ]
     },
     {
-      "title": "Sweet Tequila Blues by Chip Taylor and Carrie Rodriguez",
+      "title": "Sweet Tequila Blues",
+      "artist": "Chip Taylor and Carrie Rodriguez",
       "key": "G",
       "file": "songs/sweet_tequila_blues.html",
+      "listen": "https://www.youtube.com/watch?v=gkwvJ2e3xsA&list=RDgkwvJ2e3xsA&index=1",
       "sources": [
         [
           "cowboylyrics",
@@ -106,8 +124,10 @@
     },
     {
       "title": "Man of Constant Sorrow",
+      "artist": "Soggy Bottom Boys, Dan Tyminski",
       "key": "F",
       "file": "songs/man_of_constant_sorrow.html",
+      "listen": "https://www.youtube.com/watch?v=zHamgwlQ1yo",
       "sources": [
         [
           "UltimateGuitar",

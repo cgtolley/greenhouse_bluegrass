@@ -397,8 +397,10 @@ def update_manifest(output_path, song, key, manifest_path="songs.json"):
 
     entry = {
         "title": song["title"],
+        "artist": song.get("artist", ""),
         "key": key,
         "file": output_path,
+        "listen": song.get("listen", ""),
         "sources": song.get("sources", []),
     }
 
