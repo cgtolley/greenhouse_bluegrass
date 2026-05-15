@@ -11,17 +11,30 @@
       "type": "verse",
       "label": "Verse 1",
       "lines": [
-        ["1                                   5", "Placeholder lyric line one goes right here"],
-        ["5                                1",    "Placeholder lyric line two goes right here"]
+        ["1          5               1    ", 
+         "I'd rather be in some dark hollow"],
+        ["          4               1      ",
+         "Where the sun don't ever shine"],
+        ["        1/7   4        1    ",
+         "Than to be in some big city"],
+        ["       5              1           ",
+         "In a small room with her on my mind."]
       ]
     },
     {
       "type": "chorus",
-      "label": "Chorus 1",
+      "label": "Chorus",
       "lines": [
-        ["1",                                "Placeholder chorus line one goes here"],
-        ["                                  5  1", "Placeholder chorus line two goes here"]
-      ]
+        ["1            5        1",                                
+         "So blow your whistle freight train"],
+        ["         4.              1", 
+         "Take me far on down the tracks"],
+        ["  g7               4                ",
+         "To be home alone, knowing that you're gone,"
+      ],
+        ["      5           1      ",
+         "Would cause me to lose my mind"
+        ]
     },
     {
       "type": "solo",
