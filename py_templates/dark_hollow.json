@@ -1,6 +1,6 @@
 {
-  "title": "Song Title Here",
-  "artist": "Artist Name",
+  "title": "Dark Hollow",
+  "artist": "Trad",
   "color": "#2a6",
   "listen": "https://www.youtube.com/watch?v=h6jLKzBb_cQ",
   "sources": [
@@ -32,8 +32,8 @@
         ["    1       g7       4         1",
          "I'm going away, I'm leaving today"],
         ["    5           1      ",
-         "I'm goin, but I aint comin back."
-        ]
+         "I'm goin, but I aint comin back."]
+      ]
     },
     {
       "type": "solo",
@@ -68,8 +68,8 @@
         ["    1       g7       4         1",
          "I'm going away, I'm leaving today"],
         ["    5           1      ",
-         "I'm goin, but I aint comin back."
-        ]
-    },
+         "I'm goin, but I aint comin back."]
+      ]
+    }
   ]
 }
