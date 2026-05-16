@@ -1,49 +1,184 @@
 {
-  "title": "Song Title Here",
-  "artist": "Artist Name",
-  "color": "#b54",
-  "listen": "https://www.youtube.com/watch?v=VIDEO_ID",
+  "title": "Right Back To It",
+  "artist": "Waxahatchee",
+  "color": "#c69",
+  "listen": "https://www.youtube.com/watch?v=YL3iHhERWJw",
   "sources": [
-    ["ExampleSite", "https://example.com/some-song-page"]
+    ["UltimateGuitar", "https://tabs.ultimate-guitar.com/tab/waxahatchee/right-back-to-it-chords-5098726"]
   ],
   "sections": [
+    {
+      "type": "intro",
+      "label": "Intro",
+      "lines": [
+        ["|4    |1    |5    |6m 5  |", null],
+        ["|4    |1    |5sus2|5     |", null]
+      ]
+    },
     {
       "type": "verse",
       "label": "Verse 1",
       "lines": [
-        ["1                                   5", "Placeholder lyric line one goes right here"],
-        ["5                                1",    "Placeholder lyric line two goes right here"]
+        ["4                     1", 
+         "Photograph of us in a spotlight on a"],
+        ["5                         6      5",    
+         "hot night, I was drifting in and out"],
+        ["4                   1",    
+         "Reticent on the off-chance I'm blunter than a"],
+        ["5                    6        5",    
+         "bullseye, beggin for peace of mind."]
       ]
     },
     {
-      "type": "chorus",
-      "label": "Chorus 1",
+      "type": "refrain",
+      "label": "Refrain",
       "lines": [
-        ["1",                                "Placeholder chorus line one goes here"],
-        ["                                  5  1", "Placeholder chorus line two goes here"]
-      ]
-    },
-    {
-      "type": "solo",
-      "label": "Verse Solo Break",
-      "lines": [
-        ["|1    |5    |5    |1    |", null],
-        ["|4 1  |1 6m |2    |5    |", null]
+        ["  4            1  5    6 5", 
+         "I get ahead of myself"],
+        ["4              1    5    6 5",
+         "Bracing for a bombshell"]
       ]
     },
     {
       "type": "verse",
       "label": "Verse 2",
       "lines": [
-        ["1                              5", "Placeholder lyric line goes here"]
+        ["4                       1", 
+         "Your love written on a blank check wear it"],
+        ["5sus2                   6m         5",    
+         "around your neck, I was at a loss."],
+        ["    4                   1",    
+         "But you come to me on a fault line, deep inside"],
+        ["  5                  6m           5",    
+         "a goldmine, hovering like a moth"]
+      ]
+    },
+    {
+      "type": "refrain",
+      "label": "Refrain",
+      "lines": [
+        ["  4              1  5    6m 5", 
+         "I lose a bit of myself"],
+        ["4           1    5    6m 5",
+         "Laying out eggshells"]
+      ]
+    },
+    {
+      "type": "chorus",
+      "label": "Chorus 1",
+      "lines": [
+        ["          1            5",                                
+         "I've been yours for so long"],
+        ["      6m         4", 
+         "I get right back to it"],
+        ["      1           5",                                
+         "I let my mind run wild"],
+        ["           6m     4", 
+         "Don't know why I do it"],
+        ["                    1",                                
+         "But you just settle in"],
+        ["       5            6m   5", 
+         "Like a song with no end"],
+        ["   4            1",                                
+         "If I can keep up"],
+        ["           5         6m  5", 
+         "We'll get right back to  it"]
+      ]
+    },
+    {
+      "type": "solo",
+      "label": "Instrumental x2",
+      "lines": [
+        ["|4    |1    |5    |6m 5  |", null]
+      ]
+    },
+    {
+      "type": "verse",
+      "label": "Verse 3",
+      "lines": [
+        ["   4                      1", 
+         "If I swerve in and out of my lane burning up"],
+        [".  5                 6         5",    
+         "an old flame turn a jealous eye"],
+        ["4                     1",    
+         "I'll fall down into a fair game lick a"],
+        ["5                  6         5",    
+         "wound that was not ever mine."]
+      ]
+    },
+    {
+      "type": "refrain",
+      "label": "Refrain",
+      "lines": [
+        ["  4            1  5    6 5", 
+         "I get ahead of myself"],
+        ["4              1    5    6 5",
+         "Bracing for a bombshell"]
+      ]
+    },
+    {
+      "type": "chorus",
+      "label": "Chorus 1",
+      "lines": [
+        ["          1            5",                                
+         "I've been yours for so long"],
+        ["      6m         4", 
+         "I get right back to it"],
+        ["      1           5",                                
+         "I let my mind run wild"],
+        ["           6m     4", 
+         "Don't know why I do it"],
+        ["                    1",                                
+         "But you just settle in"],
+        ["       5            6m   5", 
+         "Like a song with no end"],
+        ["   4            1",                                
+         "If I can keep up"],
+        ["           5         6m  5", 
+         "We'll get right back to  it"]
+      ]
+    },
+    {
+      "type": "solo",
+      "label": "Instrumental x4",
+      "lines": [
+        ["|4    |1    |5    |6m 5  |", null]
+      ]
+    },
+    {
+      "type": "chorus",
+      "label": "Chorus 1",
+      "lines": [
+        ["          1            5",                                
+         "I've been yours for so long"],
+        ["      6m         4", 
+         "I get right back to it"],
+        ["      1           5",                                
+         "I let my mind run wild"],
+        ["           6m     4", 
+         "Don't know why I do it"],
+        ["                    1",                                
+         "But you just settle in"],
+        ["       5            6m   5", 
+         "Like a song with no end"],
+        ["   4            1",                                
+         "If I can keep up"],
+        ["           5         6m  5", 
+         "We'll get right back to  it"]
       ]
     },
     {
       "type": "outro",
       "label": "Outro",
       "lines": [
-        ["  57                 17", "Placeholder outro line one"],
-        ["  5                  1",  "Placeholder outro line two"]
+        ["           5         6m  5   1", 
+         "We'll get right back to  it"],
+        ["           5         6m  5", 
+         "We'll get right back to  it"],
+        ["|4    |1    |5    |6m 5  |", null],
+        ["|4    |1    |5    |5sus2 |", null],
+        ["|4    |1    |5    |6m 5  |", null],
+        ["4", null]
       ]
     }
   ]
