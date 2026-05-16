@@ -188,15 +188,15 @@
       ]
     },
     {
-      "title": "Song Title Here",
-      "artist": "Artist Name",
+      "title": "Right Back To It",
+      "artist": "Waxahatchee",
       "key": "F#",
       "file": "songs/right_back_to_it.html",
-      "listen": "https://www.youtube.com/watch?v=VIDEO_ID",
+      "listen": "https://www.youtube.com/watch?v=YL3iHhERWJw",
       "sources": [
         [
-          "ExampleSite",
-          "https://example.com/some-song-page"
+          "UltimateGuitar",
+          "https://tabs.ultimate-guitar.com/tab/waxahatchee/right-back-to-it-chords-5098726"
         ]
       ]
     }

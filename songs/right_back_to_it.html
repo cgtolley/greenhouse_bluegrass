@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Song Title Here</title>
+<title>Right Back To It</title>
 <style>
   html {
     font-size: clamp(13px, 3.2vw, 16px);
@@ -27,7 +27,7 @@
   h1 {
     font-size: 1rem;
     letter-spacing: 0.1em;
-    color: #52251e;
+    color: #541c38;
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.25rem;
     margin-top: 0.5rem;
@@ -41,7 +41,7 @@
   .key select {
     font-family: inherit;
     font-size: inherit;
-    color: #b45241;
+    color: #b83d7a;
     background: transparent;
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -51,59 +51,171 @@
   }
   pre.lyrics {
     font-family: "Courier New", Courier, monospace;
-    /* Scaled so the longest line (42 chars) fits the available width.
+    /* Scaled so the longest line (47 chars) fits the available width.
        0.62 ≈ Courier New character-width / font-size ratio (small safety margin).
        Worst-case length across all keys, so transposing live never overflows. */
-    font-size: clamp(0.4rem, calc((100vw - 2rem) / 42 / 0.62), 0.95rem);
+    font-size: clamp(0.4rem, calc((100vw - 2rem) / 47 / 0.62), 0.95rem);
     line-height: 1.4;
     margin: 0;
     white-space: pre;
   }
   pre.lyrics .chord {
-    color: #b45241;
+    color: #b83d7a;
     font-weight: bold;
   }
 </style>
 </head>
 <body data-default-key="F#">
 
-<h1>Song Title Here</h1>
+<h1>Right Back To It</h1>
 <div class="key">Key of <select id="key-selector" aria-label="Transpose to key"><option value="Nashville">Nashville</option><option value="C">C</option><option value="Db">Db</option><option value="D">D</option><option value="Eb">Eb</option><option value="E">E</option><option value="F">F</option><option value="F#" selected>F#</option><option value="G">G</option><option value="Ab">Ab</option><option value="A">A</option><option value="Bb">Bb</option><option value="B">B</option></select></div>
+
+<h2>Intro</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|4    |1    |5    |6m 5  |">|B    |F#   |C#   |D#mC# |</span>
+<span class="chord" data-nash="|4    |1    |5sus2|5     |">|B    |F#   |C#sus2C#    |</span>
+</pre>
 
 <h2>Verse 1</h2>
 <pre class="lyrics">
-<span class="chord" data-nash="1                                   5">F#                                  C#</span>
-Placeholder lyric line one goes right here
-<span class="chord" data-nash="5                                1">C#                               F#</span>
-Placeholder lyric line two goes right here
+<span class="chord" data-nash="4                     1">B                     F#</span>
+Photograph of us in a spotlight on a
+<span class="chord" data-nash="5                         6      5">C#                        D#     C#</span>
+hot night, I was drifting in and out
+<span class="chord" data-nash="4                   1">B                   F#</span>
+Reticent on the off-chance I&#x27;m blunter than a
+<span class="chord" data-nash="5                    6        5">C#                   D#       C#</span>
+bullseye, beggin for peace of mind.
 </pre>
 
-<h2>Chorus 1</h2>
+<h2>Refrain</h2>
 <pre class="lyrics">
-<span class="chord" data-nash="1">F#</span>
-Placeholder chorus line one goes here
-<span class="chord" data-nash="                                  5  1">                                  C# F#</span>
-Placeholder chorus line two goes here
-</pre>
-
-<h2>Verse Solo Break</h2>
-<pre class="lyrics">
-<span class="chord" data-nash="|1    |5    |5    |1    |">|F#   |C#   |C#   |F#   |</span>
-<span class="chord" data-nash="|4 1  |1 6m |2    |5    |">|B F# |F#D#m|G#   |C#   |</span>
+<span class="chord" data-nash="  4            1  5    6 5">  B            F# C#   D#C#</span>
+I get ahead of myself
+<span class="chord" data-nash="4              1    5    6 5">B              F#   C#   D#C#</span>
+Bracing for a bombshell
 </pre>
 
 <h2>Verse 2</h2>
 <pre class="lyrics">
-<span class="chord" data-nash="1                              5">F#                             C#</span>
-Placeholder lyric line goes here
+<span class="chord" data-nash="4                       1">B                       F#</span>
+Your love written on a blank check wear it
+<span class="chord" data-nash="5sus2                   6m         5">C#sus2                  D#m        C#</span>
+around your neck, I was at a loss.
+<span class="chord" data-nash="    4                   1">    B                   F#</span>
+But you come to me on a fault line, deep inside
+<span class="chord" data-nash="  5                  6m           5">  C#                 D#m          C#</span>
+a goldmine, hovering like a moth
+</pre>
+
+<h2>Refrain</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="  4              1  5    6m 5">  B              F# C#   D#mC#</span>
+I lose a bit of myself
+<span class="chord" data-nash="4           1    5    6m 5">B           F#   C#   D#mC#</span>
+Laying out eggshells
+</pre>
+
+<h2>Chorus 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="          1            5">          F#           C#</span>
+I&#x27;ve been yours for so long
+<span class="chord" data-nash="      6m         4">      D#m        B</span>
+I get right back to it
+<span class="chord" data-nash="      1           5">      F#          C#</span>
+I let my mind run wild
+<span class="chord" data-nash="           6m     4">           D#m    B</span>
+Don&#x27;t know why I do it
+<span class="chord" data-nash="                    1">                    F#</span>
+But you just settle in
+<span class="chord" data-nash="       5            6m   5">       C#           D#m  C#</span>
+Like a song with no end
+<span class="chord" data-nash="   4            1">   B            F#</span>
+If I can keep up
+<span class="chord" data-nash="           5         6m  5">           C#        D#m C#</span>
+We&#x27;ll get right back to  it
+</pre>
+
+<h2>Instrumental x2</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|4    |1    |5    |6m 5  |">|B    |F#   |C#   |D#mC# |</span>
+</pre>
+
+<h2>Verse 3</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="   4                      1">   B                      F#</span>
+If I swerve in and out of my lane burning up
+<span class="chord" data-nash=".  5                 6         5">.  C#                D#        C#</span>
+an old flame turn a jealous eye
+<span class="chord" data-nash="4                     1">B                     F#</span>
+I&#x27;ll fall down into a fair game lick a
+<span class="chord" data-nash="5                  6         5">C#                 D#        C#</span>
+wound that was not ever mine.
+</pre>
+
+<h2>Refrain</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="  4            1  5    6 5">  B            F# C#   D#C#</span>
+I get ahead of myself
+<span class="chord" data-nash="4              1    5    6 5">B              F#   C#   D#C#</span>
+Bracing for a bombshell
+</pre>
+
+<h2>Chorus 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="          1            5">          F#           C#</span>
+I&#x27;ve been yours for so long
+<span class="chord" data-nash="      6m         4">      D#m        B</span>
+I get right back to it
+<span class="chord" data-nash="      1           5">      F#          C#</span>
+I let my mind run wild
+<span class="chord" data-nash="           6m     4">           D#m    B</span>
+Don&#x27;t know why I do it
+<span class="chord" data-nash="                    1">                    F#</span>
+But you just settle in
+<span class="chord" data-nash="       5            6m   5">       C#           D#m  C#</span>
+Like a song with no end
+<span class="chord" data-nash="   4            1">   B            F#</span>
+If I can keep up
+<span class="chord" data-nash="           5         6m  5">           C#        D#m C#</span>
+We&#x27;ll get right back to  it
+</pre>
+
+<h2>Instrumental x4</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|4    |1    |5    |6m 5  |">|B    |F#   |C#   |D#mC# |</span>
+</pre>
+
+<h2>Chorus 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="          1            5">          F#           C#</span>
+I&#x27;ve been yours for so long
+<span class="chord" data-nash="      6m         4">      D#m        B</span>
+I get right back to it
+<span class="chord" data-nash="      1           5">      F#          C#</span>
+I let my mind run wild
+<span class="chord" data-nash="           6m     4">           D#m    B</span>
+Don&#x27;t know why I do it
+<span class="chord" data-nash="                    1">                    F#</span>
+But you just settle in
+<span class="chord" data-nash="       5            6m   5">       C#           D#m  C#</span>
+Like a song with no end
+<span class="chord" data-nash="   4            1">   B            F#</span>
+If I can keep up
+<span class="chord" data-nash="           5         6m  5">           C#        D#m C#</span>
+We&#x27;ll get right back to  it
 </pre>
 
 <h2>Outro</h2>
 <pre class="lyrics">
-<span class="chord" data-nash="  57                 17">  C#7                F#7</span>
-Placeholder outro line one
-<span class="chord" data-nash="  5                  1">  C#                 F#</span>
-Placeholder outro line two
+<span class="chord" data-nash="           5         6m  5   1">           C#        D#m C#  F#</span>
+We&#x27;ll get right back to  it
+<span class="chord" data-nash="           5         6m  5">           C#        D#m C#</span>
+We&#x27;ll get right back to  it
+<span class="chord" data-nash="|4    |1    |5    |6m 5  |">|B    |F#   |C#   |D#mC# |</span>
+<span class="chord" data-nash="|4    |1    |5    |5sus2 |">|B    |F#   |C#   |C#sus2|</span>
+<span class="chord" data-nash="|4    |1    |5    |6m 5  |">|B    |F#   |C#   |D#mC# |</span>
+<span class="chord" data-nash="4">B</span>
 </pre>
 
 
