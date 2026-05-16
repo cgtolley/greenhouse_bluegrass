@@ -1,50 +1,142 @@
 {
-  "title": "Song Title Here",
-  "artist": "Artist Name",
-  "color": "#b54",
-  "listen": "https://www.youtube.com/watch?v=VIDEO_ID",
+  "title": "You Never Even Call Me By My Name",
+  "artist": "David Allen Coe",
+  "color": "#53a",
+  "listen": "https://www.youtube.com/watch?v=s4pZFsEdP3Y",
   "sources": [
-    ["ExampleSite", "https://example.com/some-song-page"]
+    ["UltimateGuitar", "https://tabs.ultimate-guitar.com/tab/david-allan-coe/you-never-even-called-me-by-my-name-chords-1789724"]
   ],
   "sections": [
+    {
+      "type": "intro",
+      "label": "Intro",
+      "lines": [
+        ["            1                57              1", 
+         "Well it was all that I could do to keep from cryin'"]
+        ]
+    },
     {
       "type": "verse",
       "label": "Verse 1",
       "lines": [
-        ["1                                   5", "Placeholder lyric line one goes right here"],
-        ["5                                1",    "Placeholder lyric line two goes right here"]
-      ]
-    },
-    {
-      "type": "chorus",
-      "label": "Chorus 1",
-      "lines": [
-        ["1",                                "Placeholder chorus line one goes here"],
-        ["                                  5  1", "Placeholder chorus line two goes here"]
-      ]
-    },
-    {
-      "type": "solo",
-      "label": "Verse Solo Break",
-      "lines": [
-        ["|1    |5    |5    |1    |", null],
-        ["|4 1  |1 6m |2    |5    |", null]
-      ]
+        ["     4                             1", 
+         "Sometimes it seemed so useless to remain"],
+        ["    4                                1",   
+         "But you don't have to call me darlin' darlin'"],
+        ["    1          57            1    57",   
+         "You never even call me by my name"]
+       ]
     },
     {
       "type": "verse",
       "label": "Verse 2",
       "lines": [
-        ["1                              5", "Placeholder lyric line goes here"]
+        ["1              57                 1", 
+         " You don't have to call me Waylon Jennings"],
+        ["                  57           1           17", 
+         "And you don't have to call me Charley Pride"],
+        ["    4                         1                6m",   
+         "And you don't have to call me Merle Haggard anymore"],
+        ["27                                57",   
+         "Even though you're on my fightin' side"]
+       ]
+    },
+    {
+      "type": "chorus",
+      "label": "Chorus 1",
+      "lines": [
+        ["         4                               1",                                
+         "And I'll hang around as long as you will let me"],
+        ["            57                     1   17", 
+         "and I never minded standing in the rain"],
+        ["    4                                 1",                                
+         "But you don't have to call me darlin' darlin'"],
+        ["    1          57            1    57", 
+         "You never even call me by my name"]
       ]
     },
     {
-      "type": "outro",
-      "label": "Outro",
+      "type": "verse",
+      "label": "Verse 3",
       "lines": [
-        ["  57                 17", "Placeholder outro line one"],
-        ["  5                  1",  "Placeholder outro line two"]
+        ["1                     57                    1", 
+         "Well I've heard my name a few times in your phonebook (hello hello)"],
+        ["                    57               1       17", 
+         "And I've seen it on signs where I've played"],
+        ["        4                     1                6m",   
+         "But the only time I know I'll hear David Allan Coe"],
+        ["    27                                57",   
+         "Is when Jesus has his final judgement day"]
+       ]
+    },
+    {
+      "type": "chorus",
+      "label": "Chorus 1",
+      "lines": [
+        ["         4                               1",                                
+         "And I'll hang around as long as you will let me"],
+        ["      57                           1   17", 
+         "and I never minded standing in the rain"],
+        ["    4                                 1",                                
+         "But you don't have to call me darlin' darlin'"],
+        ["    1          57            1    57", 
+         "You never even call me by my name"]
       ]
-    }
+    },
+    {"type":"break",
+     "label": "Speech",
+     "lines": [
+       ["1",
+        "Well a friend of mine named Steve Goodman wrote that song"],
+       ["               5", 
+        "And he told me it was the perfect country and western song."],
+       ["", 
+        "I wrote him back a letter and told him it was not the perfect"],
+       ["                                           1", 
+        "country and western song because he hadn't said anything at all"],
+       ["              5                            1                5", 
+        "about mama, or trains, or trucks, or prison, or gettin drunk."],
+       ["                 1", 
+        "well he sat down and wrote another verse to the song and he sent it to me"],
+       ["", 
+        "and after readin' it I realized my friend had written the perfect"],
+       ["", 
+        "country and western song, and I felt obliged to included on this album."],
+       ["", 
+        "The last verse goes like this here"]
+     ]
+    },
+    {
+      "type": "verse",
+      "label": "Verse 3",
+      "lines": [
+        ["1                     57                    1", 
+         "Well I was drunk the day my mom got out of prison"],
+        ["                       57        1    17", 
+         "And I went to pick her up in the rain"],
+        ["       4                                   1      6m",   
+         "But before I could get to the station in a pickup truck"],
+        ["    27                           57",   
+         "She got run over by a damned ol' train"]
+       ]
+    },
+    {
+      "type": "chorus",
+      "label": "Chorus 1",
+      "lines": [
+        ["         4                               1",                                
+         "And I'll hang around as long as you will let me"],
+        ["      57                           1   17", 
+         "and I never minded standing in the rain"],
+        ["    4                                 1",                                
+         "But you don't have to call me darlin' darlin'"],
+        ["    1           57",
+         "You never even call me"],
+        ["       1                     4",
+         "Well I wonder why you don't call me"],
+        ["    1              57            4    1", 
+         "Why don't you ever call me by my name?"]
+      ]
+    },
   ]
 }
