@@ -186,6 +186,19 @@
           "https://tabs.ultimate-guitar.com/tab/david-allan-coe/you-never-even-called-me-by-my-name-chords-1789724"
         ]
       ]
+    },
+    {
+      "title": "Song Title Here",
+      "artist": "Artist Name",
+      "key": "F#",
+      "file": "songs/right_back_to_it.html",
+      "listen": "https://www.youtube.com/watch?v=VIDEO_ID",
+      "sources": [
+        [
+          "ExampleSite",
+          "https://example.com/some-song-page"
+        ]
+      ]
     }
   ]
 }
