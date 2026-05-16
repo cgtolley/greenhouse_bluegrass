@@ -1,49 +1,94 @@
 {
-  "title": "Song Title Here",
-  "artist": "Artist Name",
-  "color": "#b54",
-  "listen": "https://www.youtube.com/watch?v=VIDEO_ID",
+  "title": "Blue Moon of Kentucky",
+  "artist": "Bill Munroe & the Bluegrass Boys",
+  "color": "#147",
+  "listen": "hhttps://www.youtube.com/watch?v=4syA9aNnNa0",
   "sources": [
     ["ExampleSite", "https://example.com/some-song-page"]
   ],
   "sections": [
     {
+      "type": "outro",
+      "label": "Outro",
+      "lines": [
+        ["|1  17|4    |", 
+         null],
+        ["|1  5 |1    |", 
+         null]
+      ]
+    },
+    {
       "type": "verse",
       "label": "Verse 1",
       "lines": [
-        ["1                                   5", "Placeholder lyric line one goes right here"],
-        ["5                                1",    "Placeholder lyric line two goes right here"]
+        ["     1           17            4", 
+         "Blue moon of Kentucky keep on shining"],
+        ["      1                 17                 5",    
+         "Shine on the one that's gone and proved untrue"],
+        ["     1           17             4", 
+         "Blue moon of Kentucky keep on shining"],
+        ["      1                 5                1",    
+         "Shine on the one that's gone and left me blue"]
       ]
     },
     {
       "type": "chorus",
-      "label": "Chorus 1",
+      "label": "Chorus",
       "lines": [
-        ["1",                                "Placeholder chorus line one goes here"],
-        ["                                  5  1", "Placeholder chorus line two goes here"]
+        ["       4                        1", 
+         "It was on a moonlight night the stars were shining bright"],
+        ["          4                 1                            5",    
+         "When they whispered from on high your love has said good-bye"],
+        ["     1           17             4", 
+         "Blue moon of Kentucky keep on shining"],
+        ["      1                 5                 1",    
+         "Shine on the one that's gone and said goodbye"]
       ]
     },
     {
       "type": "solo",
-      "label": "Verse Solo Break",
+      "label": "Instrumental",
       "lines": [
-        ["|1    |5    |5    |1    |", null],
-        ["|4 1  |1 6m |2    |5    |", null]
+        ["|1 17 |4    |1 17 |5    |", null],
+        ["|1 17 |4    |1  5 |1    |", null]
       ]
     },
     {
       "type": "verse",
-      "label": "Verse 2",
+      "label": "Verse 1",
       "lines": [
-        ["1                              5", "Placeholder lyric line goes here"]
+        ["     1           17            4", 
+         "Blue moon of Kentucky keep on shining"],
+        ["      1                 17                 5",    
+         "Shine on the one that's gone and proved untrue"],
+        ["     1           17             4", 
+         "Blue moon of Kentucky keep on shining"],
+        ["      1                 5                1",    
+         "Shine on the one that's gone and left me blue"]
+      ]
+    },
+    {
+      "type": "chorus",
+      "label": "Chorus",
+      "lines": [
+        ["       4                        1", 
+         "It was on a moonlight night the stars were shining bright"],
+        ["          4                 1                            5",    
+         "When they whispered from on high your love has said good-bye"],
+        ["     1           17             4", 
+         "Blue moon of Kentucky keep on shining"],
+        ["      1                 5                 1",    
+         "Shine on the one that's gone and said goodbye"]
       ]
     },
     {
       "type": "outro",
       "label": "Outro",
       "lines": [
-        ["  57                 17", "Placeholder outro line one"],
-        ["  5                  1",  "Placeholder outro line two"]
+        ["  57                 17", 
+         "Placeholder outro line one"],
+        ["  5                  1", 
+         "Placeholder outro line two"]
       ]
     }
   ]
