@@ -147,6 +147,19 @@
           "https://chordify.net/chords/heaven-in-a-glass-brotherkenzie-topic"
         ]
       ]
+    },
+    {
+      "title": "Dark Hollow",
+      "artist": "Trad",
+      "key": "G",
+      "file": "songs/dark_hollow.html",
+      "listen": "https://www.youtube.com/watch?v=h6jLKzBb_cQ",
+      "sources": [
+        [
+          "searsportjam",
+          "https://www.searsportjam.com/uploads/1/4/4/7/144704393/dark_hollow_in_g.pdf"
+        ]
+      ]
     }
   ]
 }
