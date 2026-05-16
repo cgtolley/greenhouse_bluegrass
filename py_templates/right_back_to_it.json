@@ -11,7 +11,7 @@
       "type": "intro",
       "label": "Intro",
       "lines": [
-        ["|4    |1    |5     |6m 5  |", null],
+        ["|4    |1    |5     |6m  5 |", null],
         ["|4    |1    |5sus2 |5     |", null]
       ]
     },
@@ -21,11 +21,11 @@
       "lines": [
         ["4                     1", 
          "Photograph of us in a spotlight on a"],
-        ["5                         6      5",    
+        ["5                         6m      5",    
          "hot night, I was drifting in and out"],
         ["4                   1",    
          "Reticent on the off-chance I'm blunter than a"],
-        ["5                    6        5",    
+        ["5                    6m        5",    
          "bullseye, beggin for peace of mind."]
       ]
     },
@@ -33,9 +33,9 @@
       "type": "refrain",
       "label": "Refrain",
       "lines": [
-        ["  4            1  5    6 5", 
+        ["  4            1  5    6m  5", 
          "I get ahead of myself"],
-        ["4              1    5    6 5",
+        ["4              1    5    6m  5",
          "Bracing for a bombshell"]
       ]
     },
@@ -57,9 +57,9 @@
       "type": "refrain",
       "label": "Refrain",
       "lines": [
-        ["  4              1  5    6m 5", 
+        ["  4              1  5    6m  5", 
          "I lose a bit of myself"],
-        ["4           1    5    6m 5",
+        ["4           1    5    6m  5",
          "Laying out eggshells"]
       ]
     },
@@ -89,7 +89,7 @@
       "type": "solo",
       "label": "Instrumental x2",
       "lines": [
-        ["|4    |1    |5    |6m 5  |", null]
+        ["|4    |1    |5    |6m  5 |", null]
       ]
     },
     {
@@ -98,11 +98,11 @@
       "lines": [
         ["   4                      1", 
          "If I swerve in and out of my lane burning up"],
-        [".  5                 6         5",    
+        [".  5                 6m         5",    
          "an old flame turn a jealous eye"],
         ["4                     1",    
          "I'll fall down into a fair game lick a"],
-        ["5                  6         5",    
+        ["5                  6m         5",    
          "wound that was not ever mine."]
       ]
     },
@@ -110,9 +110,9 @@
       "type": "refrain",
       "label": "Refrain",
       "lines": [
-        ["  4            1  5    6 5", 
+        ["  4            1  5    6m  5", 
          "I get ahead of myself"],
-        ["4              1    5    6 5",
+        ["4              1    5    6m  5",
          "Bracing for a bombshell"]
       ]
     },
@@ -142,7 +142,7 @@
       "type": "solo",
       "label": "Instrumental x4",
       "lines": [
-        ["|4    |1    |5    |6m 5  |", null]
+        ["|4    |1    |5    |6m  5 |", null]
       ]
     },
     {
@@ -175,9 +175,9 @@
          "We'll get right back to  it"],
         ["           5         6m  5", 
          "We'll get right back to  it"],
-        ["|4    |1    |5    |6m 5  |", null],
+        ["|4    |1    |5    |6m  5 |", null],
         ["|4    |1    |5    |5sus2 |", null],
-        ["|4    |1    |5    |6m 5  |", null],
+        ["|4    |1    |5    |6m  5 |", null],
         ["4", null]
       ]
     }
