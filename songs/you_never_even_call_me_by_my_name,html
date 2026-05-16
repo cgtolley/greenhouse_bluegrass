@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You Never Even Call Me By My Name</title>
+<style>
+  html {
+    font-size: clamp(13px, 3.2vw, 16px);
+  }
+  body {
+    font-family: "Courier New", Courier, monospace;
+    max-width: 720px;
+    padding: 0 1rem;
+    margin: 1.1rem auto;
+    color: #222;
+    line-height: 1.4;
+  }
+  h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+  h1 {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: #2b1a56;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .key {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+  }
+  .key select {
+    font-family: inherit;
+    font-size: inherit;
+    color: #5e38bc;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 0.2rem;
+    margin-left: 0.3rem;
+    font-weight: bold;
+  }
+  pre.lyrics {
+    font-family: "Courier New", Courier, monospace;
+    /* Scaled so the longest line (73 chars) fits the available width.
+       0.62 ≈ Courier New character-width / font-size ratio (small safety margin).
+       Worst-case length across all keys, so transposing live never overflows. */
+    font-size: clamp(0.4rem, calc((100vw - 2rem) / 73 / 0.62), 0.95rem);
+    line-height: 1.4;
+    margin: 0;
+    white-space: pre;
+  }
+  pre.lyrics .chord {
+    color: #5e38bc;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body data-default-key="C">
+
+<h1>You Never Even Call Me By My Name</h1>
+<div class="key">Key of <select id="key-selector" aria-label="Transpose to key"><option value="Nashville">Nashville</option><option value="C" selected>C</option><option value="Db">Db</option><option value="D">D</option><option value="Eb">Eb</option><option value="E">E</option><option value="F">F</option><option value="F#">F#</option><option value="G">G</option><option value="Ab">Ab</option><option value="A">A</option><option value="Bb">Bb</option><option value="B">B</option></select></div>
+
+<h2>Intro</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="            1                57              1">            C                G7              C</span>
+Well it was all that I could do to keep from cryin&#x27;
+</pre>
+
+<h2>Verse 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="     4                             1">     F                             C</span>
+Sometimes it seemed so useless to remain
+<span class="chord" data-nash="    4                                1">    F                                C</span>
+But you don&#x27;t have to call me darlin&#x27; darlin&#x27;
+<span class="chord" data-nash="    1          57            1    57">    C          G7            C    G7</span>
+You never even call me by my name
+</pre>
+
+<h2>Verse 2</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1              57                 1">C              G7                 C</span>
+ You don&#x27;t have to call me Waylon Jennings
+<span class="chord" data-nash="                  57           1           17">                  G7           C           C7</span>
+And you don&#x27;t have to call me Charley Pride
+<span class="chord" data-nash="    4                         1                6m">    F                         C                Am</span>
+And you don&#x27;t have to call me Merle Haggard anymore
+<span class="chord" data-nash="27                                57">D7                                G7</span>
+Even though you&#x27;re on my fightin&#x27; side
+</pre>
+
+<h2>Chorus 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="         4                               1">         F                               C</span>
+And I&#x27;ll hang around as long as you will let me
+<span class="chord" data-nash="            57                     1   17">            G7                     C   C7</span>
+and I never minded standing in the rain
+<span class="chord" data-nash="    4                                 1">    F                                 C</span>
+But you don&#x27;t have to call me darlin&#x27; darlin&#x27;
+<span class="chord" data-nash="    1          57            1    57">    C          G7            C    G7</span>
+You never even call me by my name
+</pre>
+
+<h2>Verse 3</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1                     57                    1">C                     G7                    C</span>
+Well I&#x27;ve heard my name a few times in your phonebook (hello hello)
+<span class="chord" data-nash="                    57               1       17">                    G7               C       C7</span>
+And I&#x27;ve seen it on signs where I&#x27;ve played
+<span class="chord" data-nash="        4                     1                6m">        F                     C                Am</span>
+But the only time I know I&#x27;ll hear David Allan Coe
+<span class="chord" data-nash="    27                                57">    D7                                G7</span>
+Is when Jesus has his final judgement day
+</pre>
+
+<h2>Chorus 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="         4                               1">         F                               C</span>
+And I&#x27;ll hang around as long as you will let me
+<span class="chord" data-nash="      57                           1   17">      G7                           C   C7</span>
+and I never minded standing in the rain
+<span class="chord" data-nash="    4                                 1">    F                                 C</span>
+But you don&#x27;t have to call me darlin&#x27; darlin&#x27;
+<span class="chord" data-nash="    1          57            1    57">    C          G7            C    G7</span>
+You never even call me by my name
+</pre>
+
+<h2>Speech</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1">C</span>
+Well a friend of mine named Steve Goodman wrote that song
+<span class="chord" data-nash="               5">               G</span>
+And he told me it was the perfect country and western song.
+<span class="chord" data-nash=""></span>
+I wrote him back a letter and told him it was not the perfect
+<span class="chord" data-nash="                                           1">                                           C</span>
+country and western song because he hadn&#x27;t said anything at all
+<span class="chord" data-nash="              5                            1                5">              G                            C                G</span>
+about mama, or trains, or trucks, or prison, or gettin drunk.
+<span class="chord" data-nash="                 1">                 C</span>
+well he sat down and wrote another verse to the song and he sent it to me
+<span class="chord" data-nash=""></span>
+and after readin&#x27; it I realized my friend had written the perfect
+<span class="chord" data-nash=""></span>
+country and western song, and I felt obliged to included on this album.
+<span class="chord" data-nash=""></span>
+The last verse goes like this here
+</pre>
+
+<h2>Verse 3</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="1                     57                    1">C                     G7                    C</span>
+Well I was drunk the day my mom got out of prison
+<span class="chord" data-nash="                       57        1    17">                       G7        C    C7</span>
+And I went to pick her up in the rain
+<span class="chord" data-nash="       4                                   1      6m">       F                                   C      Am</span>
+But before I could get to the station in a pickup truck
+<span class="chord" data-nash="    27                           57">    D7                           G7</span>
+She got run over by a damned ol&#x27; train
+</pre>
+
+<h2>Chorus 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="         4                               1">         F                               C</span>
+And I&#x27;ll hang around as long as you will let me
+<span class="chord" data-nash="      57                           1   17">      G7                           C   C7</span>
+and I never minded standing in the rain
+<span class="chord" data-nash="    4                                 1">    F                                 C</span>
+But you don&#x27;t have to call me darlin&#x27; darlin&#x27;
+<span class="chord" data-nash="    1           57">    C           G7</span>
+You never even call me
+<span class="chord" data-nash="       1                     4">       C                     F</span>
+Well I wonder why you don&#x27;t call me
+<span class="chord" data-nash="    1              57            4    1">    C              G7            F    C</span>
+Why don&#x27;t you ever call me by my name?
+</pre>
+
+
+<script>
+(function () {
+  var NOTES_SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+  var NOTES_FLAT  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  var KEY_TO_SEMITONE = {"C":0,"C#":1,"Db":1,"D":2,"D#":3,"Eb":3,"E":4,"F":5,"F#":6,"Gb":6,"G":7,"G#":8,"Ab":8,"A":9,"A#":10,"Bb":10,"B":11};
+  var FLAT_KEYS = {"F":1,"Bb":1,"Eb":1,"Ab":1,"Db":1,"Gb":1};
+  var SDS = {1:0,2:2,3:4,4:5,5:7,6:9,7:11};
+  var CHORD_RE = /(?<![A-Za-z0-9])([b#])?([1-7])(m(?!aj)|maj|dim|aug|sus[24]?)?(7|9|11|13)?(?:\/([b#])?([1-7]))?(?![A-Za-z0-9])/g;
+
+  function noteAt(key, offset, preferFlats) {
+    if (preferFlats === null) preferFlats = !!FLAT_KEYS[key];
+    var idx = ((KEY_TO_SEMITONE[key] + offset) % 12 + 12) % 12;
+    return preferFlats ? NOTES_FLAT[idx] : NOTES_SHARP[idx];
+  }
+
+  function transposeChord(m, key) {
+    var acc = m[1], degStr = m[2], qual = m[3], ext = m[4], bassAcc = m[5], bassStr = m[6];
+    var offset = SDS[parseInt(degStr, 10)];
+    var pf = null;
+    if (acc === "b") { offset--; pf = true; }
+    else if (acc === "#") { offset++; pf = false; }
+    var out = noteAt(key, offset, pf);
+    if (qual) out += qual;
+    if (ext) out += ext;
+    if (bassStr) {
+      var bo = SDS[parseInt(bassStr, 10)];
+      var bpf = pf;
+      if (bassAcc === "b") { bo--; bpf = true; }
+      else if (bassAcc === "#") { bo++; bpf = false; }
+      out += "/" + noteAt(key, bo, bpf);
+    }
+    return out;
+  }
+
+  function transposeRow(row, key) {
+    var chars = row.split("");
+    var re = new RegExp(CHORD_RE.source, "g");
+    var m;
+    while ((m = re.exec(row)) !== null) {
+      var start = m.index;
+      var newChord = transposeChord(m, key);
+      for (var j = 0; j < newChord.length; j++) {
+        if (start + j < chars.length) chars[start + j] = newChord[j];
+        else chars.push(newChord[j]);
+      }
+      var oldLen = m[0].length;
+      if (newChord.length < oldLen) {
+        for (var k = newChord.length; k < oldLen; k++) chars[start + k] = " ";
+      }
+    }
+    return chars.join("").replace(/\s+$/, "");
+  }
+
+  function rerender(key) {
+    var spans = document.querySelectorAll(".chord[data-nash]");
+    if (key === "Nashville") {
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].textContent = spans[i].dataset.nash.replace(/\s+$/, "");
+      }
+    } else if (key in KEY_TO_SEMITONE) {
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+      }
+    } else {
+      return false;
+    }
+    var sel = document.getElementById("key-selector");
+    if (sel && sel.value !== key) sel.value = key;
+    return true;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var urlKey = params.get("key");
+  if (urlKey && (urlKey === "Nashville" || urlKey in KEY_TO_SEMITONE)) rerender(urlKey);
+
+  var sel = document.getElementById("key-selector");
+  if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
+})();
+</script>
+
+</body>
+</html>
