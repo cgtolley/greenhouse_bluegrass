@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chinese Translation</title>
+<style>
+  html {
+    font-size: clamp(13px, 3.2vw, 16px);
+  }
+  body {
+    font-family: "Courier New", Courier, monospace;
+    max-width: 720px;
+    padding: 0 1rem;
+    margin: 1.1rem auto;
+    color: #222;
+    line-height: 1.4;
+  }
+  h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+  h1 {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: #1a5645;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .key {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+  }
+  .key select {
+    font-family: inherit;
+    font-size: inherit;
+    color: #38bc97;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 0.2rem;
+    margin-left: 0.3rem;
+    font-weight: bold;
+  }
+  pre.lyrics {
+    font-family: "Courier New", Courier, monospace;
+    /* Scaled so the longest line (56 chars) fits the available width.
+       0.62 ≈ Courier New character-width / font-size ratio (small safety margin).
+       Worst-case length across all keys, so transposing live never overflows. */
+    font-size: clamp(0.4rem, calc((100vw - 2rem) / 56 / 0.62), 0.95rem);
+    line-height: 1.4;
+    margin: 0;
+    white-space: pre;
+  }
+  pre.lyrics .chord {
+    color: #38bc97;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body data-default-key="D">
+
+<h1>Chinese Translation</h1>
+<div class="key">Key of <select id="key-selector" aria-label="Transpose to key"><option value="Nashville">Nashville</option><option value="C">C</option><option value="Db">Db</option><option value="D" selected>D</option><option value="Eb">Eb</option><option value="E">E</option><option value="F">F</option><option value="F#">F#</option><option value="G">G</option><option value="Ab">Ab</option><option value="A">A</option><option value="Bb">Bb</option><option value="B">B</option></select></div>
+
+<h2>Part 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="           1">           D</span>
+I sailed a wild, wild sea
+<span class="chord" data-nash="             2m">             Em</span>
+Climbed up a tall, tall mountain
+<span class="chord" data-nash="         1">         D</span>
+I met an old, old man
+<span class="chord" data-nash="          5">          A</span>
+Beneath a weeping willow tree
+<span class="chord" data-nash="             1         ">             D</span>
+He said &#x27;Now if you got some questions,
+<span class="chord" data-nash="        2m">        Em</span>
+Go and lay them at my feet
+<span class="chord" data-nash="       1">       D</span>
+But my time here is brief
+<span class="chord" data-nash="          5">          A</span>
+So you&#x27;ll have to pick just three.&#x27;
+<span class="chord" data-nash=""></span>
+And I said:
+<span class="chord" data-nash="1                                           4maj7">D                                           Gmaj7</span>
+&#x27;What do you do with the pieces of a broken heart?
+<span class="chord" data-nash="                                        1">                                        D</span>
+And how can a man like me remain in the light?
+<span class="chord" data-nash="       1                  17">       D                  D7</span>
+And if life is really as short as they say,
+<span class="chord" data-nash="1                    4m">D                    Gm</span>
+Why is the night so long?&#x27;
+<span class="chord" data-nash="              5                                    1">              A                                    D</span>
+And then the sun went down and he sang for me this song:
+</pre>
+
+<h2>Bridge</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="      1                          2m">      D                          Em</span>
+See I once was a young fool like you
+<span class="chord" data-nash=" 1                        5"> D                        A</span>
+Afraid to do the things I knew I had to do
+<span class="chord" data-nash="     5                     ">     A</span>
+So I played an escapade just like you
+<span class="chord" data-nash="2m                           5">Em                           A</span>
+Played an escapade just like you
+</pre>
+
+<h2>Part 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="           1">           D</span>
+I sailed a wild, wild sea
+<span class="chord" data-nash="             2m">             Em</span>
+Climbed up a tall, tall mountain
+<span class="chord" data-nash="         1">         D</span>
+I met an old, old man
+<span class="chord" data-nash="          5">          A</span>
+He sat beneath a sapling tree
+<span class="chord" data-nash="             1         ">             D</span>
+He said &#x27;Now if you got some questions,
+<span class="chord" data-nash="        2m">        Em</span>
+Go and lay them at my feet
+<span class="chord" data-nash="       1">       D</span>
+But my time here is brief
+<span class="chord" data-nash="          5">          A</span>
+So you&#x27;ll have to pick just three.&#x27;
+<span class="chord" data-nash=""></span>
+And I said:
+<span class="chord" data-nash="1                                           4maj7">D                                           Gmaj7</span>
+&#x27;What do you do with the pieces of a broken heart?
+<span class="chord" data-nash="                                        1">                                        D</span>
+And how can a man like me remain in the light?
+<span class="chord" data-nash="       1                  17">       D                  D7</span>
+And if life is really as short as they say,
+<span class="chord" data-nash="1                    4m">D                    Gm</span>
+Why is the night so long?&#x27;
+<span class="chord" data-nash="              5                                    1">              A                                    D</span>
+And then the sun went down and he sang for me this song:
+</pre>
+
+<h2>Outro</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|1    |4maj7  |4maj7  |1     |">|D    |Gmaj7  |Gmaj7  |D     |</span>
+<span class="chord" data-nash="|1  17|1  4m  |5      |1     |">|D  D7|D  Gm  |A      |D     |</span>
+</pre>
+
+
+<script>
+(function () {
+  var NOTES_SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+  var NOTES_FLAT  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  var KEY_TO_SEMITONE = {"C":0,"C#":1,"Db":1,"D":2,"D#":3,"Eb":3,"E":4,"F":5,"F#":6,"Gb":6,"G":7,"G#":8,"Ab":8,"A":9,"A#":10,"Bb":10,"B":11};
+  var FLAT_KEYS = {"F":1,"Bb":1,"Eb":1,"Ab":1,"Db":1,"Gb":1};
+  var SDS = {1:0,2:2,3:4,4:5,5:7,6:9,7:11};
+  var CHORD_RE = /(?<![A-Za-z0-9])([b#])?([1-7])(m(?!aj)|maj|dim|aug|sus[24]?)?(7|9|11|13)?(?:\/([b#])?([1-7]))?(?![A-Za-z0-9])/g;
+
+  function noteAt(key, offset, preferFlats) {
+    if (preferFlats === null) preferFlats = !!FLAT_KEYS[key];
+    var idx = ((KEY_TO_SEMITONE[key] + offset) % 12 + 12) % 12;
+    return preferFlats ? NOTES_FLAT[idx] : NOTES_SHARP[idx];
+  }
+
+  function transposeChord(m, key) {
+    var acc = m[1], degStr = m[2], qual = m[3], ext = m[4], bassAcc = m[5], bassStr = m[6];
+    var offset = SDS[parseInt(degStr, 10)];
+    var pf = null;
+    if (acc === "b") { offset--; pf = true; }
+    else if (acc === "#") { offset++; pf = false; }
+    var out = noteAt(key, offset, pf);
+    if (qual) out += qual;
+    if (ext) out += ext;
+    if (bassStr) {
+      var bo = SDS[parseInt(bassStr, 10)];
+      var bpf = pf;
+      if (bassAcc === "b") { bo--; bpf = true; }
+      else if (bassAcc === "#") { bo++; bpf = false; }
+      out += "/" + noteAt(key, bo, bpf);
+    }
+    return out;
+  }
+
+  function transposeRow(row, key) {
+    var chars = row.split("");
+    var re = new RegExp(CHORD_RE.source, "g");
+    var m;
+    while ((m = re.exec(row)) !== null) {
+      var start = m.index;
+      var newChord = transposeChord(m, key);
+      for (var j = 0; j < newChord.length; j++) {
+        if (start + j < chars.length) chars[start + j] = newChord[j];
+        else chars.push(newChord[j]);
+      }
+      var oldLen = m[0].length;
+      if (newChord.length < oldLen) {
+        for (var k = newChord.length; k < oldLen; k++) chars[start + k] = " ";
+      }
+    }
+    return chars.join("").replace(/\s+$/, "");
+  }
+
+  function rerender(key) {
+    var spans = document.querySelectorAll(".chord[data-nash]");
+    if (key === "Nashville") {
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].textContent = spans[i].dataset.nash.replace(/\s+$/, "");
+      }
+    } else if (key in KEY_TO_SEMITONE) {
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+      }
+    } else {
+      return false;
+    }
+    var sel = document.getElementById("key-selector");
+    if (sel && sel.value !== key) sel.value = key;
+    return true;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var urlKey = params.get("key");
+  if (urlKey && (urlKey === "Nashville" || urlKey in KEY_TO_SEMITONE)) rerender(urlKey);
+
+  var sel = document.getElementById("key-selector");
+  if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
+})();
+</script>
+
+</body>
+</html>
