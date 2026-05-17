@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Old Home Place</title>
+<style>
+  html {
+    font-size: clamp(13px, 3.2vw, 16px);
+  }
+  body {
+    font-family: "Courier New", Courier, monospace;
+    max-width: 720px;
+    padding: 0 1rem;
+    margin: 1.1rem auto;
+    color: #222;
+    line-height: 1.4;
+  }
+  h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+  h1 {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: #562b1a;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .key {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+  }
+  .key select {
+    font-family: inherit;
+    font-size: inherit;
+    color: #bc5e38;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 0.2rem;
+    margin-left: 0.3rem;
+    font-weight: bold;
+  }
+  pre.lyrics {
+    font-family: "Courier New", Courier, monospace;
+    /* Scaled so the longest line (51 chars) fits the available width.
+       0.62 ≈ Courier New character-width / font-size ratio (small safety margin).
+       Worst-case length across all keys, so transposing live never overflows. */
+    font-size: clamp(0.4rem, calc((100vw - 2rem) / 51 / 0.62), 0.95rem);
+    line-height: 1.4;
+    margin: 0;
+    white-space: pre;
+  }
+  pre.lyrics .chord {
+    color: #bc5e38;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body data-default-key="D">
+
+<h1>Old Home Place</h1>
+<div class="key">Key of <select id="key-selector" aria-label="Transpose to key"><option value="Nashville">Nashville</option><option value="C">C</option><option value="Db">Db</option><option value="D" selected>D</option><option value="Eb">Eb</option><option value="E">E</option><option value="F">F</option><option value="F#">F#</option><option value="G">G</option><option value="Ab">Ab</option><option value="A">A</option><option value="Bb">Bb</option><option value="B">B</option></select></div>
+
+<h2>Intro</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|1  37 |4  1  |1     |5     |">|D  F#7|G  D  |D     |A     |</span>
+<span class="chord" data-nash="|1  37 |4  1  |1  5  |1     |">|D  F#7|G  D  |D  A  |D     |</span>
+</pre>
+
+<h2>Verse 1</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="          1        37          4         1">          D        F#7         G         D</span>
+It&#x27;s been ten long years since I left my home
+<span class="chord" data-nash="                          4">                          G</span>
+In the holler where I was born
+<span class="chord" data-nash="          1         37              4          1">          D         F#7             G          D</span>
+Where the cool fall nights make the wood smoke rise
+<span class="chord" data-nash="                   5         1">                   A         D</span>
+And the fox hunter blows his horn
+</pre>
+
+<h2>Verse 2</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="  1       37          4             1">  D       F#7         G             D</span>
+I fell in love with a girl from the town
+<span class="chord" data-nash="                            4">                            G</span>
+I thought that she would be true
+<span class="chord" data-nash="  1     37      4        1">  D     F#7     G        D</span>
+I ran away to Charlottesville
+<span class="chord" data-nash="                 5         1">                 A         D</span>
+And worked in a sawmill in town
+</pre>
+
+<h2>Chorus</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="5                          1">A                          D</span>
+What have they done to the old home place?
+<span class="chord" data-nash="27                   57">E7                   A7</span>
+Why did they tear it down?
+<span class="chord" data-nash="    1         47       5           1">    D         G7       A           D</span>
+And why did I leave my plow in the field
+<span class="chord" data-nash="               5          1">               A          D</span>
+And look for a job in the town?
+</pre>
+
+<h2>Instrumental</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|1  37 |4  1  |1     |5     |">|D  F#7|G  D  |D     |A     |</span>
+<span class="chord" data-nash="|1  37 |4  1  |1  5  |1     |">|D  F#7|G  D  |D  A  |D     |</span>
+</pre>
+
+<h2>Verse 3</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="          1        37          4         1">          D        F#7         G         D</span>
+Well my girl ran off with somebody else
+<span class="chord" data-nash="                          4">                          G</span>
+The tariffs took all my pay
+<span class="chord" data-nash="          1         37              4          1">          D         F#7             G          D</span>
+And here I stand where the old home stood
+<span class="chord" data-nash="            5         1">            A         D</span>
+Before they took it away
+</pre>
+
+<h2>Verse 4</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="        1         37            4         1">        D         F#7           G         D</span>
+Now the geese fly south and the cold wind blows
+<span class="chord" data-nash="                            4">                            G</span>
+As I stand here and hang my head
+<span class="chord" data-nash="      1      37         4       1">      D      F#7        G       D</span>
+I&#x27;ve lost my love, I&#x27;ve lost my home
+<span class="chord" data-nash="          5               1">          A               D</span>
+And now I wish that I was dead
+</pre>
+
+<h2>Chorus</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="5                          1">A                          D</span>
+What have they done to the old home place?
+<span class="chord" data-nash="27                   57">E7                   A7</span>
+Why did they tear it down?
+<span class="chord" data-nash="    1         47       5           1">    D         G7       A           D</span>
+And why did I leave my plow in the field
+<span class="chord" data-nash="               5          1">               A          D</span>
+And look for a job in the town?
+</pre>
+
+<h2>Instrumental</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="|1  37 |4  1  |1     |5     |">|D  F#7|G  D  |D     |A     |</span>
+<span class="chord" data-nash="|1  37 |4  1  |1  5  |1     |">|D  F#7|G  D  |D  A  |D     |</span>
+</pre>
+
+<h2>Chorus</h2>
+<pre class="lyrics">
+<span class="chord" data-nash="5                          1">A                          D</span>
+What have they done to the old home place?
+<span class="chord" data-nash="27                   57">E7                   A7</span>
+Why did they tear it down?
+<span class="chord" data-nash="    1         47       5           1">    D         G7       A           D</span>
+And why did I leave my plow in the field
+<span class="chord" data-nash="               5          1">               A          D</span>
+And look for a job in the town?
+</pre>
+
+
+<script>
+(function () {
+  var NOTES_SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+  var NOTES_FLAT  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  var KEY_TO_SEMITONE = {"C":0,"C#":1,"Db":1,"D":2,"D#":3,"Eb":3,"E":4,"F":5,"F#":6,"Gb":6,"G":7,"G#":8,"Ab":8,"A":9,"A#":10,"Bb":10,"B":11};
+  var FLAT_KEYS = {"F":1,"Bb":1,"Eb":1,"Ab":1,"Db":1,"Gb":1};
+  var SDS = {1:0,2:2,3:4,4:5,5:7,6:9,7:11};
+  var CHORD_RE = /(?<![A-Za-z0-9])([b#])?([1-7])(m(?!aj)|maj|dim|aug|sus[24]?)?(7|9|11|13)?(?:\/([b#])?([1-7]))?(?![A-Za-z0-9])/g;
+
+  function noteAt(key, offset, preferFlats) {
+    if (preferFlats === null) preferFlats = !!FLAT_KEYS[key];
+    var idx = ((KEY_TO_SEMITONE[key] + offset) % 12 + 12) % 12;
+    return preferFlats ? NOTES_FLAT[idx] : NOTES_SHARP[idx];
+  }
+
+  function transposeChord(m, key) {
+    var acc = m[1], degStr = m[2], qual = m[3], ext = m[4], bassAcc = m[5], bassStr = m[6];
+    var offset = SDS[parseInt(degStr, 10)];
+    var pf = null;
+    if (acc === "b") { offset--; pf = true; }
+    else if (acc === "#") { offset++; pf = false; }
+    var out = noteAt(key, offset, pf);
+    if (qual) out += qual;
+    if (ext) out += ext;
+    if (bassStr) {
+      var bo = SDS[parseInt(bassStr, 10)];
+      var bpf = pf;
+      if (bassAcc === "b") { bo--; bpf = true; }
+      else if (bassAcc === "#") { bo++; bpf = false; }
+      out += "/" + noteAt(key, bo, bpf);
+    }
+    return out;
+  }
+
+  function transposeRow(row, key) {
+    var chars = row.split("");
+    var re = new RegExp(CHORD_RE.source, "g");
+    var m;
+    while ((m = re.exec(row)) !== null) {
+      var start = m.index;
+      var newChord = transposeChord(m, key);
+      for (var j = 0; j < newChord.length; j++) {
+        if (start + j < chars.length) chars[start + j] = newChord[j];
+        else chars.push(newChord[j]);
+      }
+      var oldLen = m[0].length;
+      if (newChord.length < oldLen) {
+        for (var k = newChord.length; k < oldLen; k++) chars[start + k] = " ";
+      }
+    }
+    return chars.join("").replace(/\s+$/, "");
+  }
+
+  function rerender(key) {
+    var spans = document.querySelectorAll(".chord[data-nash]");
+    if (key === "Nashville") {
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].textContent = spans[i].dataset.nash.replace(/\s+$/, "");
+      }
+    } else if (key in KEY_TO_SEMITONE) {
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].textContent = transposeRow(spans[i].dataset.nash, key);
+      }
+    } else {
+      return false;
+    }
+    var sel = document.getElementById("key-selector");
+    if (sel && sel.value !== key) sel.value = key;
+    return true;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var urlKey = params.get("key");
+  if (urlKey && (urlKey === "Nashville" || urlKey in KEY_TO_SEMITONE)) rerender(urlKey);
+
+  var sel = document.getElementById("key-selector");
+  if (sel) sel.addEventListener("change", function () { rerender(sel.value); });
+})();
+</script>
+
+</body>
+</html>
