@@ -1,49 +1,100 @@
 {
-  "title": "Song Title Here",
-  "artist": "Artist Name",
-  "color": "#b54",
-  "listen": "https://www.youtube.com/watch?v=VIDEO_ID",
+  "title": "Chinese Translation",
+  "artist": "M. Ward",
+  "color": "#3a8",
+  "listen": "https://www.youtube.com/watch?v=cUfIKX5ReKQ",
   "sources": [
-    ["ExampleSite", "https://example.com/some-song-page"]
+    ["UltimateGuitar", "https://tabs.ultimate-guitar.com/tab/m-ward/chinese-translation-chords-1030525"]
   ],
   "sections": [
     {
       "type": "verse",
-      "label": "Verse 1",
+      "label": "Part 1",
       "lines": [
-        ["1                                   5", "Placeholder lyric line one goes right here"],
-        ["5                                1",    "Placeholder lyric line two goes right here"]
+        ["           1", 
+         "I sailed a wild, wild sea"],
+        ["             2m",    
+         "Climbed up a tall, tall mountain"],
+        ["         1", 
+         "I met an old, old man"],
+        ["          5",    
+         "Beneath a weeping willow tree"],
+        ["             1         ", 
+         "He said 'Now if you got some questions,"],
+        ["        2m",    
+         "Go and lay them at my feet"],
+        ["       1", 
+         "But my time here is brief"],
+        ["          5",    
+         "So you'll have to pick just three.'"],
+        ["", 
+         "And I said:"],
+        ["1                                           4maj7",    
+         "'What do you do with the pieces of a broken heart?"],
+        ["                                        1", 
+         "And how can a man like me remain in the light?"],
+        ["       1                  17",    
+         "And if life is really as short as they say,"],
+        ["1                    4m", 
+         "Why is the night so long?'"],
+        ["              5                                    1",    
+         "And then the sun went down and he sang for me this song:"]
       ]
     },
     {
-      "type": "chorus",
-      "label": "Chorus 1",
+      "type": "bridge",
+      "label": "Bridge",
       "lines": [
-        ["1",                                "Placeholder chorus line one goes here"],
-        ["                                  5  1", "Placeholder chorus line two goes here"]
+        ["      1                          2m", 
+         "See I once was a young fool like you"],
+        [" 1                        5", 
+         "Afraid to do the things I knew I had to do"],
+        ["     5                     ", 
+         "So I played an escapade just like you"],
+        ["2m                           5", 
+         "Played an escapade just like you"]
       ]
     },
-    {
-      "type": "solo",
-      "label": "Verse Solo Break",
-      "lines": [
-        ["|1    |5    |5    |1    |", null],
-        ["|4 1  |1 6m |2    |5    |", null]
-      ]
-    },
-    {
+        {
       "type": "verse",
-      "label": "Verse 2",
+      "label": "Part 1",
       "lines": [
-        ["1                              5", "Placeholder lyric line goes here"]
+        ["           1", 
+         "I sailed a wild, wild sea"],
+        ["             2m",    
+         "Climbed up a tall, tall mountain"],
+        ["         1", 
+         "I met an old, old man"],
+        ["          5",    
+         "He sat beneath a sapling tree"],
+        ["             1         ", 
+         "He said 'Now if you got some questions,"],
+        ["        2m",    
+         "Go and lay them at my feet"],
+        ["       1", 
+         "But my time here is brief"],
+        ["          5",    
+         "So you'll have to pick just three.'"],
+        ["", 
+         "And I said:"],
+        ["1                                           4maj7",    
+         "'What do you do with the pieces of a broken heart?"],
+        ["                                        1", 
+         "And how can a man like me remain in the light?"],
+        ["       1                  17",    
+         "And if life is really as short as they say,"],
+        ["1                    4m", 
+         "Why is the night so long?'"],
+        ["              5                                    1",    
+         "And then the sun went down and he sang for me this song:"]
       ]
     },
     {
       "type": "outro",
       "label": "Outro",
       "lines": [
-        ["  57                 17", "Placeholder outro line one"],
-        ["  5                  1",  "Placeholder outro line two"]
+        ["|1    |4maj7  |4maj7  |1     |", null],
+        ["|1  17|1  4m  |5      |1     |",  null]
       ]
     }
   ]
