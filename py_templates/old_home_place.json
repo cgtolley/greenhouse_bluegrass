@@ -1,49 +1,132 @@
 {
-  "title": "Song Title Here",
-  "artist": "Artist Name",
-  "color": "#b54",
-  "listen": "https://www.youtube.com/watch?v=VIDEO_ID",
+  "title": "Old Home Place",
+  "artist": "J.D. Crowe & The New South",
+  "color": "#c75",
+  "listen": "https://www.youtube.com/watch?v=LXA3UGcbZFI",
   "sources": [
-    ["ExampleSite", "https://example.com/some-song-page"]
+    ["UltimateGuitar", "https://tabs.ultimate-guitar.com/tab/j-d-crowe-the-new-south/old-home-place-chords-1506458"]
   ],
   "sections": [
+    {
+      "type": "intro",
+      "label": "Intro",
+      "lines": [
+        ["|1  37 |4  1  |1     |5     |", null],
+        ["|1  37 |4  1  |1  5  |1     |", null]
+      ]
+    },
     {
       "type": "verse",
       "label": "Verse 1",
       "lines": [
-        ["1                                   5", "Placeholder lyric line one goes right here"],
-        ["5                                1",    "Placeholder lyric line two goes right here"]
-      ]
-    },
-    {
-      "type": "chorus",
-      "label": "Chorus 1",
-      "lines": [
-        ["1",                                "Placeholder chorus line one goes here"],
-        ["                                  5  1", "Placeholder chorus line two goes here"]
-      ]
-    },
-    {
-      "type": "solo",
-      "label": "Verse Solo Break",
-      "lines": [
-        ["|1    |5    |5    |1    |", null],
-        ["|4 1  |1 6m |2    |5    |", null]
+        ["          1        37          4         1", 
+         "It's been ten long years since I left my home"],
+        ["                          4",    
+         "In the holler where I was born"],
+        ["          1         37              4          1", 
+         "Where the cool fall nights make the wood smoke rise"],
+        ["                   5         1", 
+         "And the fox hunter blows his horn"]
       ]
     },
     {
       "type": "verse",
       "label": "Verse 2",
       "lines": [
-        ["1                              5", "Placeholder lyric line goes here"]
+        ["  1       37          4             1", 
+         "I fell in love with a girl from the town"],
+        ["                            4",    
+         "I thought that she would be true"],
+        ["  1     37      4        1", 
+         "I ran away to Charlottesville"],
+        ["                 5         1", 
+         "And worked in a sawmill in town"]
       ]
     },
     {
-      "type": "outro",
-      "label": "Outro",
+      "type": "chorus",
+      "label": "Chorus",
       "lines": [
-        ["  57                 17", "Placeholder outro line one"],
-        ["  5                  1",  "Placeholder outro line two"]
+        ["5                          1",                                
+         "What have they done to the old home place?"],
+        ["27                   57", 
+         "Why did they tear it down?"],
+        ["    1         47       5           1", 
+         "And why did I leave my plow in the field"],
+        ["               5          1", 
+         "And look for a job in the town?"],
+      ]
+    },
+    {
+      "type": "solo",
+      "label": "Instrumental",
+      "lines": [
+        ["|1  37 |4  1  |1     |5     |", null],
+        ["|1  37 |4  1  |1  5  |1     |", null]
+      ]
+    },
+    {
+      "type": "verse",
+      "label": "Verse 3",
+      "lines": [
+        ["          1        37          4         1", 
+         "Well my girl ran off with somebody else"],
+        ["                          4",    
+         "The tariffs took all my pay"],
+        ["          1         37              4          1", 
+         "And here I stand where the old home stood"],
+        ["            5         1", 
+         "Before they took it away"]
+      ]
+    },
+    {
+      "type": "verse",
+      "label": "Verse 4",
+      "lines": [
+        ["        1         37            4         1", 
+         "Now the geese fly south and the cold wind blows"],
+        ["                            4",    
+         "As I stand here and hang my head"],
+        ["      1      37         4       1", 
+         "I've lost my love, I've lost my home"],
+        ["          5               1", 
+         "And now I wish that I was dead"]
+      ]
+    },
+    {
+      "type": "chorus",
+      "label": "Chorus",
+      "lines": [
+        ["5                          1",                                
+         "What have they done to the old home place?"],
+        ["27                   57", 
+         "Why did they tear it down?"],
+        ["    1         47       5           1", 
+         "And why did I leave my plow in the field"],
+        ["               5          1", 
+         "And look for a job in the town?"],
+      ]
+    },
+    {
+      "type": "solo",
+      "label": "Instrumental",
+      "lines": [
+        ["|1  37 |4  1  |1     |5     |", null],
+        ["|1  37 |4  1  |1  5  |1     |", null]
+      ]
+    },
+    {
+      "type": "chorus",
+      "label": "Chorus",
+      "lines": [
+        ["5                          1",                                
+         "What have they done to the old home place?"],
+        ["27                   57", 
+         "Why did they tear it down?"],
+        ["    1         47       5           1", 
+         "And why did I leave my plow in the field"],
+        ["               5          1", 
+         "And look for a job in the town?"],
       ]
     }
   ]
