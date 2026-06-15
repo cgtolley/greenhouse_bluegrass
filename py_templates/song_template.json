@@ -11,39 +11,60 @@
       "type": "verse",
       "label": "Verse 1",
       "lines": [
-        ["1                                   5", "Placeholder lyric line one goes right here"],
-        ["5                                1",    "Placeholder lyric line two goes right here"]
+        ["", 
+         "Placeholder lyric line one goes right here"],
+        ["",    
+         "Placeholder lyric line two goes right here"],
+        ["", 
+         "Placeholder lyric line one goes right here"],
+        ["",    
+         "Placeholder lyric line two goes right here"]
       ]
     },
     {
       "type": "chorus",
       "label": "Chorus 1",
       "lines": [
-        ["1",                                "Placeholder chorus line one goes here"],
-        ["                                  5  1", "Placeholder chorus line two goes here"]
+        ["", 
+         "Placeholder lyric line one goes right here"],
+        ["",    
+         "Placeholder lyric line two goes right here"],
+        ["", 
+         "Placeholder lyric line one goes right here"],
+        ["",    
+         "Placeholder lyric line two goes right here"]
       ]
     },
     {
       "type": "solo",
       "label": "Verse Solo Break",
       "lines": [
-        ["|1    |5    |5    |1    |", null],
-        ["|4 1  |1 6m |2    |5    |", null]
+        ["|     |     |     |     |", null],
+        ["|     |     |     |     |", null]
       ]
     },
     {
       "type": "verse",
       "label": "Verse 2",
       "lines": [
-        ["1                              5", "Placeholder lyric line goes here"]
+        ["", 
+         "Placeholder lyric line one goes right here"],
+        ["",    
+         "Placeholder lyric line two goes right here"],
+        ["", 
+         "Placeholder lyric line one goes right here"],
+        ["",    
+         "Placeholder lyric line two goes right here"]
       ]
     },
     {
       "type": "outro",
       "label": "Outro",
       "lines": [
-        ["  57                 17", "Placeholder outro line one"],
-        ["  5                  1",  "Placeholder outro line two"]
+        ["", 
+         "Placeholder outro line one"],
+        ["",  
+         "Placeholder outro line two"]
       ]
     }
   ]
