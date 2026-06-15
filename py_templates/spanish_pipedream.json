@@ -1,26 +1,42 @@
 {
-  "title": "Song Title Here",
-  "artist": "Artist Name",
+  "title": "Spanish Pipedream",
+  "artist": "John Prine",
   "color": "#b54",
-  "listen": "https://www.youtube.com/watch?v=VIDEO_ID",
+  "listen": "https://www.youtube.com/watch?v=BofvfVPFbiM",
   "sources": [
-    ["ExampleSite", "https://example.com/some-song-page"]
+    ["UltimateGuitar", "https://tabs.ultimate-guitar.com/tab/john-prine/spanish-pipedream-chords-586982"]
   ],
   "sections": [
     {
       "type": "verse",
       "label": "Verse 1",
       "lines": [
-        ["1                                   5", "Placeholder lyric line one goes right here"],
-        ["5                                1",    "Placeholder lyric line two goes right here"]
+        ["1                                   5", 
+         "She was a level headed dancer on the road to alcohol,"],
+        ["5                                1",    
+         "And I was just a soldier on my way to Montreal."],
+        ["1                                   5", 
+         "Well she pressed her chest against me"],
+        ["5                                1",    
+         "About the time the jukebox broke."],
+        ["1                                   5", 
+         "Yeah, she gave me a peck on the back of the neck,"],
+        ["5                                1",    
+         "And these are the words she spoke:"]
       ]
     },
     {
       "type": "chorus",
       "label": "Chorus 1",
       "lines": [
-        ["1",                                "Placeholder chorus line one goes here"],
-        ["                                  5  1", "Placeholder chorus line two goes here"]
+        ["1",                                
+         "Blow up your T.V.. Throw away your paper."],
+        ["                                  5  1", 
+         "Go to the country.  Build you a home."],
+        ["1",                                
+         "Plant a little garden, eat a lotta peaches."],
+        ["                                  5  1", 
+         "Try an find Jesus,  on your own."]
       ]
     },
     {
