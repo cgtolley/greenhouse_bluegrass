@@ -11,60 +11,105 @@
       "type": "verse",
       "label": "Verse 1",
       "lines": [
-        ["", 
-         "Placeholder lyric line one goes right here"],
-        ["",    
-         "Placeholder lyric line two goes right here"],
-        ["", 
-         "Placeholder lyric line one goes right here"],
-        ["",    
-         "Placeholder lyric line two goes right here"]
+        ["1", 
+         "About three miles from the Batelle yard"],
+        ["                          4",    
+         "From the reverse curve on down"],
+        ["                     1", 
+         "Not far south of the town depot"],
+        ["6                    3",    
+         "Sullivan's shack was found"],
+        ["5              1",    
+         "Back on higher ground"],
+        ["1", 
+         "You can see him every day"],
+        ["                 4",    
+         "Walking down the line"],
+        ["                        1", 
+         "With his old brown sack across his back"],
+        ["         6                3",    
+         "And his long hair down behind"],
+        ["5                    1",    
+         "Speaking his worried mind"]
       ]
     },
     {
       "type": "chorus",
       "label": "Chorus 1",
       "lines": [
-        ["", 
-         "Placeholder lyric line one goes right here"],
-        ["",    
-         "Placeholder lyric line two goes right here"],
-        ["", 
-         "Placeholder lyric line one goes right here"],
-        ["",    
-         "Placeholder lyric line two goes right here"]
+        ["1", 
+         "It's a long way from the delta"],
+        ["       4",    
+         "To the North Georgia hills"],
+        ["                        1", 
+         "And a tote sack full of ginseng"],
+        ["                      4",    
+         "Don't pay no travelin bills"],
+        ["     b7             1",    
+         "Now, I'm too old to ride the rails"],
+        ["   2              5",    
+         "Or thumb the road alone"],
+        ["  1                4               1",    
+         "I guess I'll never make it back to home"],
+        ["   1           4           5     1",    
+         "My muddy water Mississippi delta home."]
       ]
     },
     {
       "type": "solo",
       "label": "Verse Solo Break",
       "lines": [
-        ["|     |     |     |     |", null],
-        ["|     |     |     |     |", null]
+        ["|1    |1 4  |4 1  |6 3 |5 1 | x2", null]
       ]
     },
-    {
+     {
       "type": "verse",
       "label": "Verse 2",
       "lines": [
-        ["", 
-         "Placeholder lyric line one goes right here"],
-        ["",    
-         "Placeholder lyric line two goes right here"],
-        ["", 
-         "Placeholder lyric line one goes right here"],
-        ["",    
-         "Placeholder lyric line two goes right here"]
+        ["1", 
+         "The winters here they get too cold"],
+        ["                     4",    
+         "The damp it makes me ill"],
+        ["                          1", 
+         "Can't dig no roots in the mountainside"],
+        ["6                              3",    
+         "With the ground froze hard and still"],
+        ["      5                       1",    
+         "Gotta stay at the foot of the hill"],
+        ["1", 
+         "But next summer if things turn right"],
+        ["                       4",    
+         "The companies will pay high"],
+        ["                          1", 
+         "I'll make enough money to pay my bills"],
+        ["6                       3",    
+         "Bid these mountains goodbye"],
+        ["5                    1",    
+         "Then he said with a sigh"]
       ]
     },
     {
-      "type": "outro",
-      "label": "Outro",
+      "type": "chorus",
+      "label": "Chorus 1",
       "lines": [
-        ["", 
-         "Placeholder outro line one"],
-        ["",  
-         "Placeholder outro line two"]
+        ["1", 
+         "It's a long way from the delta"],
+        ["       4",    
+         "To the North Georgia hills"],
+        ["                        1", 
+         "And a tote sack full of ginseng"],
+        ["                      4",    
+         "Don't pay no travelin bills"],
+        ["     b7             1",    
+         "Now, I'm too old to ride the rails"],
+        ["   2              5",    
+         "Or thumb the road alone"],
+        ["  1                4               1",    
+         "I guess I'll never make it back to home"],
+        ["   1           4           5     1",    
+         "My muddy water Mississippi delta home."],
+        ["   1           4           5     1",    
+         "My muddy water Mississippi delta home."]
       ]
     }
   ]
