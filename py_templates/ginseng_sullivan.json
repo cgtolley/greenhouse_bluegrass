@@ -17,7 +17,7 @@
          "From the reverse curve on down"],
         ["                     1", 
          "Not far south of the town depot"],
-        ["6                    3",    
+        ["6m                   3m",    
          "Sullivan's shack was found"],
         ["5              1",    
          "Back on higher ground"],
@@ -27,7 +27,7 @@
          "Walking down the line"],
         ["                        1", 
          "With his old brown sack across his back"],
-        ["         6                3",    
+        ["         6m               3m",    
          "And his long hair down behind"],
         ["5                    1",    
          "Speaking his worried mind"]
@@ -47,7 +47,7 @@
          "Don't pay no travelin bills"],
         ["     b7             1",    
          "Now, I'm too old to ride the rails"],
-        ["   2              5",    
+        ["   2m             5",    
          "Or thumb the road alone"],
         ["  1                4               1",    
          "I guess I'll never make it back to home"],
@@ -59,7 +59,7 @@
       "type": "solo",
       "label": "Verse Solo Break",
       "lines": [
-        ["|1    |1 4  |4 1  |6 3 |5 1 | x2", null]
+        ["|1    |1 4  |4 1  |6m 3m|5 1 | x2", null]
       ]
     },
      {
@@ -82,7 +82,7 @@
          "The companies will pay high"],
         ["                          1", 
          "I'll make enough money to pay my bills"],
-        ["6                       3",    
+        ["6m                      3m",    
          "Bid these mountains goodbye"],
         ["5                    1",    
          "Then he said with a sigh"]
@@ -102,7 +102,7 @@
          "Don't pay no travelin bills"],
         ["     b7             1",    
          "Now, I'm too old to ride the rails"],
-        ["   2              5",    
+        ["   2m             5",    
          "Or thumb the road alone"],
         ["  1                4               1",    
          "I guess I'll never make it back to home"],
