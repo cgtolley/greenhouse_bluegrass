@@ -1,0 +1,71 @@
+{
+  "title": "Song Title Here",
+  "artist": "Artist Name",
+  "color": "#b54",
+  "listen": "https://www.youtube.com/watch?v=VIDEO_ID",
+  "sources": [
+    ["ExampleSite", "https://example.com/some-song-page"]
+  ],
+  "sections": [
+    {
+      "type": "verse",
+      "label": "Verse 1",
+      "lines": [
+        ["", 
+         "Placeholder lyric line one goes right here"],
+        ["",    
+         "Placeholder lyric line two goes right here"],
+        ["", 
+         "Placeholder lyric line one goes right here"],
+        ["",    
+         "Placeholder lyric line two goes right here"]
+      ]
+    },
+    {
+      "type": "chorus",
+      "label": "Chorus 1",
+      "lines": [
+        ["", 
+         "Placeholder lyric line one goes right here"],
+        ["",    
+         "Placeholder lyric line two goes right here"],
+        ["", 
+         "Placeholder lyric line one goes right here"],
+        ["",    
+         "Placeholder lyric line two goes right here"]
+      ]
+    },
+    {
+      "type": "solo",
+      "label": "Verse Solo Break",
+      "lines": [
+        ["|     |     |     |     |", null],
+        ["|     |     |     |     |", null]
+      ]
+    },
+    {
+      "type": "verse",
+      "label": "Verse 2",
+      "lines": [
+        ["", 
+         "Placeholder lyric line one goes right here"],
+        ["",    
+         "Placeholder lyric line two goes right here"],
+        ["", 
+         "Placeholder lyric line one goes right here"],
+        ["",    
+         "Placeholder lyric line two goes right here"]
+      ]
+    },
+    {
+      "type": "outro",
+      "label": "Outro",
+      "lines": [
+        ["", 
+         "Placeholder outro line one"],
+        ["",  
+         "Placeholder outro line two"]
+      ]
+    }
+  ]
+}
