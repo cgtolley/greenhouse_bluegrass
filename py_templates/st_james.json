@@ -11,8 +11,8 @@
       "type": "solo",
       "label": "Instrumental",
       "lines": [
-        ["|1m 4m|1m   |1m 4m|3  5 |", null],
-        ["|1m 4m|1m   |3  5 |1m   |", null]
+        ["|1m 4m|1m   |1m 4m|2  5 |", null],
+        ["|1m 4m|1m   |2  5 |1m   |", null]
       ]
     },
     {
