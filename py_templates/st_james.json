@@ -11,8 +11,8 @@
       "type": "solo",
       "label": "Instrumental",
       "lines": [
-        ["|1m 4m|1m   |1m 4m|3  5 |", null],
-        ["|1m 4m|1m   |3  5 |1m   |", null]
+        ["|1m 4m|1m   |1m 4m|3b 5 |", null],
+        ["|1m 4m|1m   |3b 5 |1m   |", null]
       ]
     },
     {
@@ -21,19 +21,19 @@
       "lines": [
         ["  1m           4m        1m", 
          "I went down to Old Joe's barroom"],
-        ["1m          4m            3      5",    
+        ["1m          4m            3b     5",    
          "Down on the corner by the square"],
         ["1m        4m       1m", 
          "They were serving drinks as usual and the "],
-        ["3      5        1m",    
+        ["3b     5        1m",    
          "Usual crowd was there."],
         ["1m     4m        1m", 
          "In the corner sat Big Joe McKenzie"],
-        [".   1m        4m        3      5",    
+        [".   1m        4m        3b     5",    
          "His eyes were bloodshot red"],
         ["  1m         4m       1m", 
          "And as he turned to address the crowd around him "],
-        ["       3            5             1m",    
+        ["       3b           5             1m",    
          "These were the very words that he said:"]
       ]
     },
@@ -43,21 +43,21 @@
       "lines": [
         ["  1m           4m        1m", 
          "I went down to St. James Infirmary"],
-        ["1m        4m    3      5",    
+        ["1m        4m    3b     5",    
          "To see my baby there"],
         ["1m       4m                  1m", 
          "She was stretched out on that long white table"],
-        ["  3         5        1m",    
+        ["  3b        5        1m",    
          "So cold, so pale, so fair"],
         ["       1m         4m        1m", 
          "Let her go, let her go, God bless her"],
-        ["    1m   4m      3      5",    
+        ["    1m   4m      3b     5",    
          "Wherever she may be"],
         ["1m       4m               1m", 
          "Let her search that whole wide world over"],
-        ["       3            5        1m",    
+        ["       3b           5        1m",    
          "Never find a man as sweet as me"],
-        ["             3             5         1m",    
+        ["             3b            5         1m",    
          "She'll never find a man as sweet as me"]
       ]
     },
@@ -67,19 +67,19 @@
       "lines": [
         ["1m     4m           1m", 
          "When I die won't you bury me"],
-        ["      1m       4m      3      5",    
+        ["      1m       4m      3b     5",    
          "In my high-top Stetson hat"],
         ["1m    4m            1m", 
          "Put a twenty dollar gold piece on my watch chain"],
-        ["       3              5            1m",    
+        ["       3b             5            1m",    
          "So the gang'll know I died standing pat"],
         [".      1m        4m              1m", 
          "I want six crack shooters for pall-bearers"],
-        ["1m         4m        3      5",    
+        ["1m         4m        3b     5",    
          "Pretty gal sing me a song"],
         ["1m       4m        1m", 
          "I want a jazz band on my hearse wagon"],
-        ["    3            5       1m",    
+        ["    3b           5       1m",    
          "To raise hell as we roll on"]
       ]
     },
@@ -89,11 +89,11 @@
       "lines": [
         ["          1m            4m        1m", 
          "Won't you roll out that rubber tarmac"],
-        ["          1m            4m         3      5",    
+        ["          1m            4m         3b     5",    
          "Won't you roll out that rubber tarmac"],
         ["1m                4m            1m", 
          "Thirteen men gone down to that old graveyard"],
-        ["     3             5           1m",    
+        ["     3b            5           1m",    
          "Only twelve of the men comin' back"]
       ]
     },
@@ -103,13 +103,13 @@
       "lines": [
         ["  1m            4m        1m", 
          "Now that you've heard my story"],
-        ["1m           4m          3      5",    
+        ["1m           4m          3b     5",    
          "Have another shot of the booze"],
         ["1m       4m       1m", 
          "And if anybody should ask - "],
-        ["3           5        1m",    
+        ["3b          5        1m",    
          "I got the St. James infirmary blues"],
-        ["3           5        1m",    
+        ["3b          5        1m",    
          "I got the St. James infirmary blues"]
       ]
     }
